@@ -162,8 +162,8 @@ body:
       label: Confidentiality agreement
       description: Would you be willing to sign an NDA before accessing private source code or confidential information?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
         - I would need to review the agreement first
     validations:
       required: true
@@ -174,8 +174,8 @@ body:
       label: Intellectual-property and contribution agreement
       description: Would you be willing to sign an agreement governing ownership and use of accepted contributions?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
         - I would need to review the agreement first
     validations:
       required: true
