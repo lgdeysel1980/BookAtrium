@@ -1,0 +1,230 @@
+name: Developer Contribution Interest
+description: Apply to assist voluntarily with the private development of BookAtrium.
+title: "[Developer Interest]: "
+labels:
+  - developer interest
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest in helping develop BookAtrium.
+
+        BookAtrium's core source code is private and proprietary. Core development participation is currently voluntary and unpaid.
+
+        Submitting this form does not guarantee acceptance or access to the private repository.
+
+        Suitable applicants may be contacted privately for further discussion and may be required to sign confidentiality, intellectual-property, security, and contribution agreements before receiving access.
+
+        This issue will be publicly visible. Do not include identity documents, residential addresses, telephone numbers, passwords, licence keys, private source code, client information, employer-confidential information, API credentials, or other sensitive personal information.
+
+  - type: input
+    id: preferred-name
+    attributes:
+      label: Preferred name
+      description: Enter the name or professional name by which you would like to be addressed publicly.
+      placeholder: "Example: Alex Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: github-profile
+    attributes:
+      label: GitHub profile
+      description: Provide the link to your GitHub profile.
+      placeholder: "Example: https://github.com/username"
+    validations:
+      required: true
+
+  - type: input
+    id: portfolio
+    attributes:
+      label: Portfolio or professional profile
+      description: Provide a public portfolio, LinkedIn profile, personal website, or similar page if available.
+      placeholder: "Optional public link"
+
+  - type: dropdown
+    id: contribution-area
+    attributes:
+      label: Main area of interest
+      description: Select the area in which you are most interested in contributing.
+      options:
+        - WPF desktop application development
+        - C# and .NET application development
+        - MVVM architecture
+        - EPUB processing and ebook formats
+        - Ebook reader development
+        - PDF functionality
+        - Web application development
+        - Blazor development
+        - Database and SQLite development
+        - Search and indexing
+        - Import, conversion, or metadata processing
+        - Plugin SDK development
+        - Automated testing and quality assurance
+        - Installer and update development
+        - Documentation
+        - Accessibility and user experience
+        - Security review
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: other-area
+    attributes:
+      label: Other area of interest
+      description: Complete this if you selected Other or want to mention additional areas.
+      placeholder: "Describe any other area in which you would like to help."
+
+  - type: textarea
+    id: experience
+    attributes:
+      label: Relevant experience
+      description: Describe your experience with the technologies or areas selected above.
+      placeholder: |
+        Include relevant languages, frameworks, tools, project types, and approximate experience.
+    validations:
+      required: true
+
+  - type: textarea
+    id: previous-work
+    attributes:
+      label: Examples of previous work
+      description: Provide links to public repositories, applications, packages, documentation, or other work that demonstrates your experience.
+      placeholder: |
+        Add public links and a brief explanation of your contribution to each project.
+    validations:
+      required: true
+
+  - type: textarea
+    id: contribution-interest
+    attributes:
+      label: Why would you like to contribute to BookAtrium?
+      description: Explain what interests you about the project and what you hope to contribute.
+      placeholder: "Describe your interest in BookAtrium and the contribution you would like to make."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: availability
+    attributes:
+      label: General availability
+      description: Select the option that most closely reflects the time you could normally contribute.
+      options:
+        - Occasional contributions when available
+        - Approximately 1 to 2 hours per week
+        - Approximately 3 to 5 hours per week
+        - More than 5 hours per week
+        - Availability varies considerably
+        - Unsure at present
+    validations:
+      required: true
+
+  - type: dropdown
+    id: collaboration-experience
+    attributes:
+      label: Git and collaborative-development experience
+      description: Select the option that best reflects your experience.
+      options:
+        - Experienced with Git, branches, pull requests, and code review
+        - Familiar with Git but still learning collaborative workflows
+        - Limited Git experience
+        - No previous Git experience
+    validations:
+      required: true
+
+  - type: textarea
+    id: development-environment
+    attributes:
+      label: Development environment
+      description: Briefly describe the operating system, IDE, and main development tools you use.
+      placeholder: "Example: Windows 11, Visual Studio 2022, Cursor, GitHub Desktop"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: syncfusion-experience
+    attributes:
+      label: Syncfusion experience
+      description: BookAtrium uses Syncfusion controls in parts of the application.
+      options:
+        - I currently use Syncfusion and have an appropriate licence
+        - I have previous Syncfusion experience
+        - I am familiar with Syncfusion but have not used it professionally
+        - I have no Syncfusion experience
+        - Unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: nda-willingness
+    attributes:
+      label: Confidentiality agreement
+      description: Would you be willing to sign an NDA before accessing private source code or confidential information?
+      options:
+        - Yes
+        - No
+        - I would need to review the agreement first
+    validations:
+      required: true
+
+  - type: dropdown
+    id: contribution-agreement
+    attributes:
+      label: Intellectual-property and contribution agreement
+      description: Would you be willing to sign an agreement governing ownership and use of accepted contributions?
+      options:
+        - Yes
+        - No
+        - I would need to review the agreement first
+    validations:
+      required: true
+
+  - type: dropdown
+    id: unpaid-basis
+    attributes:
+      label: Voluntary and unpaid basis
+      description: Core development contributions are currently voluntary and unpaid.
+      options:
+        - I understand and accept that contributions are currently voluntary and unpaid
+        - I do not accept unpaid participation
+        - I would like clarification before proceeding
+    validations:
+      required: true
+
+  - type: dropdown
+    id: future-commercialisation
+    attributes:
+      label: Possible future commercialisation
+      description: BookAtrium may introduce optional premium features, paid services, commercial editions, or another commercial model in the future.
+      options:
+        - I understand and accept this
+        - I do not accept this
+        - I would like clarification before proceeding
+    validations:
+      required: true
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions or additional information
+      description: Add anything else relevant to your application or any questions you would like answered.
+      placeholder: "Optional additional information"
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Applicant confirmations
+      options:
+        - label: I understand that this application will be publicly visible.
+          required: true
+        - label: I have not included sensitive personal information, identity documents, credentials, private code, or confidential information.
+          required: true
+        - label: I understand that submitting this application does not guarantee acceptance or private repository access.
+          required: true
+        - label: I understand that suitable applicants may be asked to continue the process privately.
+          required: true
+        - label: I confirm that the information supplied in this application is accurate to the best of my knowledge.
+          required: true
+        - label: I agree to follow the BookAtrium Code of Conduct.
+          required: true
