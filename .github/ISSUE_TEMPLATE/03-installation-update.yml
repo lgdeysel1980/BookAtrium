@@ -39,7 +39,7 @@ body:
     id: target-version
     attributes:
       label: Version being installed or updated to
-      placeholder: Example: 1.1.0
+      placeholder: "Example: 1.1.0"
     validations:
       required: true
 
