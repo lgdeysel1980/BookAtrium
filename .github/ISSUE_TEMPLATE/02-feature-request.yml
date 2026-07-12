@@ -1,0 +1,91 @@
+name: Feature Request
+description: Suggest a new feature or improvement for BookAtrium.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting an improvement to BookAtrium.
+
+        Please describe the need or problem first, rather than only describing a proposed button or screen. This helps us understand the best solution.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area of BookAtrium
+      description: Which part of BookAtrium would this improve?
+      options:
+        - Library management
+        - Book import
+        - Book metadata
+        - Authors, series, or tags
+        - Ebook reader
+        - PDF reader
+        - Audiobooks
+        - Covers
+        - Search
+        - Highlights or notes
+        - OPDS
+        - Web interface
+        - Backup or restore
+        - Settings
+        - Installation or updates
+        - New platform or device
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this feature solve?
+      description: Describe the difficulty, limitation, or need that led to this request.
+      placeholder: Explain what you are trying to achieve and why the current behaviour does not meet that need.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed feature or improvement
+      description: Describe how you think BookAtrium could solve the problem.
+      placeholder: Describe the suggested functionality.
+    validations:
+      required: true
+
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Example workflow
+      description: Explain how you imagine using this feature.
+      placeholder: |
+        1. The user opens...
+        2. The user selects...
+        3. BookAtrium then...
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you found another way to achieve this, either in BookAtrium or another application?
+      placeholder: Describe any workarounds or alternatives you have tried.
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: Add examples, mock-ups, screenshots, or links that help explain the request.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and could not find the same request.
+          required: true
+        - label: This request describes one main feature or improvement.
+          required: true
+        - label: I have not included private, confidential, or copyrighted files.
+          required: true
