@@ -1,0 +1,131 @@
+name: Bug Report
+description: Report an error, crash, or unexpected behaviour in BookAtrium.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us improve BookAtrium.
+
+        Please provide as much information as possible so that the problem can be investigated.
+
+        Do not include passwords, licence keys, private ebooks, personal documents, database backups, or other confidential information.
+
+  - type: input
+    id: version
+    attributes:
+      label: BookAtrium version
+      description: You can find this under Help → About in BookAtrium.
+      placeholder: Example: 1.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      description: Select the operating system on which the problem occurred.
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows Server
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of BookAtrium is affected?
+      options:
+        - Application startup
+        - Library management
+        - Book import
+        - Book metadata
+        - Authors, series, or tags
+        - Ebook reader
+        - PDF reader
+        - Audiobooks
+        - Covers
+        - Search
+        - Highlights or notes
+        - OPDS
+        - Web interface
+        - Backup or restore
+        - Settings
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly, including what you were trying to do.
+      placeholder: Explain what happened and any error message that appeared.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps that cause the problem.
+      placeholder: |
+        1. Open BookAtrium
+        2. Select...
+        3. Click...
+        4. The error appears
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect BookAtrium to do?
+      placeholder: Describe the result you expected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error message
+      description: Paste the complete error message here, if one was displayed.
+      placeholder: Paste the error message here.
+
+  - type: textarea
+    id: frequency
+    attributes:
+      label: How often does this happen?
+      description: Tell us whether the problem occurs every time, sometimes, or only once.
+      placeholder: Example: Every time I import an EPUB file.
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Additional diagnostic information
+      description: Add any relevant technical information or log output. Remove private or sensitive information before submitting.
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or screen recordings
+      description: Drag and drop screenshots or recordings here if they help explain the problem.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and could not find the same problem.
+          required: true
+        - label: I am using the latest available version of BookAtrium.
+          required: true
+        - label: I removed passwords, licence keys, personal information, and private files from this report.
+          required: true
