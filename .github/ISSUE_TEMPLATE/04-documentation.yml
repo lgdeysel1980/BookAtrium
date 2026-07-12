@@ -1,0 +1,83 @@
+name: Documentation Problem
+description: Report missing, incorrect, unclear, or outdated BookAtrium documentation.
+title: "[Documentation]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report a problem with the BookAtrium manual, online documentation, help text, or instructions.
+
+  - type: dropdown
+    id: documentation-type
+    attributes:
+      label: Documentation type
+      options:
+        - User manual
+        - Installation guide
+        - Online documentation
+        - Troubleshooting guide
+        - In-application help
+        - Tooltip or field description
+        - Release notes
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Page, section, or location
+      description: Tell us where the documentation problem appears.
+      placeholder: Example: User Manual, page 24, Importing Books
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: Type of documentation problem
+      options:
+        - Incorrect information
+        - Missing information
+        - Unclear instructions
+        - Outdated information
+        - Broken link
+        - Spelling or grammar
+        - Screenshot does not match the application
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the problem
+      description: Explain what is incorrect, missing, or unclear.
+      placeholder: Describe the documentation problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: Suggested correction
+      description: Provide corrected wording or explain what should be added, if possible.
+      placeholder: Describe the correction you recommend.
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag and drop screenshots here if they help identify the documentation problem.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this documentation problem has not already been reported.
+          required: true
+        - label: I have identified the relevant page, section, or screen as accurately as possible.
+          required: true
