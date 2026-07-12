@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a general question
+    url: https://github.com/lgdeysel1980/BookAtrium/discussions
+    about: Ask for help or discuss BookAtrium without opening a development issue.
+
+  - name: View existing issues
+    url: https://github.com/lgdeysel1980/BookAtrium/issues
+    about: Search existing reports before submitting a new issue.
