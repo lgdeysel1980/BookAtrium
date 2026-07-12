@@ -103,7 +103,7 @@ body:
     attributes:
       label: How often does this happen?
       description: Tell us whether the problem occurs every time, sometimes, or only once.
-      placeholder: Example: Every time I import an EPUB file.
+      placeholder: "Example: Every time I import an EPUB file."
 
   - type: textarea
     id: diagnostics
