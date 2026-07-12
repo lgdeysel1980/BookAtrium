@@ -1,0 +1,118 @@
+name: Installation or Update Problem
+description: Report a problem installing, updating, repairing, or uninstalling BookAtrium.
+title: "[Installer]: "
+labels:
+  - installer
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for problems involving installation, updates, repair, or removal of BookAtrium.
+
+        Do not upload licence keys, Windows product keys, passwords, or complete system backups.
+
+  - type: dropdown
+    id: problem-type
+    attributes:
+      label: Type of problem
+      options:
+        - New installation
+        - Updating an existing installation
+        - Automatic update check
+        - Downloading an update
+        - Installing a downloaded update
+        - Repairing BookAtrium
+        - Uninstalling BookAtrium
+        - Windows security or SmartScreen warning
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: current-version
+    attributes:
+      label: Currently installed version
+      description: Leave blank if BookAtrium has never been installed.
+      placeholder: Example: 1.0.0
+
+  - type: input
+    id: target-version
+    attributes:
+      label: Version being installed or updated to
+      placeholder: Example: 1.1.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - Windows Server
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: System architecture
+      options:
+        - 64-bit
+        - ARM64
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe exactly where the installation or update failed.
+      placeholder: Explain what you clicked, what appeared, and where the process stopped.
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: Error message or error code
+      description: Paste the complete installer or updater message.
+      placeholder: Paste the complete error text here.
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps already attempted
+      description: Tell us what you have already tried.
+      placeholder: |
+        - Restarted Windows
+        - Downloaded the installer again
+        - Ran the installer as administrator
+
+  - type: textarea
+    id: security-software
+    attributes:
+      label: Security software
+      description: List any antivirus or endpoint security product that may have blocked the installer.
+      placeholder: Example: Microsoft Defender
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or installer logs
+      description: Drag and drop relevant screenshots or logs here. Remove personal or sensitive information first.
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Before submitting
+      options:
+        - label: I downloaded the installer from the official BookAtrium GitHub Releases page.
+          required: true
+        - label: I searched the existing issues for the same installation or update problem.
+          required: true
+        - label: I removed passwords, licence keys, and personal information from the report.
+          required: true
