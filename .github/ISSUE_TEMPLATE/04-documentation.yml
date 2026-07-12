@@ -30,7 +30,7 @@ body:
     attributes:
       label: Page, section, or location
       description: Tell us where the documentation problem appears.
-      placeholder: Example: User Manual, page 24, Importing Books
+      placeholder: "Example: User Manual, page 24, Importing Books"
     validations:
       required: true
 
