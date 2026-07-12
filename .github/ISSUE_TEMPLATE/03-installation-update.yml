@@ -97,7 +97,7 @@ body:
     attributes:
       label: Security software
       description: List any antivirus or endpoint security product that may have blocked the installer.
-      placeholder: Example: Microsoft Defender
+      placeholder: "Example: Microsoft Defender"
 
   - type: textarea
     id: screenshots
