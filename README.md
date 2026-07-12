@@ -224,6 +224,13 @@ The future Plugin SDK, sample code, documentation, and other materials may use s
 
 The absence of an open-source licence for the core application does not grant permission to copy, modify, redistribute, or commercially use the private BookAtrium source code.
 
+## Software Licence
+
+BookAtrium is proprietary software distributed under the
+[BookAtrium End-User Licence Agreement](EULA.md).
+
+The Software may currently be used without charge, but it is not open-source software.
+
 ## BookAtrium Community
 
 - [Issues](../../issues)
