@@ -50,6 +50,21 @@ BookAtrium documentation will include:
 
 The full user manual will be published here when the first public release is available.
 
+### Plugin development (API 2.0)
+
+Third-party plugins reference **only** the public NuGet package:
+
+```xml
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+```
+
+- Source and package metadata: [`BookAtrium.PluginContracts`](BookAtrium.PluginContracts/)
+- Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/)
+- Reusable CI: [`.github/workflows/plugin-build.yml`](.github/workflows/plugin-build.yml)
+- Community catalogue (metadata only): [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
+
+The application core remains private. Third-party plugin projects should reference only `BookAtrium.PluginContracts`.
+
 ## Support
 
 Choose the support option that best matches your request:

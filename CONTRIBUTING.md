@@ -101,9 +101,17 @@ Use GitHub Discussions for:
 
 ## Third-Party Plugin Development
 
-BookAtrium is intended to support independently developed third-party plugins through a public Plugin SDK.
+BookAtrium supports independently developed third-party plugins through the public NuGet package **`BookAtrium.PluginContracts`** (Plugin API 2.0).
 
-Normal plugin development will not require access to the private BookAtrium source code.
+```xml
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+```
+
+Normal plugin development does **not** require access to the private BookAtrium application source. Do not reference private BookAtrium projects. Third-party plugin projects should reference only `BookAtrium.PluginContracts`.
+
+Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/).  
+Reusable CI: [`.github/workflows/plugin-build.yml`](.github/workflows/plugin-build.yml).  
+Catalogue submissions: [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins).
 
 Plugin developers may choose whether their plugins are:
 
@@ -137,7 +145,7 @@ A plugin must not imply that it is developed, approved, certified, endorsed, sol
 
 Plugin developers must not use BookAtrium branding in a way that could mislead users into believing that an independent plugin is an official BookAtrium product.
 
-The Plugin SDK, sample projects, packaging format, compatibility rules, permission model, and developer guidance will be published separately when ready.
+The Plugin API package (`BookAtrium.PluginContracts`), guides under `docs/plugins/sdk-2/`, packaging format, compatibility rules, and permission model are published from this repository. Community catalogue listing is separate and curated.
 
 ## Private Core Application Development
 
