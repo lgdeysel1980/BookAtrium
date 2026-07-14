@@ -1,0 +1,124 @@
+name: Plugin build
+
+# Reusable CI for BookAtrium Plugin API 2.0 packages (BookAtrium.PluginContracts).
+#
+# jobs:
+#   plugin:
+#     uses: OWNER/REPO/.github/workflows/plugin-build.yml@main
+#     with:
+#       project: path/to/Plugin.csproj
+#       test-project: path/to/Plugin.Tests.csproj   # optional
+
+on:
+  workflow_call:
+    inputs:
+      project:
+        description: Path to the plugin .csproj
+        required: true
+        type: string
+      test-project:
+        description: Optional path to a test .csproj
+        required: false
+        type: string
+        default: ""
+      configuration:
+        description: Build configuration
+        required: false
+        type: string
+        default: Release
+      dotnet-version:
+        description: .NET SDK version
+        required: false
+        type: string
+        default: "8.0.x"
+      pack-output:
+        description: Directory for .bookplugin output
+        required: false
+        type: string
+        default: artifacts
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - name: Restore
+        run: dotnet restore "${{ inputs.project }}"
+
+  build:
+    needs: restore
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - name: Restore
+        run: dotnet restore "${{ inputs.project }}"
+      - name: Build
+        run: dotnet build "${{ inputs.project }}" -c ${{ inputs.configuration }} --no-restore
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - name: Detect bookatrium-plugin
+        id: cli
+        run: |
+          if command -v bookatrium-plugin >/dev/null 2>&1; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Test with bookatrium-plugin
+        if: steps.cli.outputs.available == 'true'
+        run: bookatrium-plugin test --project "${{ inputs.project }}"
+      - name: Test with dotnet
+        if: steps.cli.outputs.available != 'true'
+        run: |
+          if [ -n "${{ inputs.test-project }}" ]; then
+            dotnet test "${{ inputs.test-project }}" -c ${{ inputs.configuration }} --verbosity normal
+          else
+            echo "No test-project input and bookatrium-plugin unavailable; skipping tests."
+          fi
+
+  pack:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+      - name: Detect bookatrium-plugin
+        id: cli
+        run: |
+          if command -v bookatrium-plugin >/dev/null 2>&1; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Pack with bookatrium-plugin
+        if: steps.cli.outputs.available == 'true'
+        run: |
+          mkdir -p "${{ inputs.pack-output }}"
+          bookatrium-plugin pack --project "${{ inputs.project }}" --out "${{ inputs.pack-output }}"
+      - name: Build fallback (no CLI)
+        if: steps.cli.outputs.available != 'true'
+        run: |
+          mkdir -p "${{ inputs.pack-output }}"
+          dotnet build "${{ inputs.project }}" -c ${{ inputs.configuration }} -o "${{ inputs.pack-output }}/bin"
+          echo "::warning::bookatrium-plugin not on PATH; produced build output only (no .bookplugin)."
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugin-package
+          path: ${{ inputs.pack-output }}
+          if-no-files-found: warn

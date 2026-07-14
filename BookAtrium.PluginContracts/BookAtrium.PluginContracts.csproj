@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BookAtrium.PluginContracts</RootNamespace>
+    <AssemblyName>BookAtrium.PluginContracts</AssemblyName>
+    <PackageId>BookAtrium.PluginContracts</PackageId>
+    <Version>2.0.0</Version>
+    <Authors>PractiCore</Authors>
+    <Description>Canonical public BookAtrium plugin authoring package (Plugin API 2.0). Reference this package only.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/lgdeysel1980/BookAtrium</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/lgdeysel1980/BookAtrium</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>bookatrium;plugins;ebooks</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
