@@ -38,87 +38,97 @@ on:
         default: artifacts
 
 jobs:
-  restore:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ inputs.dotnet-version }}
-      - name: Restore
-        run: dotnet restore "${{ inputs.project }}"
-
   build:
-    needs: restore
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - name: Checkout calling plugin repository
+        uses: actions/checkout@v4
         with:
-          dotnet-version: ${{ inputs.dotnet-version }}
-      - name: Restore
-        run: dotnet restore "${{ inputs.project }}"
-      - name: Build
-        run: dotnet build "${{ inputs.project }}" -c ${{ inputs.configuration }} --no-restore
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
+          path: plugin-src
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+      - name: Checkout public tooling repository
+        uses: actions/checkout@v4
+        with:
+          repository: lgdeysel1980/BookAtrium
+          ref: ${{ github.workflow_sha }}
+          path: tooling
+
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ inputs.dotnet-version }}
-      - name: Detect bookatrium-plugin
-        id: cli
+
+      - name: Restore public CLI
+        run: dotnet restore "$GITHUB_WORKSPACE/tooling/BookAtrium.PluginCli/BookAtrium.PluginCli.csproj"
+
+      - name: Restore plugin from NuGet.org
+        run: dotnet restore "$GITHUB_WORKSPACE/plugin-src/${{ inputs.project }}"
+
+      - name: Restore test project
+        if: ${{ inputs.test-project != '' }}
+        run: dotnet restore "$GITHUB_WORKSPACE/plugin-src/${{ inputs.test-project }}"
+
+      - name: Build plugin release
+        run: dotnet build "$GITHUB_WORKSPACE/plugin-src/${{ inputs.project }}" -c ${{ inputs.configuration }} --no-restore
+
+      - name: Build public BookAtrium.PluginCli
+        run: dotnet build "$GITHUB_WORKSPACE/tooling/BookAtrium.PluginCli/BookAtrium.PluginCli.csproj" -c ${{ inputs.configuration }} --no-restore
+
+      - name: Run test project
+        if: ${{ inputs.test-project != '' }}
+        run: dotnet test "$GITHUB_WORKSPACE/plugin-src/${{ inputs.test-project }}" -c ${{ inputs.configuration }} --no-restore --verbosity normal
+
+      - name: Validate plugin with public CLI
         run: |
-          if command -v bookatrium-plugin >/dev/null 2>&1; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
-          fi
-      - name: Test with bookatrium-plugin
-        if: steps.cli.outputs.available == 'true'
-        run: bookatrium-plugin test --project "${{ inputs.project }}"
-      - name: Test with dotnet
-        if: steps.cli.outputs.available != 'true'
+          set -euo pipefail
+          cli="$GITHUB_WORKSPACE/tooling/BookAtrium.PluginCli/bin/${{ inputs.configuration }}/net8.0/bookatrium-plugin.dll"
+          dotnet "$cli" validate --project "$GITHUB_WORKSPACE/plugin-src/${{ inputs.project }}"
+
+      - name: Pack plugin with public CLI
         run: |
-          if [ -n "${{ inputs.test-project }}" ]; then
-            dotnet test "${{ inputs.test-project }}" -c ${{ inputs.configuration }} --verbosity normal
-          else
-            echo "No test-project input and bookatrium-plugin unavailable; skipping tests."
+          set -euo pipefail
+          out="$GITHUB_WORKSPACE/${{ inputs.pack-output }}"
+          rm -rf "$out"
+          mkdir -p "$out"
+          cli="$GITHUB_WORKSPACE/tooling/BookAtrium.PluginCli/bin/${{ inputs.configuration }}/net8.0/bookatrium-plugin.dll"
+          dotnet "$cli" pack --project "$GITHUB_WORKSPACE/plugin-src/${{ inputs.project }}" --out "$out"
+
+          bookplugin_count=$(find "$out" -maxdepth 1 -type f -name '*.bookplugin' | wc -l)
+          checksum_count=$(find "$out" -maxdepth 1 -type f -name '*.sha256' | wc -l)
+
+          if [ "$bookplugin_count" -ne 1 ]; then
+            echo "Expected exactly one .bookplugin artifact, found $bookplugin_count" >&2
+            exit 1
           fi
 
-  pack:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: ${{ inputs.dotnet-version }}
-      - name: Detect bookatrium-plugin
-        id: cli
-        run: |
-          if command -v bookatrium-plugin >/dev/null 2>&1; then
-            echo "available=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "available=false" >> "$GITHUB_OUTPUT"
+          if [ "$checksum_count" -ne 1 ]; then
+            echo "Expected exactly one .sha256 artifact, found $checksum_count" >&2
+            exit 1
           fi
-      - name: Pack with bookatrium-plugin
-        if: steps.cli.outputs.available == 'true'
-        run: |
-          mkdir -p "${{ inputs.pack-output }}"
-          bookatrium-plugin pack --project "${{ inputs.project }}" --out "${{ inputs.pack-output }}"
-      - name: Build fallback (no CLI)
-        if: steps.cli.outputs.available != 'true'
-        run: |
-          mkdir -p "${{ inputs.pack-output }}"
-          dotnet build "${{ inputs.project }}" -c ${{ inputs.configuration }} -o "${{ inputs.pack-output }}/bin"
-          echo "::warning::bookatrium-plugin not on PATH; produced build output only (no .bookplugin)."
-      - name: Upload artifacts
+
+          package=$(find "$out" -maxdepth 1 -type f -name '*.bookplugin' | head -n 1)
+          checksum=$(find "$out" -maxdepth 1 -type f -name '*.sha256' | head -n 1)
+
+          if [ ! -s "$package" ]; then
+            echo "Pack output is missing a real .bookplugin" >&2
+            exit 1
+          fi
+
+          if [ ! -s "$checksum" ]; then
+            echo "Pack output is missing a real .sha256" >&2
+            exit 1
+          fi
+
+          cd "$out"
+          sha256sum --check "$(basename "$checksum")"
+          echo "Checksum verified: $(basename "$checksum")"
+
+      - name: Upload package artifacts
         uses: actions/upload-artifact@v4
         with:
           name: plugin-package
-          path: ${{ inputs.pack-output }}
-          if-no-files-found: warn
+          path: |
+            ${{ inputs.pack-output }}/*.bookplugin
+            ${{ inputs.pack-output }}/*.sha256
+          if-no-files-found: error
