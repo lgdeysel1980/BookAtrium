@@ -15,11 +15,11 @@
       "version": "1.0.4",
       "pluginApiVersion": "2.0",
       "metadataPath": "plugins/official/stores/amazon-us-kindle-store/plugin.json",
-      "releaseRepository": "lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store",
-      "releaseTag": "v1.0.4",
-      "packageHosting": "standalone-repository-transitional",
+      "releaseRepository": "lgdeysel1980/BookAtrium",
+      "releaseTag": "plugin-store-amazon-us-kindle-v1.0.4",
+      "packageHosting": "bookatrium",
       "package": {
-        "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/download/v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
+        "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/plugin-store-amazon-us-kindle-v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
         "fileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
         "sizeBytes": 24256,
         "sha256": "65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719"
