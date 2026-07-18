@@ -93,27 +93,29 @@ When an official plugin already has a public release on a standalone repository:
 7. Archive or redirect the standalone repository only after a separate, explicit
    migration task confirms consumers have moved.
 
-### Amazon US Kindle Store v1.0.4 (current transitional state)
+### Amazon US Kindle Store v1.0.4 (hosting migration complete)
 
 | Item | Value |
 |------|-------|
 | Plugin id | `com.practicore.bookatrium.store.amazon-us-kindle` |
 | Version | `1.0.4` |
-| Release host | `lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store` |
-| Release tag | `v1.0.4` |
+| Release host | `lgdeysel1980/BookAtrium` |
+| Release tag | `plugin-store-amazon-us-kindle-v1.0.4` |
 | Package file | `com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin` |
-| Package hosting | `standalone-repository-transitional` |
+| Package hosting | `bookatrium` |
+| SHA-256 | `65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719` |
+| Size | `24256` bytes |
 
-Facts for this transitional listing:
+Facts for the completed hosting migration:
 
-- Source development has moved privately into BookAtrium’s private development repository.
-- Public v1.0.4 remains hosted in the standalone repository.
-- Official metadata points to the exact existing asset and checksum.
-- No new Amazon version is created for this repository reorganisation.
-- Hosting migration will occur only after end-to-end updater validation.
-- The old repository remains available until all links are verified.
-- The community catalogue entry is **not** removed in this transitional step;
-  that is deferred work.
+- Source development remains in BookAtrium’s private development repository.
+- The BookAtrium-hosted package is byte-for-byte identical to the original standalone v1.0.4 asset.
+- Official catalogue metadata now points to the BookAtrium release tag and immutable asset URL.
+- No new Amazon plugin version was created for the hosting migration.
+- The immutable package retains its original embedded `PractiCore` publisher metadata; the catalogue identifies BookAtrium as the official first-party publisher.
+- The original standalone v1.0.4 release remains temporarily available.
+- The community catalogue entry and standalone-repository retirement remain deferred follow-up work.
+- The standalone repository has **not** been archived in this step.
 
 ## Validation
 

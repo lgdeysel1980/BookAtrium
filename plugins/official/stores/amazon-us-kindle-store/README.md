@@ -77,16 +77,20 @@ You may also install a downloaded `.bookplugin` from BookAtrium Settings → Plu
 
 ## Manual download
 
-The current published package remains hosted on the standalone release repository until a later hosting migration:
+The official package is hosted through the BookAtrium repository:
 
-- Release: [v1.0.4](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/tag/v1.0.4)
-- Package: [`com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin`](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/download/v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin)
+- Release: [plugin-store-amazon-us-kindle-v1.0.4](https://github.com/lgdeysel1980/BookAtrium/releases/tag/plugin-store-amazon-us-kindle-v1.0.4)
+- Package: [`com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin`](https://github.com/lgdeysel1980/BookAtrium/releases/download/plugin-store-amazon-us-kindle-v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin)
 
 SHA-256:
 
 `65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719`
 
-Always use the version-specific release URL. Do not use `/releases/latest/download/...`.
+This package is byte-for-byte identical to the originally published v1.0.4 asset. No new plugin version was created for the hosting migration. The previous standalone host remains temporarily available during transition:
+
+- Historical standalone release: [v1.0.4](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/tag/v1.0.4)
+
+Always use the version-specific BookAtrium release URL for new downloads. Do not use `/releases/latest/download/...`.
 
 ## Support
 
@@ -97,7 +101,8 @@ Security: see [SECURITY.md](SECURITY.md) and the [BookAtrium security policy](ht
 ## Release history
 
 - Catalogue changelog: [CHANGELOG.md](CHANGELOG.md)
-- Published GitHub releases (transitional host): [BookAtrium-Plugin-Amazon-US-Kindle-Store releases](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases)
+- Official BookAtrium release: [plugin-store-amazon-us-kindle-v1.0.4](https://github.com/lgdeysel1980/BookAtrium/releases/tag/plugin-store-amazon-us-kindle-v1.0.4)
+- Historical standalone releases (still available during transition): [BookAtrium-Plugin-Amazon-US-Kindle-Store releases](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases)
 
 ## Licence
 
