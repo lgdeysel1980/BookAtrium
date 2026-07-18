@@ -41,4 +41,4 @@ bookatrium-plugin test --project .\MyPlugin.csproj
 
 Looks for a sibling `*.Tests` project; otherwise falls back to `validate`.
 
-Example: `samples/AmazonUsKindleStore.Tests`.
+Example layout: a sibling `*.Tests` project next to your plugin project (see SDK samples when published).

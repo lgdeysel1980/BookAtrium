@@ -61,9 +61,10 @@ Third-party plugins reference **only** the public NuGet package:
 - Source and package metadata: [`BookAtrium.PluginContracts`](BookAtrium.PluginContracts/)
 - Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/)
 - Reusable CI: [`.github/workflows/plugin-build.yml`](.github/workflows/plugin-build.yml)
-- Community catalogue (metadata only): [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
+- Official plugin catalogue: [`plugins/official/`](plugins/official/) and [`registries/official-plugins.json`](registries/official-plugins.json)
+- Community catalogue (third-party metadata only): [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
 
-The application core remains private. Third-party plugin projects should reference only `BookAtrium.PluginContracts`.
+The application core remains private. Third-party plugin projects should reference only `BookAtrium.PluginContracts`. Official BookAtrium plugins are developed privately and published here as catalogue metadata and release references.
 
 ## Support
 
@@ -106,13 +107,44 @@ A useful feature request explains:
 
 Early ideas and general feedback can also be discussed in [GitHub Discussions](../../discussions).
 
+## Official BookAtrium Plugins
+
+BookAtrium publishes first-party plugins developed and maintained by the
+BookAtrium project.
+
+Official plugins are distributed through the official BookAtrium plugin
+catalogue and are independently versioned. A plugin is updated only when its
+installed package changes.
+
+Official plugins are listed under:
+
+- `plugins/official/`
+- the BookAtrium official-plugin registry ([`registries/official-plugins.json`](registries/official-plugins.json))
+- version-specific GitHub Releases
+
+An official BookAtrium plugin that integrates with a third-party website or
+service is not necessarily affiliated with or endorsed by that third party.
+Refer to each plugin’s documentation for applicable notices.
+
+### Current official plugins
+
+| Plugin | Version | Category |
+|--------|---------|----------|
+| [Amazon US Kindle Store](plugins/official/stores/amazon-us-kindle-store/) | 1.0.4 | Store |
+
+Amazon US Kindle Store is an official first-party BookAtrium plugin for searching Amazon US Kindle listings. It is not affiliated with, sponsored by, approved by, or endorsed by Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.
+
 ## Third-Party Plugins
+
+This section applies only to independently published third-party (community) plugins. It does not describe BookAtrium’s official first-party plugins.
 
 BookAtrium is intended to support independently developed third-party plugins through a public Plugin SDK.
 
 Plugin developers will be free to decide whether their plugins are distributed without charge or sold commercially.
 
 Third-party plugins will be distributed directly by their respective developers. BookAtrium does not operate an official third-party plugin marketplace or directory and does not host, sell, approve, certify, endorse, or provide support for independently developed plugins unless expressly stated otherwise.
+
+Third-party catalogue metadata (not packages) may be listed separately in [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins). Official BookAtrium plugins are not submitted to that community catalogue.
 
 Third-party plugin developers are responsible for:
 
@@ -199,6 +231,8 @@ Each release may include:
 - File checksums where applicable
 
 BookAtrium may use release information published in this repository to check for application updates.
+
+> **Release-tag note:** This repository will eventually host both application releases and official plugin releases. Repository-wide “latest release” links become ambiguous once plugin tags are published here. Prefer version-specific application tags (for example `bookatrium-v1.0.0`) and version-specific plugin tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`. The download link above still points at `/releases/latest` only while no public application release exists yet; it should be replaced with a version-specific application URL when the first application release is published.
 
 ## Security
 

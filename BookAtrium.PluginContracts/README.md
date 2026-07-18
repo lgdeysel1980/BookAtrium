@@ -14,4 +14,5 @@ Third-party plugin projects should reference only `BookAtrium.PluginContracts`.
 
 Developer guides: [docs/plugins/sdk-2](https://github.com/lgdeysel1980/BookAtrium/tree/main/docs/plugins/sdk-2)
 
-Community catalogue: [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
+Official plugin catalogue (first-party): [`plugins/official/`](../plugins/official/) and [`registries/official-plugins.json`](../registries/official-plugins.json)  
+Community catalogue (third-party): [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
