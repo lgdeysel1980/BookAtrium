@@ -1,0 +1,51 @@
+name: Validate official plugins
+
+# Validates official catalogue metadata only.
+# Does not publish releases, upload packages, or require private secrets.
+
+on:
+  pull_request:
+    paths:
+      - "plugins/official/**"
+      - "registries/**"
+      - "docs/plugins/**"
+      - "scripts/validate_official_registry.py"
+      - "scripts/verify_official_package_remote.py"
+      - ".github/workflows/validate-official-plugins.yml"
+  push:
+    branches: [main]
+    paths:
+      - "plugins/official/**"
+      - "registries/**"
+      - "docs/plugins/**"
+      - "scripts/validate_official_registry.py"
+      - "scripts/verify_official_package_remote.py"
+      - ".github/workflows/validate-official-plugins.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install optional JSON Schema validator
+        run: pip install jsonschema
+
+      - name: Validate official registry and plugin metadata
+        run: python scripts/validate_official_registry.py
+
+      - name: Reject latest-download URLs in official metadata
+        run: |
+          set -euo pipefail
+          if grep -RIn --include='*.json' 'releases/latest' plugins/official registries; then
+            echo "Official plugin metadata must not contain releases/latest URLs" >&2
+            exit 1
+          fi
+          echo "No releases/latest URLs in official JSON metadata."

@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lgdeysel1980/BookAtrium/registries/schemas/official-plugin.schema.json",
+  "title": "Official BookAtrium Plugin Catalogue Entry",
+  "description": "Public catalogue metadata for a BookAtrium first-party (official) plugin. Distinct from community registry entries in BookAtrium-Community-Plugins.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "publisher",
+    "official",
+    "ownership",
+    "category",
+    "pluginType",
+    "version",
+    "minimumAppVersion",
+    "pluginApiVersion",
+    "supportedPlatforms",
+    "releaseRepository",
+    "releaseTag",
+    "repositoryUrl",
+    "supportUrl",
+    "privacyPath",
+    "securityPath",
+    "licensePath",
+    "license",
+    "package",
+    "capabilities",
+    "networkHosts",
+    "blockedVersions",
+    "uninstallPluginIds",
+    "tags"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[a-z0-9]([a-z0-9.\\-]{0,126}[a-z0-9])?$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "summary": { "type": ["string", "null"], "maxLength": 500 },
+    "description": { "type": ["string", "null"], "maxLength": 4000 },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "verified"],
+      "properties": {
+        "name": { "const": "BookAtrium" },
+        "githubLogin": { "type": ["string", "null"], "maxLength": 64 },
+        "verified": { "const": true }
+      }
+    },
+    "official": { "const": true },
+    "ownership": { "const": "first-party" },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ConversionInput",
+        "ConversionOutput",
+        "Store",
+        "MetadataReader",
+        "MetadataWriter",
+        "MetadataSource",
+        "Importer",
+        "Exporter",
+        "Device",
+        "Reader",
+        "Utility"
+      ]
+    },
+    "pluginType": {
+      "type": "string",
+      "enum": [
+        "ConversionInput",
+        "ConversionOutput",
+        "DeviceInterface",
+        "MetadataReader",
+        "MetadataSource",
+        "MetadataWriter",
+        "Store"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "releaseDateUtc": { "type": ["string", "null"], "format": "date-time" },
+    "minimumAppVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "maximumAppVersion": { "type": ["string", "null"] },
+    "pluginApiVersion": {
+      "type": "string",
+      "enum": ["2.0"]
+    },
+    "supportedPlatforms": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "enum": ["windows-x64", "windows-x86", "windows-arm64", "windows", "any"]
+      }
+    },
+    "releaseRepository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9]([A-Za-z0-9\\-]*[A-Za-z0-9])?/[A-Za-z0-9._\\-]+$"
+    },
+    "releaseTag": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[^/]+$"
+    },
+    "packageHosting": {
+      "type": "string",
+      "enum": ["bookatrium", "standalone-repository-transitional"]
+    },
+    "repositoryUrl": {
+      "type": "string",
+      "pattern": "^https://github\\.com/[A-Za-z0-9]([A-Za-z0-9\\-]*[A-Za-z0-9])?/[A-Za-z0-9._\\-]+/?$"
+    },
+    "supportUrl": { "type": "string", "minLength": 1 },
+    "documentationUrl": { "type": ["string", "null"] },
+    "homepageUrl": { "type": ["string", "null"] },
+    "changelogUrl": { "type": ["string", "null"] },
+    "privacyPath": {
+      "type": "string",
+      "pattern": "^plugins/official/.+/PRIVACY\\.md$"
+    },
+    "securityPath": {
+      "type": "string",
+      "pattern": "^plugins/official/.+/SECURITY\\.md$"
+    },
+    "licensePath": {
+      "type": "string",
+      "pattern": "^plugins/official/.+/LICENSE$"
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spdxId"],
+      "properties": {
+        "spdxId": { "type": "string", "minLength": 1, "maxLength": 128 },
+        "url": { "type": ["string", "null"] }
+      }
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["downloadUrl", "fileName", "sizeBytes", "sha256"],
+      "properties": {
+        "downloadUrl": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[A-Za-z0-9]([A-Za-z0-9\\-]*[A-Za-z0-9])?/[A-Za-z0-9._\\-]+/releases/download/[^/]+/[^/?#]+$"
+        },
+        "fileName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 260,
+          "pattern": "^.+\\.bookplugin$"
+        },
+        "sizeBytes": { "type": "integer", "minimum": 1, "maximum": 41943040 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "string",
+        "enum": [
+          "NetworkAccess",
+          "PluginSettingsStorage",
+          "TemporaryFileAccess",
+          "ReadBookMetadata",
+          "WriteBookMetadata",
+          "ReadInputFormat",
+          "ProduceOutputFormat",
+          "DetectDevice",
+          "TransferToDevice",
+          "StoreSearch",
+          "CoverDownload",
+          "MetadataLookup"
+        ]
+      }
+    },
+    "networkHosts": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "type": "string", "minLength": 1, "maxLength": 253 }
+    },
+    "requiresRestart": { "type": "boolean" },
+    "donationUrl": { "type": ["string", "null"] },
+    "deprecated": { "type": "boolean" },
+    "replacementPluginId": { "type": ["string", "null"] },
+    "blocked": { "type": "boolean" },
+    "blockSeverity": {
+      "type": ["string", "null"],
+      "enum": ["Informational", "DisableRecommended", "DisableRequired", "InstallBlocked", null]
+    },
+    "blockReason": { "type": ["string", "null"], "maxLength": 2000 },
+    "blockedVersions": {
+      "type": "array",
+      "maxItems": 64,
+      "items": { "type": "string" }
+    },
+    "safeReplacementVersion": { "type": ["string", "null"] },
+    "uninstallPluginIds": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "type": "string", "minLength": 1, "maxLength": 64 }
+    },
+    "privacyDeclaration": { "type": ["string", "null"], "maxLength": 2000 },
+    "telemetryDeclaration": { "type": ["string", "null"], "maxLength": 2000 }
+  }
+}

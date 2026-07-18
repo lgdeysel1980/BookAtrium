@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "id": "com.practicore.bookatrium.store.amazon-us-kindle",
+  "name": "Amazon US Kindle Store",
+  "summary": "Official first-party BookAtrium plugin for searching Amazon US Kindle listings and opening product pages in the user's browser.",
+  "description": "Official first-party BookAtrium plugin for searching Amazon.com Kindle listings and opening product pages in the user's browser. Search and product-page opening only; no Amazon API, account access, purchasing, downloads, DRM handling, telemetry, analytics, or affiliate tags. This plugin is not affiliated with, sponsored by, approved by, or endorsed by Amazon.",
+  "publisher": {
+    "name": "BookAtrium",
+    "githubLogin": "lgdeysel1980",
+    "verified": true
+  },
+  "official": true,
+  "ownership": "first-party",
+  "category": "Store",
+  "pluginType": "Store",
+  "version": "1.0.4",
+  "releaseDateUtc": "2026-07-18T13:49:13Z",
+  "minimumAppVersion": "1.0.0",
+  "maximumAppVersion": null,
+  "pluginApiVersion": "2.0",
+  "supportedPlatforms": ["windows"],
+  "releaseRepository": "lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store",
+  "releaseTag": "v1.0.4",
+  "packageHosting": "standalone-repository-transitional",
+  "repositoryUrl": "https://github.com/lgdeysel1980/BookAtrium",
+  "supportUrl": "https://github.com/lgdeysel1980/BookAtrium/issues",
+  "documentationUrl": "https://github.com/lgdeysel1980/BookAtrium/blob/main/plugins/official/stores/amazon-us-kindle-store/README.md",
+  "homepageUrl": "https://github.com/lgdeysel1980/BookAtrium/tree/main/plugins/official/stores/amazon-us-kindle-store",
+  "changelogUrl": "https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/tag/v1.0.4",
+  "privacyPath": "plugins/official/stores/amazon-us-kindle-store/PRIVACY.md",
+  "securityPath": "plugins/official/stores/amazon-us-kindle-store/SECURITY.md",
+  "licensePath": "plugins/official/stores/amazon-us-kindle-store/LICENSE",
+  "license": {
+    "spdxId": "MIT",
+    "url": "https://github.com/lgdeysel1980/BookAtrium/blob/main/plugins/official/stores/amazon-us-kindle-store/LICENSE"
+  },
+  "package": {
+    "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/download/v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
+    "fileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
+    "sizeBytes": 24256,
+    "sha256": "65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719"
+  },
+  "capabilities": [
+    "NetworkAccess",
+    "PluginSettingsStorage",
+    "StoreSearch",
+    "CoverDownload"
+  ],
+  "networkHosts": [
+    "www.amazon.com",
+    "amazon.com",
+    "m.media-amazon.com",
+    "images-na.ssl-images-amazon.com",
+    "images-eu.ssl-images-amazon.com"
+  ],
+  "requiresRestart": false,
+  "donationUrl": null,
+  "deprecated": false,
+  "replacementPluginId": null,
+  "blocked": false,
+  "blockSeverity": null,
+  "blockReason": null,
+  "blockedVersions": [],
+  "safeReplacementVersion": null,
+  "uninstallPluginIds": [],
+  "tags": ["amazon", "kindle", "store", "ebooks", "united-states", "official"],
+  "privacyDeclaration": "This plugin does not access Amazon accounts, perform purchases, download DRM-protected content, or collect telemetry or analytics.",
+  "telemetryDeclaration": "No telemetry, analytics, or usage reporting is implemented or transmitted by this plugin."
+}

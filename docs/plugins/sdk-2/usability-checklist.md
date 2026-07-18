@@ -21,8 +21,9 @@ Acceptance checklist for task-first authoring.
 - [ ] `[PluginSetting]` + `SettingsType` appear in Settings UI after install
 - [ ] `PluginTestContext` can run a fixture HTTP search without launching BookAtrium
 
-## Publishing path
+## Publishing path (third-party / community plugins)
 
 - [ ] `bookatrium-plugin prepare-release` produces registry-entry scaffold
 - [ ] Reusable workflow `lgdeysel1980/BookAtrium/.github/workflows/plugin-build.yml@main` builds/tests/packs a plugin repo
 - [ ] Registry PR targets [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
+- [ ] Do **not** submit official BookAtrium plugins to the community catalogue; official releases use [`plugins/official/`](../../../plugins/official/) and [`registries/official-plugins.json`](../../../registries/official-plugins.json)

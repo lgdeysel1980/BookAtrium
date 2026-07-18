@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lgdeysel1980/BookAtrium/registries/schemas/official-index.schema.json",
+  "title": "Official BookAtrium Plugin Registry Index",
+  "description": "Index of official BookAtrium first-party plugins. Separate trust source from BookAtrium-Community-Plugins.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "minimumClientVersion", "trustSource", "plugins"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAtUtc": { "type": ["string", "null"], "format": "date-time" },
+    "minimumClientVersion": { "type": "string", "minLength": 1 },
+    "trustSource": { "const": "official-bookatrium" },
+    "description": { "type": ["string", "null"], "maxLength": 1000 },
+    "plugins": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "publisher",
+          "official",
+          "ownership",
+          "category",
+          "version",
+          "pluginApiVersion",
+          "metadataPath",
+          "package"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]([a-z0-9.\\-]{0,126}[a-z0-9])?$"
+          },
+          "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "publisher": { "const": "BookAtrium" },
+          "official": { "const": true },
+          "ownership": { "const": "first-party" },
+          "category": {
+            "type": "string",
+            "enum": [
+              "ConversionInput",
+              "ConversionOutput",
+              "Store",
+              "MetadataReader",
+              "MetadataWriter",
+              "MetadataSource",
+              "Importer",
+              "Exporter",
+              "Device",
+              "Reader",
+              "Utility"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+          },
+          "pluginApiVersion": { "type": "string", "enum": ["2.0"] },
+          "metadataPath": {
+            "type": "string",
+            "pattern": "^plugins/official/.+/plugin\\.json$"
+          },
+          "releaseRepository": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]([A-Za-z0-9\\-]*[A-Za-z0-9])?/[A-Za-z0-9._\\-]+$"
+          },
+          "releaseTag": { "type": "string", "minLength": 1, "maxLength": 128 },
+          "packageHosting": {
+            "type": "string",
+            "enum": ["bookatrium", "standalone-repository-transitional"]
+          },
+          "package": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["downloadUrl", "fileName", "sizeBytes", "sha256"],
+            "properties": {
+              "downloadUrl": {
+                "type": "string",
+                "pattern": "^https://github\\.com/[A-Za-z0-9]([A-Za-z0-9\\-]*[A-Za-z0-9])?/[A-Za-z0-9._\\-]+/releases/download/[^/]+/[^/?#]+$"
+              },
+              "fileName": {
+                "type": "string",
+                "pattern": "^.+\\.bookplugin$"
+              },
+              "sizeBytes": { "type": "integer", "minimum": 1, "maximum": 41943040 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
