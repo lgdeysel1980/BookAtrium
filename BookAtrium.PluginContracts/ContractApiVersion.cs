@@ -6,14 +6,14 @@ namespace BookAtrium.PluginContracts;
 /// </summary>
 public static class ContractApiVersion
 {
-    /// <summary>Host supports Plugin API 2.0 (and remains compatible with 1.0/1.1 packages).</summary>
+    /// <summary>Host supports Plugin API 2.0 and retains compatibility for older package metadata.</summary>
     public const string Current = "2.0";
     public const int Major = 2;
     public const int Minor = 0;
 
     /// <summary>
     /// Returns true when <paramref name="requiredVersion"/> is compatible with this host API.
-    /// Empty/null is treated as compatible. API 1.0 and 1.1 remain compatible during transition.
+    /// Empty/null is treated as compatible. API 1.0 and 1.1 remain accepted for compatibility.
     /// </summary>
     public static bool IsCompatible(string? requiredVersion)
     {

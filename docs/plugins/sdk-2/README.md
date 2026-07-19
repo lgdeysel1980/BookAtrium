@@ -31,7 +31,6 @@ bookatrium-plugin pack
 | [testing.md](testing.md) | `PluginTestContext` |
 | [packaging.md](packaging.md) | `bookatrium-plugin pack` |
 | [publishing.md](publishing.md) | Third-party community registry release |
-| [migration-from-1.1.md](migration-from-1.1.md) | Move from verbose 1.1 interfaces |
 | [usability-checklist.md](usability-checklist.md) | Authoring checklist |
 | [../official/release-process.md](../official/release-process.md) | Official first-party plugin release process (maintainers) |
 
@@ -39,7 +38,7 @@ bookatrium-plugin pack
 
 | Kind | Who develops it | Public metadata | Packages |
 |------|-----------------|-----------------|----------|
-| Official BookAtrium plugin | BookAtrium (private development repository) | [`plugins/official/`](../../../plugins/official/) and [`registries/official-plugins.json`](../../../registries/official-plugins.json) | Version-specific GitHub Releases (BookAtrium or transitional standalone host) |
+| Official BookAtrium plugin | BookAtrium (private development repository) | [`plugins/official/`](../../../plugins/official/) and [`registries/official-plugins.json`](../../../registries/official-plugins.json) | Version-specific GitHub Releases in this repository |
 | Third-party / community plugin | Independent publisher | [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins) | Publisher’s own repository releases |
 
 Official plugins are **not** submitted to the community catalogue. Third-party developers continue to use their own repositories and the community registry.
