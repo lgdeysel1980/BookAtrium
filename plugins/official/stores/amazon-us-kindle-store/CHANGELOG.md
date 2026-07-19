@@ -20,9 +20,9 @@
 - Fixed `ObjectDisposedException` during store search by using a plugin-owned long-lived `HttpClient` instead of the host init-scoped HTTP client.
 - Plugin package metadata now declares `requiresRestart = true`.
 
-## 1.0.0 - Pending
+## 1.0.0
 
-- Initial Amazon US Kindle Store community plugin.
+- Initial Amazon US Kindle Store official first-party BookAtrium plugin.
 - Search-only integration for Amazon.com Kindle listings.
 - Opens selected product pages in the user's default browser through BookAtrium host activation.
 - No Amazon API, account access, purchasing, downloads, DRM handling, telemetry, or analytics.

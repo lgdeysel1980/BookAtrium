@@ -86,10 +86,6 @@ SHA-256:
 
 `65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719`
 
-This package is byte-for-byte identical to the originally published v1.0.4 asset. No new plugin version was created for the hosting migration. The previous standalone host remains temporarily available during transition:
-
-- Historical standalone release: [v1.0.4](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases/tag/v1.0.4)
-
 Always use the version-specific BookAtrium release URL for new downloads. Do not use `/releases/latest/download/...`.
 
 ## Support
@@ -102,7 +98,6 @@ Security: see [SECURITY.md](SECURITY.md) and the [BookAtrium security policy](ht
 
 - Catalogue changelog: [CHANGELOG.md](CHANGELOG.md)
 - Official BookAtrium release: [plugin-store-amazon-us-kindle-v1.0.4](https://github.com/lgdeysel1980/BookAtrium/releases/tag/plugin-store-amazon-us-kindle-v1.0.4)
-- Historical standalone releases (still available during transition): [BookAtrium-Plugin-Amazon-US-Kindle-Store releases](https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/releases)
 
 ## Licence
 

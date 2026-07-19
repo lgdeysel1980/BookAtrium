@@ -16,9 +16,9 @@ Only download BookAtrium from this repository or another location explicitly ide
 
 ## Project Status
 
-BookAtrium is currently under active development.
+BookAtrium is currently under active development and has not yet had its first public application release.
 
-Public installers, documentation, release notes, and update information will be published when the first public release is ready.
+Public installers, release notes, and update information are published through this repository when application releases are created.
 
 ## Supported Platform
 
@@ -57,6 +57,8 @@ Third-party plugins reference **only** the public NuGet package:
 ```xml
 <PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
 ```
+
+New third-party plugin packages use the `.bookplugin` extension.
 
 - Source and package metadata: [`BookAtrium.PluginContracts`](BookAtrium.PluginContracts/)
 - Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/)
@@ -138,7 +140,7 @@ Amazon US Kindle Store is an official first-party BookAtrium plugin for searchin
 
 This section applies only to independently published third-party (community) plugins. It does not describe BookAtrium’s official first-party plugins.
 
-BookAtrium is intended to support independently developed third-party plugins through a public Plugin SDK.
+BookAtrium supports independently developed third-party plugins through Plugin API 2.0.
 
 Plugin developers will be free to decide whether their plugins are distributed without charge or sold commercially.
 
@@ -163,22 +165,14 @@ Users should install plugins only from developers and sources they trust.
 
 Third-party plugins are subject to the plugin developer's own terms, licence, privacy policy, and support arrangements.
 
-## Plugin Development
+Third-party plugins use the community metadata registry at
+[BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins).
 
-Normal plugin development will not require access to BookAtrium's private core source code.
+Current valid community state may be an empty approved catalogue. At this time,
+no community plugin has yet been publicly approved.
 
-A separate public Plugin SDK is planned and may include:
-
-- Public plugin interfaces
-- Plugin manifest specifications
-- Permission declarations
-- Compatibility and versioning rules
-- Sample plugins
-- Packaging instructions
-- Security guidance
-- Developer documentation
-
-The Plugin SDK and its applicable licence will be published when the plugin framework is ready.
+Normal plugin development does not require access to BookAtrium's private core
+source code.
 
 ## Core Application Development
 
@@ -220,7 +214,7 @@ Contributors must accept that approved contributions may continue to be used, mo
 
 ## Releases and Updates
 
-Stable versions of BookAtrium will be published through GitHub Releases.
+BookAtrium application releases are published through GitHub Releases.
 
 Each release may include:
 
@@ -267,9 +261,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting issues, partici
 
 The BookAtrium core application is private and proprietary.
 
-The licence governing the distributed application will be published before the first public release.
-
-The future Plugin SDK, sample code, documentation, and other materials may use separate licences where indicated.
+Plugin contracts, samples, and documentation may use separate licences where indicated.
 
 The absence of an open-source licence for the core application does not grant permission to copy, modify, redistribute, or commercially use the private BookAtrium source code.
 

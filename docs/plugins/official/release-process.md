@@ -4,8 +4,7 @@ Maintainer guide for BookAtrium first-party (official) plugins.
 
 Official plugins are developed in BookAtrium’s private development repository and
 published as public catalogue metadata, documentation, checksums, and release
-assets through this public repository (or, during migration, a transitional
-standalone release host).
+assets through this public repository.
 
 This document does not cover third-party/community plugins. Community listings
 remain in [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins).
@@ -36,7 +35,7 @@ Do not submit official plugins to the community catalogue.
 - Every published package must have a version-specific GitHub Release asset URL.
 - Forbidden for plugin downloads: `/releases/latest` and `/releases/latest/download/...`.
 - Every published package must record SHA-256 and byte size in catalogue metadata.
-- Preferred future release tag conventions (do not create these tags until migration):
+- Preferred release tag conventions:
 
 ```text
 bookatrium-v1.0.0
@@ -76,24 +75,7 @@ Create category folders only when a plugin exists in that category.
    the remote asset matches the recorded checksum.
 7. Do not open a community-catalogue PR for official plugins.
 
-## Migration of an existing plugin release
-
-When an official plugin already has a public release on a standalone repository:
-
-1. Do **not** rebuild, replace, rename, or republish the existing package.
-2. Do **not** create a new version solely for repository reorganisation.
-3. Add official catalogue metadata that points at the **exact** existing
-   version-specific asset URL and checksum.
-4. Keep `packageHosting` as `standalone-repository-transitional` until hosting
-   migration is complete and end-to-end updater validation succeeds.
-5. Only after updater validation, copy/host the **same** package bytes under a
-   BookAtrium release tag, update catalogue URLs to the new immutable URL, and
-   set `packageHosting` to `bookatrium`.
-6. Keep the old standalone repository available until all links are verified.
-7. Archive or redirect the standalone repository only after a separate, explicit
-   migration task confirms consumers have moved.
-
-### Amazon US Kindle Store v1.0.4 (hosting migration complete)
+## Amazon US Kindle Store v1.0.4 reference
 
 | Item | Value |
 |------|-------|
@@ -106,16 +88,11 @@ When an official plugin already has a public release on a standalone repository:
 | SHA-256 | `65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719` |
 | Size | `24256` bytes |
 
-Facts for the completed hosting migration:
+Reference notes:
 
 - Source development remains in BookAtrium’s private development repository.
-- The BookAtrium-hosted package is byte-for-byte identical to the original standalone v1.0.4 asset.
-- Official catalogue metadata now points to the BookAtrium release tag and immutable asset URL.
-- No new Amazon plugin version was created for the hosting migration.
-- The immutable package retains its original embedded `PractiCore` publisher metadata; the catalogue identifies BookAtrium as the official first-party publisher.
-- The original standalone v1.0.4 release remains temporarily available.
-- The community catalogue entry and standalone-repository retirement remain deferred follow-up work.
-- The standalone repository has **not** been archived in this step.
+- Official catalogue metadata points to the BookAtrium release tag and immutable asset URL.
+- The immutable package retains its embedded `PractiCore` publisher metadata; the catalogue identifies BookAtrium as the official first-party publisher.
 
 ## Validation
 
