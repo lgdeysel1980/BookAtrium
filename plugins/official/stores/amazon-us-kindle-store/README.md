@@ -17,7 +17,7 @@ Current published version: **1.0.4**
 | Requirement | Value |
 |-------------|-------|
 | Plugin API | 2.0 |
-| Contracts package | `BookAtrium.PluginContracts` 2.0.0 |
+| Contracts package | `BookAtrium.PluginContracts` 2.0.1 |
 | Minimum BookAtrium version | 1.0.0 |
 | Platforms | Windows |
 

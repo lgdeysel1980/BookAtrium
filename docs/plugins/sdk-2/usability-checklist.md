@@ -4,7 +4,7 @@ Acceptance checklist for task-first authoring.
 
 ## Scaffold → pack
 
-- [ ] Project references **only** `BookAtrium.PluginContracts` **2.0.0**
+- [ ] Project references **only** `BookAtrium.PluginContracts` **2.0.1**
 - [ ] Author edits **one** public plugin class (plus optional settings POCO)
 - [ ] `bookatrium-plugin validate` succeeds (when CLI is available)
 - [ ] `bookatrium-plugin pack` emits `.bookplugin` + `.sha256` without hand-written `plugin.json`

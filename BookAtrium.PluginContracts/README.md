@@ -3,7 +3,7 @@
 Canonical public package for BookAtrium plugins. Reference this package only:
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
 ```
 
 Inherit a type base (`StorePlugin`, `MetadataSourcePlugin`, `MetadataReaderPlugin`,

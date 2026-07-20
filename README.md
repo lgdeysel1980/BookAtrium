@@ -55,7 +55,7 @@ The full user manual will be published here when the first public release is ava
 Third-party plugins reference **only** the public NuGet package:
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
 ```
 
 New third-party plugin packages use the `.bookplugin` extension.

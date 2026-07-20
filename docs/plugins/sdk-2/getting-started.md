@@ -5,10 +5,10 @@ Build a working plugin in minutes: reference the public package â†’ one class â†
 ## Prerequisites
 
 - .NET 8 SDK
-- NuGet package **`BookAtrium.PluginContracts` 2.0.0**
+- NuGet package **`BookAtrium.PluginContracts` 2.0.1**
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
 ```
 
 Optional CLI: `bookatrium-plugin` (when published). Until then you can author a small class library that inherits an API 2.0 base type and validate/pack with the CLI when available.

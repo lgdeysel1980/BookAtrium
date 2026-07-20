@@ -9,7 +9,7 @@ name: Publish PluginContracts
 #   Workflow: publish-plugin-contracts.yml
 #   Environment: (blank)
 #
-# Recommended: run on an annotated tag such as plugincontracts-v2.0.0
+# Recommended: run on an annotated tag such as plugincontracts-v2.0.1
 # or via workflow_dispatch after reviewing the pack artifact.
 
 on:

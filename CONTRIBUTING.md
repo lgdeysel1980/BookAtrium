@@ -104,7 +104,7 @@ Use GitHub Discussions for:
 BookAtrium supports independently developed third-party plugins through the public NuGet package **`BookAtrium.PluginContracts`** (Plugin API 2.0).
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
 ```
 
 Normal plugin development does **not** require access to the private BookAtrium application source. Do not reference private BookAtrium projects. Third-party plugin projects should reference only `BookAtrium.PluginContracts`.

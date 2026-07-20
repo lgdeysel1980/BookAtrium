@@ -1,9 +1,9 @@
 # BookAtrium Plugin API 2.0
 
-**Canonical public package:** `BookAtrium.PluginContracts` **2.0.0** only.
+**Canonical public package:** `BookAtrium.PluginContracts` **2.0.1** only.
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.0" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
 ```
 
 Use the thin base classes (`StorePlugin`, `MetadataSourcePlugin`, `MetadataReaderPlugin`,
