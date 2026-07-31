@@ -54,16 +54,27 @@ jobs:
       - name: Install JSON Schema validator and test runner
         run: pip install jsonschema pytest
 
-      - name: Sync official registry schemas from plugin contracts
+      - name: Verify baked official registry schemas
         run: |
-          if [ -d BookAtrium.PluginContracts ]; then
-            python scripts/sync_official_registry_schemas.py --check
-          else
-            test -f registries/schemas/official-contract.json
-            test -f registries/schemas/official-index.schema.json
-            test -f registries/schemas/official-plugin-manifest.schema.json
-            echo "Using baked official schemas (PluginContracts not present in this repository)."
-          fi
+          test -f registries/schemas/official-contract.json
+          test -f registries/schemas/official-index.schema.json
+          test -f registries/schemas/official-plugin-manifest.schema.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          contract = json.loads(Path("registries/schemas/official-contract.json").read_text(encoding="utf-8"))
+          assert contract.get("pluginApiVersions") == ["2.0"], contract.get("pluginApiVersions")
+          required = {
+              "AuthorMetadataSource",
+              "FileType",
+              "InputProfile",
+              "OutputProfile",
+              "Store",
+          }
+          missing = required - set(contract.get("categories") or [])
+          assert not missing, f"missing categories in baked contract: {sorted(missing)}"
+          print("Baked official contract OK (API 2.0, required categories present).")
+          PY
 
       - name: Validate official registry and plugin metadata
         run: python scripts/validate_official_registry.py
