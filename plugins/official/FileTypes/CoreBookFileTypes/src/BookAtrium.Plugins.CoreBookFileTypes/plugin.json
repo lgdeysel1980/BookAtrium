@@ -1,0 +1,26 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.filetypes.core",
+  "name": "Core Book File Types",
+  "description": "Standard ebook, document, comic archive, and audiobook file-type definitions.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "FileType",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.CoreBookFileTypes.dll",
+  "entryType": "BookAtrium.Plugins.CoreBookFileTypes.Plugin",
+  "capabilities": [ "DeclareFileTypes" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [
+    "epub", "kepub", "pdf", "mobi", "azw", "azw1", "azw3", "prc", "pobi",
+    "fb2", "fbz", "opf", "oeb", "zip", "cbz", "rar", "cbr", "docx", "odt",
+    "rtf", "lit", "lrf", "lrx", "tpz", "txt", "html", "htm", "xhtml",
+    "mp3", "m4b", "m4a"
+  ]
+}

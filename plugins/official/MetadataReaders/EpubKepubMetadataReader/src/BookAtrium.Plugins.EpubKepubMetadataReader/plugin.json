@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.epub-kepub",
+  "name": "ePub/KePub Metadata Reader",
+  "description": "Reads OPF metadata, identifiers, authors, series, subjects, page data, and cover images from ePub and KePub files.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.EpubKepubMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.EpubKepubMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "epub", "kepub" ]
+}

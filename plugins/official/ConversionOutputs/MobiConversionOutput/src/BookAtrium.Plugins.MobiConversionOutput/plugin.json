@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversionoutput.mobi",
+  "name": "MOBI Conversion Output",
+  "description": "Writes the BookAtrium conversion intermediate representation to a legacy MOBI7 PalmDOC/MOBI container.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionOutput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.MobiConversionOutput.dll",
+  "entryType": "BookAtrium.Plugins.MobiConversionOutput.Plugin",
+  "capabilities": [ "ProduceOutputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "mobi" ]
+}

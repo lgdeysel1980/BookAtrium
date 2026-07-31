@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatawriter.odt",
+  "name": "ODT Metadata Writer",
+  "description": "Writes OpenDocument meta.xml metadata.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataWriter",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.OdtMetadataWriter.dll",
+  "entryType": "BookAtrium.Plugins.OdtMetadataWriter.Plugin",
+  "capabilities": [ "WriteBookMetadata", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "odt" ]
+}

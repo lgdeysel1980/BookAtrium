@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.audio.mp3",
+  "name": "MP3 Audiobook Metadata Reader",
+  "description": "Reads MP3 audiobook metadata from ID3v2 and ID3v1 tags, including title, authors, narrator, genre, description, date, duration, identifiers, and cover image.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.Mp3AudioMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.Mp3AudioMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "mp3" ]
+}

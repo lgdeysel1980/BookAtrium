@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversionoutput.epub",
+  "name": "EPUB Conversion Output",
+  "description": "Writes the BookAtrium conversion intermediate representation to an EPUB package (OPF manifest, spine, nav, and resources).",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionOutput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.EpubConversionOutput.dll",
+  "entryType": "BookAtrium.Plugins.EpubConversionOutput.Plugin",
+  "capabilities": [ "ProduceOutputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "epub" ]
+}

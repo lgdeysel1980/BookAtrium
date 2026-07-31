@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversioninput.txt",
+  "name": "TXT Conversion Input",
+  "description": "Reads plain-text files, detecting chapter headings and paragraph boundaries, into the BookAtrium conversion intermediate representation.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionInput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.TxtConversionInput.dll",
+  "entryType": "BookAtrium.Plugins.TxtConversionInput.Plugin",
+  "capabilities": [ "ReadInputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "txt" ]
+}

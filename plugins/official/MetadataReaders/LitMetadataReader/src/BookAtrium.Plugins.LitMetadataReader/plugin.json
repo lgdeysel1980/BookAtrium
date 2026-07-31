@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.lit",
+  "name": "LIT Metadata Reader",
+  "description": "Best-effort binary scan for Microsoft Reader (LIT) title, author, publisher, language, and identifier metadata.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.LitMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.LitMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "lit" ]
+}

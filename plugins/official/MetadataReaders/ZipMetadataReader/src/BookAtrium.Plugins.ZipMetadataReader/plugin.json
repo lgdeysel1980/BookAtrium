@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.zip",
+  "name": "ZIP Metadata Reader",
+  "description": "Reads ZIP, CBZ, FBZ and HTMLZ archive metadata from ComicInfo.xml, OPF, FB2, or HTML files, and falls back to archive image counts and cover images.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.ZipMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.ZipMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "zip", "cbz", "fbz", "htmlz" ]
+}

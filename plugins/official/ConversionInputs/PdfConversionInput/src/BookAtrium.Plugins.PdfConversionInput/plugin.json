@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversioninput.pdf",
+  "name": "PDF Conversion Input",
+  "description": "Extracts per-page text from PDF documents into the BookAtrium conversion intermediate representation.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionInput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.PdfConversionInput.dll",
+  "entryType": "BookAtrium.Plugins.PdfConversionInput.Plugin",
+  "capabilities": [ "ReadInputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "pdf" ]
+}

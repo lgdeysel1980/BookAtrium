@@ -1,0 +1,34 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.store.amazon-us-kindle",
+  "name": "Amazon US Kindle Store",
+  "description": "Unofficial BookAtrium store plugin for searching Amazon.com Kindle listings and opening product pages in the user's browser.",
+  "version": "1.0.4",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "Store",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows-x64", "any" ],
+  "entryAssembly": "BookAtrium.Plugins.AmazonUSKindleStore.dll",
+  "entryType": "BookAtrium.Plugins.AmazonUSKindleStore.Plugin",
+  "capabilities": [
+    "NetworkAccess",
+    "PluginSettingsStorage",
+    "StoreSearch",
+    "CoverDownload"
+  ],
+  "networkHosts": [
+    "www.amazon.com",
+    "amazon.com",
+    "m.media-amazon.com",
+    "images-na.ssl-images-amazon.com",
+    "images-eu.ssl-images-amazon.com"
+  ],
+  "requiresRestart": true,
+  "defaultEnabled": false,
+  "homepage": "https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store",
+  "supportUrl": "https://github.com/lgdeysel1980/BookAtrium-Plugin-Amazon-US-Kindle-Store/issues"
+}

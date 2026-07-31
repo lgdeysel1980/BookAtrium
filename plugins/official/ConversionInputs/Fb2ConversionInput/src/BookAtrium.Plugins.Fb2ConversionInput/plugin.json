@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversioninput.fb2",
+  "name": "FB2 Conversion Input",
+  "description": "Reads FictionBook 2 (FB2) documents, including embedded binaries, into the BookAtrium conversion intermediate representation.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionInput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.Fb2ConversionInput.dll",
+  "entryType": "BookAtrium.Plugins.Fb2ConversionInput.Plugin",
+  "capabilities": [ "ReadInputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "fb2" ]
+}

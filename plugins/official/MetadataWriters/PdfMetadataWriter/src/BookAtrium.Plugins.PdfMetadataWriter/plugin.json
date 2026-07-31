@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatawriter.pdf",
+  "name": "PDF Metadata Writer",
+  "description": "Writes PDF document information through ExifTool when available.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataWriter",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.PdfMetadataWriter.dll",
+  "entryType": "BookAtrium.Plugins.PdfMetadataWriter.Plugin",
+  "capabilities": [ "WriteBookMetadata", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "pdf" ]
+}

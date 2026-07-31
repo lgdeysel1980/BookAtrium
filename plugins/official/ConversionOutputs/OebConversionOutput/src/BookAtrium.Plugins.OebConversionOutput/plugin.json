@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversionoutput.oeb",
+  "name": "OEB Conversion Output",
+  "description": "Writes the BookAtrium conversion intermediate representation to an unpacked Open eBook (OEB) folder (content.opf, toc.ncx, Text/, Resources/).",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionOutput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.OebConversionOutput.dll",
+  "entryType": "BookAtrium.Plugins.OebConversionOutput.Plugin",
+  "capabilities": [ "ProduceOutputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "oeb" ]
+}

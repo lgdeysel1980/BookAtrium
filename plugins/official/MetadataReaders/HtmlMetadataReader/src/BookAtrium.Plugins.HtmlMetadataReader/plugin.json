@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.html",
+  "name": "HTML Metadata Reader",
+  "description": "Reads meta tags, Dublin Core fields, legacy HTML comment metadata, series, identifiers, and local cover images referenced from HTML/XHTML files.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.HtmlMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.HtmlMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "html", "htm", "xhtml" ]
+}

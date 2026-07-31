@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatawriter.docx",
+  "name": "DOCX Metadata Writer",
+  "description": "Writes Word package core/app/custom metadata without altering document body content.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataWriter",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.DocxMetadataWriter.dll",
+  "entryType": "BookAtrium.Plugins.DocxMetadataWriter.Plugin",
+  "capabilities": [ "WriteBookMetadata", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "docx" ]
+}

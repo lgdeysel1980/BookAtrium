@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.conversioninput.docx",
+  "name": "DOCX Conversion Input",
+  "description": "Reads Word (.docx) documents, including headings, tables, images, and footnotes, into the BookAtrium conversion intermediate representation.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "ConversionInput",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.DocxConversionInput.dll",
+  "entryType": "BookAtrium.Plugins.DocxConversionInput.Plugin",
+  "capabilities": [ "ReadInputFormat", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "docx" ]
+}

@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatareader.audio.mpeg4",
+  "name": "M4B/M4A Audiobook Metadata Reader",
+  "description": "Reads M4B and M4A audiobook metadata from MPEG-4 atoms, including title, authors, narrator, album, grouping, genre, description, date, duration, identifiers, and cover image.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataReader",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.Mpeg4AudioMetadataReader.dll",
+  "entryType": "BookAtrium.Plugins.Mpeg4AudioMetadataReader.Plugin",
+  "capabilities": [ "ReadBookMetadata" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "m4b", "m4a" ]
+}

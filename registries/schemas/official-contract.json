@@ -1,0 +1,72 @@
+{
+  "categories": [
+    "ConversionInput",
+    "ConversionOutput",
+    "DeviceInterface",
+    "MetadataReader",
+    "MetadataSource",
+    "MetadataWriter",
+    "Store",
+    "FileType",
+    "InputProfile",
+    "OutputProfile",
+    "AuthorMetadataSource"
+  ],
+  "pluginTypes": [
+    "ConversionInput",
+    "ConversionOutput",
+    "DeviceInterface",
+    "MetadataReader",
+    "MetadataSource",
+    "MetadataWriter",
+    "Store",
+    "FileType",
+    "InputProfile",
+    "OutputProfile",
+    "AuthorMetadataSource"
+  ],
+  "capabilities": [
+    "NetworkAccess",
+    "PluginSettingsStorage",
+    "TemporaryFileAccess",
+    "ReadBookMetadata",
+    "WriteBookMetadata",
+    "ReadInputFormat",
+    "ProduceOutputFormat",
+    "DetectDevice",
+    "TransferToDevice",
+    "StoreSearch",
+    "CoverDownload",
+    "MetadataLookup",
+    "DeclareFileTypes",
+    "DeclareInputProfiles",
+    "DeclareOutputProfiles",
+    "SearchByTitleAuthor",
+    "SearchByIsbn",
+    "SearchByExternalIdentifier",
+    "CoverSearch",
+    "MetadataEnrichment",
+    "MultipleLanguages",
+    "SeriesMetadata",
+    "Description",
+    "Publisher",
+    "PublicationDate",
+    "TagsSubjects",
+    "Ratings",
+    "Identifiers"
+  ],
+  "platforms": [
+    "windows-x64",
+    "windows-x86",
+    "windows-arm64",
+    "windows",
+    "any"
+  ],
+  "pluginApiVersions": [
+    "2.0"
+  ],
+  "currentPluginApiVersion": "2.1",
+  "officialPluginApiVersion": "2.0",
+  "metadataPathPrefix": "Plugins/Official/",
+  "metadataPathPattern": "^Plugins/Official/[A-Za-z0-9._\\-]+/[A-Za-z0-9._\\-]+/src/[A-Za-z0-9._\\-]+/plugin\\.json$"
+}

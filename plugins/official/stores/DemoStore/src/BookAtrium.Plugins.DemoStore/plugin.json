@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.store.demo",
+  "name": "Demo Store",
+  "description": "Deterministic offline catalogue for demonstrations and store-search UI testing.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "Store",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.DemoStore.dll",
+  "entryType": "BookAtrium.Plugins.DemoStore.Plugin",
+  "capabilities": [ "StoreSearch" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": []
+}

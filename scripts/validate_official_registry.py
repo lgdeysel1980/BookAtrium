@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the official BookAtrium plugin registry and per-plugin catalogue metadata.
+"""Validate the official BookAtrium plugin registry against source manifests.
 
-Validates:
-  - registries/official-plugins.json structure and uniqueness
-  - per-plugin plugin.json identity, versions, package URLs, and SHA-256
-  - registry ↔ plugin metadata consistency
-  - required public documents (README, CHANGELOG, LICENSE, PRIVACY, SECURITY)
-  - prohibition of /releases/latest download URLs
-  - official publisher must be BookAtrium
-  - rejection of development-style versions in the published registry
-
-Does not download or execute plugin packages. Use verify_official_package_remote.py
-for an explicit remote checksum audit.
+Canonical contract:
+  - registries/official-plugins.json is the repository / packaging registry
+  - metadataPath points at source manifests:
+      Plugins/Official/<CategoryDir>/<PluginDir>/src/<Project>/plugin.json
+  - Categories and plugin API versions are derived from BookAtrium.PluginContracts
+  - Structural rules live in JSON Schema; this script adds filesystem checks
 
 Exit codes: 0 success, 1 validation failure, 2 usage/environment error.
 """
@@ -20,79 +15,33 @@ from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 from typing import Any
 
+from official_registry_contract import (
+    ID_RE,
+    LATEST_URL_RE,
+    LEGACY_PUBLISHED_METADATA_RE,
+    METADATA_PATH_PREFIX,
+    METADATA_PATH_RE,
+    RELEASE_URL_RE,
+    SEMVER_RE,
+    SHA256_RE,
+    canonicalize_official_metadata_path,
+    discover_official_metadata_files,
+    is_canonical_metadata_path,
+    is_dev_version,
+    is_excluded_metadata_path,
+    load_contract,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ROOT / "registries" / "official-plugins.json"
-PLUGIN_SCHEMA_PATH = ROOT / "registries" / "schemas" / "official-plugin.schema.json"
 INDEX_SCHEMA_PATH = ROOT / "registries" / "schemas" / "official-index.schema.json"
-
-PLUGIN_TYPES = {
-    "ConversionInput",
-    "ConversionOutput",
-    "DeviceInterface",
-    "MetadataReader",
-    "MetadataSource",
-    "MetadataWriter",
-    "Store",
-}
-CATEGORIES = {
-    "ConversionInput",
-    "ConversionOutput",
-    "Store",
-    "MetadataReader",
-    "MetadataWriter",
-    "MetadataSource",
-    "Importer",
-    "Exporter",
-    "Device",
-    "Reader",
-    "Utility",
-}
-CAPABILITIES = {
-    "NetworkAccess",
-    "PluginSettingsStorage",
-    "TemporaryFileAccess",
-    "ReadBookMetadata",
-    "WriteBookMetadata",
-    "ReadInputFormat",
-    "ProduceOutputFormat",
-    "DetectDevice",
-    "TransferToDevice",
-    "StoreSearch",
-    "CoverDownload",
-    "MetadataLookup",
-}
-PLATFORMS = {"windows-x64", "windows-x86", "windows-arm64", "windows", "any"}
-SHA256_RE = re.compile(r"^[0-9a-fA-F]{64}$")
-ID_RE = re.compile(r"^[a-z0-9]([a-z0-9.\-]{0,126}[a-z0-9])?$")
-SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
-RELEASE_URL_RE = re.compile(
-    r"^https://github\.com/[A-Za-z0-9](?:[A-Za-z0-9\-]*[A-Za-z0-9])?/"
-    r"[A-Za-z0-9._\-]+/releases/download/[^/]+/[^/?#]+$"
+MANIFEST_SCHEMA_PATH = (
+    ROOT / "registries" / "schemas" / "official-plugin-manifest.schema.json"
 )
-LATEST_URL_RE = re.compile(r"/releases/latest(?:/|$)", re.IGNORECASE)
-DEV_VERSION_RE = re.compile(
-    r"(?:^0\.\d+\.\d+$)|(?:-(?:dev|alpha|beta|rc|preview|snapshot)(?:\.|$))",
-    re.IGNORECASE,
-)
-REQUIRED_DOCS = ("README.md", "CHANGELOG.md", "LICENSE", "PRIVACY.md", "SECURITY.md")
-CATEGORY_DIR = {
-    "ConversionInput": "conversion-input",
-    "ConversionOutput": "conversion-output",
-    "Store": "stores",
-    "MetadataReader": "metadata-readers",
-    "MetadataWriter": "metadata-writers",
-    "MetadataSource": "metadata-sources",
-    "Importer": "importers",
-    "Exporter": "exporters",
-    "Device": "devices",
-    "Reader": "readers",
-    "Utility": "utilities",
-}
 
 
 def fail(msg: str) -> None:
@@ -110,13 +59,20 @@ def load_json(path: Path) -> Any:
         raise
 
 
-def is_dev_version(version: str) -> bool:
-    if version.startswith("0."):
-        return True
-    return bool(DEV_VERSION_RE.search(version))
+def try_jsonschema(data: Any, schema_path: Path, label: str, errors: list[str]) -> None:
+    try:
+        import jsonschema  # type: ignore
+    except ImportError:
+        return
+
+    schema = load_json(schema_path)
+    validator = jsonschema.Draft202012Validator(schema)
+    for error in sorted(validator.iter_errors(data), key=lambda e: list(e.path)):
+        path = ".".join(str(p) for p in error.path) or "(root)"
+        errors.append(f"{label} schema: {path}: {error.message}")
 
 
-def validate_package(prefix: str, package: dict[str, Any], errors: list[str]) -> None:
+def validate_package(prefix: str, package: Any, errors: list[str]) -> None:
     if not isinstance(package, dict):
         errors.append(f"{prefix}: package must be an object")
         return
@@ -139,7 +95,9 @@ def validate_package(prefix: str, package: dict[str, Any], errors: list[str]) ->
                 f"{prefix}: package.downloadUrl must be an immutable version-specific "
                 f"GitHub release asset URL (got {download_url})"
             )
-        if isinstance(file_name, str) and file_name and not download_url.endswith("/" + file_name):
+        if isinstance(file_name, str) and file_name and not download_url.endswith(
+            "/" + file_name
+        ):
             errors.append(
                 f"{prefix}: package.downloadUrl file name must match package.fileName"
             )
@@ -154,111 +112,12 @@ def validate_package(prefix: str, package: dict[str, Any], errors: list[str]) ->
         errors.append(f"{prefix}: package.sha256 must be a 64-character hex digest")
 
 
-def validate_plugin_entry(path: Path, data: dict[str, Any], errors: list[str]) -> None:
-    rel = path.relative_to(ROOT).as_posix()
-    prefix = rel
-
-    if data.get("schemaVersion") != 1:
-        errors.append(f"{prefix}: schemaVersion must be 1")
-
-    plugin_id = data.get("id")
-    if not isinstance(plugin_id, str) or not ID_RE.match(plugin_id):
-        errors.append(f"{prefix}: invalid plugin id")
-
-    if data.get("official") is not True:
-        errors.append(f"{prefix}: official must be true")
-    if data.get("ownership") != "first-party":
-        errors.append(f"{prefix}: ownership must be 'first-party'")
-
-    publisher = data.get("publisher")
-    if not isinstance(publisher, dict):
-        errors.append(f"{prefix}: publisher must be an object")
-    else:
-        if publisher.get("name") != "BookAtrium":
-            errors.append(
-                f"{prefix}: official plugins must have publisher.name 'BookAtrium' "
-                f"(got {publisher.get('name')!r})"
-            )
-        if publisher.get("verified") is not True:
-            errors.append(f"{prefix}: publisher.verified must be true for official plugins")
-
-    category = data.get("category")
-    if category not in CATEGORIES:
-        errors.append(f"{prefix}: invalid category {category!r}")
-
-    plugin_type = data.get("pluginType")
-    if plugin_type not in PLUGIN_TYPES:
-        errors.append(f"{prefix}: invalid pluginType {plugin_type!r}")
-
-    version = data.get("version")
-    if not isinstance(version, str) or not SEMVER_RE.match(version):
-        errors.append(f"{prefix}: version must be a semantic version")
-    elif is_dev_version(version):
-        errors.append(
-            f"{prefix}: development versions are not allowed in the published official "
-            f"registry (got {version})"
-        )
-
-    if data.get("pluginApiVersion") != "2.0":
-        errors.append(f"{prefix}: pluginApiVersion must be '2.0'")
-
-    min_app = data.get("minimumAppVersion")
-    if not isinstance(min_app, str) or not SEMVER_RE.match(min_app):
-        errors.append(f"{prefix}: minimumAppVersion must be a semantic version")
-
-    platforms = data.get("supportedPlatforms")
-    if not isinstance(platforms, list) or not platforms:
-        errors.append(f"{prefix}: supportedPlatforms must be a non-empty array")
-    else:
-        for platform in platforms:
-            if platform not in PLATFORMS:
-                errors.append(f"{prefix}: unsupported platform {platform!r}")
-
-    capabilities = data.get("capabilities")
-    if not isinstance(capabilities, list) or not capabilities:
-        errors.append(f"{prefix}: capabilities must be a non-empty array")
-    else:
-        for capability in capabilities:
-            if capability not in CAPABILITIES:
-                errors.append(f"{prefix}: unknown capability {capability!r}")
-
-    network_hosts = data.get("networkHosts")
-    if not isinstance(network_hosts, list):
-        errors.append(f"{prefix}: networkHosts must be an array")
-
-    for key in ("privacyPath", "securityPath", "licensePath"):
-        value = data.get(key)
-        if not isinstance(value, str) or not value:
-            errors.append(f"{prefix}: {key} is required")
-            continue
-        doc_path = ROOT / value
-        if not doc_path.is_file():
-            errors.append(f"{prefix}: {key} does not exist: {value}")
-
-    validate_package(prefix, data.get("package") or {}, errors)
-
-    download_url = (data.get("package") or {}).get("downloadUrl")
-    if isinstance(download_url, str) and LATEST_URL_RE.search(download_url):
-        errors.append(f"{prefix}: forbidden latest-download URL")
-
-    # Required sibling documents
-    plugin_dir = path.parent
-    for doc in REQUIRED_DOCS:
-        if not (plugin_dir / doc).is_file():
-            errors.append(f"{prefix}: missing required document {doc}")
-
-    # Category/path consistency
-    if isinstance(category, str) and category in CATEGORY_DIR:
-        expected_parent = CATEGORY_DIR[category]
-        parts = path.relative_to(ROOT / "plugins" / "official").parts
-        if not parts or parts[0] != expected_parent:
-            errors.append(
-                f"{prefix}: metadata path category folder must be "
-                f"plugins/official/{expected_parent}/... for category {category}"
-            )
-
-
-def validate_registry(registry: dict[str, Any], errors: list[str]) -> list[Path]:
+def validate_registry(
+    registry: dict[str, Any],
+    contract: dict[str, Any],
+    errors: list[str],
+) -> list[str]:
+    """Validate registry FS/uniqueness rules. Returns metadataPath values."""
     if registry.get("schemaVersion") != 1:
         errors.append("registries/official-plugins.json: schemaVersion must be 1")
     if registry.get("trustSource") != "official-bookatrium":
@@ -271,17 +130,28 @@ def validate_registry(registry: dict[str, Any], errors: list[str]) -> list[Path]
         errors.append("registries/official-plugins.json: plugins must be an array")
         return []
 
-    # Deterministic ordering: sort by id
-    ids = [p.get("id") for p in plugins if isinstance(p, dict)]
-    if ids != sorted(x for x in ids if isinstance(x, str)):
+    # Deterministic ordering: category, then id (matches OfficialPluginRepositoryBuilder).
+    order_keys = [
+        (p.get("category"), p.get("id"))
+        for p in plugins
+        if isinstance(p, dict)
+    ]
+    expected = sorted(
+        [(c, i) for c, i in order_keys if isinstance(c, str) and isinstance(i, str)],
+        key=lambda item: (item[0], item[1]),
+    )
+    actual = [(c, i) for c, i in order_keys if isinstance(c, str) and isinstance(i, str)]
+    if actual != expected:
         errors.append(
-            "registries/official-plugins.json: plugins must be ordered by id ascending"
+            "registries/official-plugins.json: plugins must be ordered by "
+            "category ascending, then id ascending"
         )
 
+    categories = set(contract["categories"])
+    api_versions = set(contract["pluginApiVersions"])
     seen_ids: set[str] = set()
     seen_paths: set[str] = set()
-    seen_category_paths: set[str] = set()
-    metadata_paths: list[Path] = []
+    metadata_paths: list[str] = []
 
     for index, entry in enumerate(plugins):
         prefix = f"registries/official-plugins.json[{index}]"
@@ -305,8 +175,8 @@ def validate_registry(registry: dict[str, Any], errors: list[str]) -> list[Path]
             errors.append(f"{prefix}: ownership must be 'first-party'")
 
         category = entry.get("category")
-        if category not in CATEGORIES:
-            errors.append(f"{prefix}: invalid category")
+        if category not in categories:
+            errors.append(f"{prefix}: invalid category {category!r}")
 
         version = entry.get("version")
         if not isinstance(version, str) or not SEMVER_RE.match(version):
@@ -314,14 +184,33 @@ def validate_registry(registry: dict[str, Any], errors: list[str]) -> list[Path]
         elif is_dev_version(version):
             errors.append(f"{prefix}: development version not allowed ({version})")
 
-        if entry.get("pluginApiVersion") != "2.0":
-            errors.append(f"{prefix}: pluginApiVersion must be '2.0'")
+        api = entry.get("pluginApiVersion")
+        if api not in api_versions:
+            errors.append(
+                f"{prefix}: pluginApiVersion must be one of "
+                f"{sorted(api_versions)} (got {api!r})"
+            )
 
         metadata_path = entry.get("metadataPath")
-        if not isinstance(metadata_path, str) or not metadata_path.startswith(
-            "plugins/official/"
-        ):
-            errors.append(f"{prefix}: metadataPath must be under plugins/official/")
+        if not isinstance(metadata_path, str):
+            errors.append(f"{prefix}: metadataPath is required")
+            continue
+
+        if metadata_path != canonicalize_official_metadata_path(metadata_path):
+            errors.append(
+                f"{prefix}: metadataPath must use canonical casing "
+                f"{METADATA_PATH_PREFIX!r} (got {metadata_path!r})"
+            )
+
+        if not is_canonical_metadata_path(metadata_path):
+            errors.append(
+                f"{prefix}: metadataPath must match "
+                f"{METADATA_PATH_PREFIX}<Category>/<Plugin>/src/<Project>/plugin.json"
+            )
+            continue
+
+        if ".." in metadata_path.split("/"):
+            errors.append(f"{prefix}: metadataPath must not contain '..'")
             continue
 
         if metadata_path in seen_paths:
@@ -329,85 +218,90 @@ def validate_registry(registry: dict[str, Any], errors: list[str]) -> list[Path]
         else:
             seen_paths.add(metadata_path)
 
-        category_path_key = f"{category}:{metadata_path}"
-        if category_path_key in seen_category_paths:
-            errors.append(f"{prefix}: duplicate category/path combination")
-        else:
-            seen_category_paths.add(category_path_key)
-
         abs_meta = ROOT / metadata_path
         if not abs_meta.is_file():
             errors.append(f"{prefix}: metadataPath does not exist: {metadata_path}")
         else:
-            metadata_paths.append(abs_meta)
+            metadata_paths.append(metadata_path)
 
-        validate_package(prefix, entry.get("package") or {}, errors)
+        validate_package(prefix, entry.get("package"), errors)
 
     return metadata_paths
 
 
-def validate_consistency(
-    registry_entry: dict[str, Any], plugin: dict[str, Any], errors: list[str]
+def validate_manifest_consistency(
+    registry_entry: dict[str, Any],
+    manifest: dict[str, Any],
+    metadata_path: str,
+    contract: dict[str, Any],
+    errors: list[str],
 ) -> None:
     plugin_id = registry_entry.get("id")
     prefix = f"consistency:{plugin_id}"
 
     checks = [
-        ("id", registry_entry.get("id"), plugin.get("id")),
-        ("name", registry_entry.get("name"), plugin.get("name")),
-        ("version", registry_entry.get("version"), plugin.get("version")),
-        ("category", registry_entry.get("category"), plugin.get("category")),
+        ("id", registry_entry.get("id"), manifest.get("id")),
+        ("name", registry_entry.get("name"), manifest.get("name")),
+        ("version", registry_entry.get("version"), manifest.get("version")),
         (
             "pluginApiVersion",
             registry_entry.get("pluginApiVersion"),
-            plugin.get("pluginApiVersion"),
-        ),
-        (
-            "releaseRepository",
-            registry_entry.get("releaseRepository"),
-            plugin.get("releaseRepository"),
-        ),
-        ("releaseTag", registry_entry.get("releaseTag"), plugin.get("releaseTag")),
-        (
-            "packageHosting",
-            registry_entry.get("packageHosting"),
-            plugin.get("packageHosting"),
+            manifest.get("pluginApiVersion") or manifest.get("contractApiVersion"),
         ),
     ]
     for field, left, right in checks:
         if left is not None and right is not None and left != right:
-            errors.append(f"{prefix}: registry.{field} ({left!r}) != plugin.{field} ({right!r})")
-
-    reg_pkg = registry_entry.get("package") or {}
-    plug_pkg = plugin.get("package") or {}
-    for field in ("downloadUrl", "fileName", "sizeBytes", "sha256"):
-        if reg_pkg.get(field) != plug_pkg.get(field):
             errors.append(
-                f"{prefix}: registry.package.{field} differs from plugin.package.{field}"
+                f"{prefix}: registry.{field} ({left!r}) != manifest.{field} ({right!r})"
             )
 
-    publisher_name = (plugin.get("publisher") or {}).get("name")
-    if registry_entry.get("publisher") != publisher_name:
+    category = registry_entry.get("category")
+    plugin_type = manifest.get("pluginType")
+    if category != plugin_type:
         errors.append(
-            f"{prefix}: registry.publisher ({registry_entry.get('publisher')!r}) "
-            f"!= plugin.publisher.name ({publisher_name!r})"
+            f"{prefix}: registry.category ({category!r}) != manifest.pluginType ({plugin_type!r})"
         )
 
+    if plugin_type not in contract["pluginTypes"]:
+        errors.append(f"{prefix}: unsupported manifest.pluginType {plugin_type!r}")
 
-def try_jsonschema(data: Any, schema_path: Path, label: str, errors: list[str]) -> None:
-    try:
-        import jsonschema  # type: ignore
-    except ImportError:
+    # Path traversal / unsafe relative path already gated by canonical pattern.
+    if not METADATA_PATH_RE.match(metadata_path):
+        errors.append(f"{prefix}: non-canonical metadataPath {metadata_path!r}")
+
+
+def reject_legacy_published_layout(repo_root: Path, errors: list[str]) -> None:
+    """Fail if the obsolete kebab published layout is still present."""
+    official_lower = repo_root / "plugins" / "official"
+    # On case-insensitive filesystems this is the same tree as Plugins/Official.
+    # Only flag leaf paths that match the old published pattern and are not
+    # canonical source-tree paths.
+    if not official_lower.is_dir():
         return
 
-    schema = load_json(schema_path)
-    validator = jsonschema.Draft202012Validator(schema)
-    for error in sorted(validator.iter_errors(data), key=lambda e: list(e.path)):
-        path = ".".join(str(p) for p in error.path) or "(root)"
-        errors.append(f"{label} schema: {path}: {error.message}")
+    for path in sorted(official_lower.rglob("plugin.json")):
+        rel = path.relative_to(repo_root).as_posix()
+        canonical = canonicalize_official_metadata_path(rel)
+        if LEGACY_PUBLISHED_METADATA_RE.match(rel.replace("\\", "/")) or (
+            LEGACY_PUBLISHED_METADATA_RE.match(canonical.lower())
+            and not is_canonical_metadata_path(canonical)
+        ):
+            # Exact old layout: plugins/official/<kebab-category>/<kebab-plugin>/plugin.json
+            parts = rel.replace("\\", "/").split("/")
+            if (
+                len(parts) == 5
+                and parts[0].lower() == "plugins"
+                and parts[1].lower() == "official"
+                and parts[4] == "plugin.json"
+                and "/src/" not in rel.replace("\\", "/")
+            ):
+                errors.append(
+                    "obsolete published official metadata layout must be removed "
+                    f"(use {METADATA_PATH_PREFIX}.../src/.../plugin.json): {rel}"
+                )
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--root",
@@ -415,14 +309,15 @@ def main() -> int:
         default=None,
         help="Repository root (default: parent of scripts/)",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     root = (args.root or Path(__file__).resolve().parents[1]).resolve()
     registry_path = root / "registries" / "official-plugins.json"
-    plugin_schema_path = root / "registries" / "schemas" / "official-plugin.schema.json"
     index_schema_path = root / "registries" / "schemas" / "official-index.schema.json"
+    manifest_schema_path = (
+        root / "registries" / "schemas" / "official-plugin-manifest.schema.json"
+    )
 
-    # Bind module-level ROOT used by helpers for relative paths.
     global ROOT
     ROOT = root
 
@@ -433,16 +328,24 @@ def main() -> int:
         return 2
 
     try:
+        contract = load_contract(root)
         registry = load_json(registry_path)
-    except (OSError, json.JSONDecodeError):
+    except (OSError, json.JSONDecodeError, ValueError) as exc:
+        fail(str(exc))
         return 2
 
     if not isinstance(registry, dict):
         fail("registry root must be an object")
         return 1
 
+    if not index_schema_path.is_file() or not manifest_schema_path.is_file():
+        fail(
+            "missing schemas; run: python scripts/sync_official_registry_schemas.py"
+        )
+        return 2
+
     try_jsonschema(registry, index_schema_path, "official-index", errors)
-    metadata_paths = validate_registry(registry, errors)
+    metadata_paths = validate_registry(registry, contract, errors)
 
     registry_by_path = {
         entry["metadataPath"]: entry
@@ -450,33 +353,91 @@ def main() -> int:
         if isinstance(entry, dict) and isinstance(entry.get("metadataPath"), str)
     }
 
-    for meta_path in metadata_paths:
+    for metadata_path in metadata_paths:
+        abs_meta = root / metadata_path
         try:
-            plugin = load_json(meta_path)
+            manifest = load_json(abs_meta)
         except (OSError, json.JSONDecodeError):
-            errors.append(f"failed to load {meta_path.relative_to(root).as_posix()}")
+            errors.append(f"failed to load {metadata_path}")
             continue
-        if not isinstance(plugin, dict):
-            errors.append(f"{meta_path.relative_to(root).as_posix()}: root must be an object")
+        if not isinstance(manifest, dict):
+            errors.append(f"{metadata_path}: root must be an object")
             continue
-        try_jsonschema(plugin, plugin_schema_path, meta_path.name, errors)
-        validate_plugin_entry(meta_path, plugin, errors)
-        reg_entry = registry_by_path.get(meta_path.relative_to(root).as_posix())
+        try_jsonschema(manifest, manifest_schema_path, metadata_path, errors)
+        reg_entry = registry_by_path.get(metadata_path)
         if reg_entry:
-            validate_consistency(reg_entry, plugin, errors)
+            validate_manifest_consistency(
+                reg_entry, manifest, metadata_path, contract, errors
+            )
 
-    # Ensure every plugins/official/**/plugin.json is registered
-    official_root = root / "plugins" / "official"
-    if official_root.is_dir():
-        for orphan in sorted(official_root.rglob("plugin.json")):
-            rel = orphan.relative_to(root).as_posix()
-            if rel not in registry_by_path:
-                errors.append(f"unregistered official plugin metadata: {rel}")
+    # Every canonical source manifest must be registered (except inventory exclusions).
+    excluded_ids_path = root / "registries" / "official-plugin-inventory.json"
+    excluded_ids: set[str] = set()
+    # Soft-read ExcludedPluginIds from inventory is not stored; hardcode sync with C#.
+    # Smashwords remains the only inventory exclusion today.
+    excluded_ids.add("com.practicore.bookatrium.store.smashwords")
+
+    discovered = discover_official_metadata_files(root)
+    for rel in discovered:
+        if rel in registry_by_path:
+            continue
+        # Allow intentionally excluded packages to remain on disk unregistered.
+        try:
+            manifest = load_json(root / rel)
+            plugin_id = manifest.get("id") if isinstance(manifest, dict) else None
+        except (OSError, json.JSONDecodeError):
+            plugin_id = None
+        if isinstance(plugin_id, str) and plugin_id in excluded_ids:
+            continue
+        errors.append(f"unregistered official plugin metadata: {rel}")
+
+    for metadata_path in registry_by_path:
+        if metadata_path not in discovered and (root / metadata_path).is_file():
+            # Registered but discovery skipped it (shouldn't happen for canonical paths).
+            if is_excluded_metadata_path(metadata_path):
+                errors.append(
+                    f"registry metadataPath points at excluded build artifact: {metadata_path}"
+                )
+
+    reject_legacy_published_layout(root, errors)
+
+    # Amazon US Kindle Store must be present exactly once under the canonical path
+    # whenever that official plugin exists in the repository tree.
+    amazon_id = "com.practicore.bookatrium.store.amazon-us-kindle"
+    amazon_source = (
+        root
+        / "Plugins"
+        / "Official"
+        / "Stores"
+        / "AmazonUSKindleStore"
+        / "src"
+        / "BookAtrium.Plugins.AmazonUSKindleStore"
+        / "plugin.json"
+    )
+    amazon_entries = [
+        e
+        for e in registry.get("plugins", [])
+        if isinstance(e, dict) and e.get("id") == amazon_id
+    ]
+    if amazon_source.is_file() or amazon_entries:
+        if len(amazon_entries) != 1:
+            errors.append(
+                f"Amazon US Kindle Store must appear exactly once in the registry "
+                f"(found {len(amazon_entries)})"
+            )
+        elif not is_canonical_metadata_path(str(amazon_entries[0].get("metadataPath"))):
+            errors.append(
+                "Amazon US Kindle Store metadataPath must use the canonical "
+                f"{METADATA_PATH_PREFIX} source-tree layout"
+            )
 
     if errors:
         for message in errors:
             fail(message)
-        print(f"Official registry validation failed with {len(errors)} error(s).", file=sys.stderr)
+        print(
+            f"Official registry validation failed with {len(errors)} error(s).",
+            file=sys.stderr,
+        )
         return 1
 
     print(f"Official registry OK ({len(metadata_paths)} plugin(s)).")

@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "id": "com.practicore.bookatrium.metadatawriter.fb2",
+  "name": "FB2 Metadata Writer",
+  "description": "Writes FictionBook title-info metadata.",
+  "version": "1.0.0",
+  "publisher": "PractiCore",
+  "author": "PractiCore",
+  "license": "MIT",
+  "pluginType": "MetadataWriter",
+  "pluginApiVersion": "2.0",
+  "minimumAppVersion": "1.0.0",
+  "targetFramework": "net10.0",
+  "supportedPlatforms": [ "windows" ],
+  "entryAssembly": "BookAtrium.Plugins.Fb2MetadataWriter.dll",
+  "entryType": "BookAtrium.Plugins.Fb2MetadataWriter.Plugin",
+  "capabilities": [ "WriteBookMetadata", "TemporaryFileAccess" ],
+  "requiresRestart": false,
+  "defaultEnabled": true,
+  "contentTypes": [ "fb2" ]
+}
