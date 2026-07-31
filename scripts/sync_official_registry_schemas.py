@@ -33,14 +33,19 @@ def main(argv: list[str] | None = None) -> int:
 
     root = (args.root or Path(__file__).resolve().parents[1]).resolve()
     load_contract.cache_clear()
+    schemas_dir = root / "registries" / "schemas"
+    schemas_dir.mkdir(parents=True, exist_ok=True)
+    baked_path = schemas_dir / "official-contract.json"
     contracts_dir = root / "BookAtrium.PluginContracts"
-    if contracts_dir.is_dir():
+
+    if args.check and baked_path.is_file():
+        # Public publication trees may ship an older PluginContracts package while the
+        # baked official-contract.json is authoritative for catalogue validation.
+        contract = load_contract(root)
+    elif contracts_dir.is_dir():
         contract = _build_contract_from_sources(root)
     else:
         contract = load_contract(root)
-
-    schemas_dir = root / "registries" / "schemas"
-    schemas_dir.mkdir(parents=True, exist_ok=True)
 
     targets = {
         schemas_dir / "official-contract.json": contract,
