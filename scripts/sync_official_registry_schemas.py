@@ -53,7 +53,8 @@ def main(argv: list[str] | None = None) -> int:
     for path, payload in targets.items():
         text = json.dumps(payload, indent=2) + "\n"
         if args.check:
-            if not path.is_file() or path.read_text(encoding="utf-8") != text:
+            existing = path.read_text(encoding="utf-8") if path.is_file() else ""
+            if existing.replace("\r\n", "\n") != text.replace("\r\n", "\n"):
                 print(f"schema drift: {path.relative_to(root).as_posix()}", file=sys.stderr)
                 dirty = True
             continue
