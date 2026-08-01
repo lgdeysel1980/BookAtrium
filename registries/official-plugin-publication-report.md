@@ -1,6 +1,6 @@
 # Official plugin publication report
 
-Generated (UTC): 2026-08-01T12:24:24.4495735+00:00
+Generated (UTC): 2026-08-01T13:46:04.7540106+00:00
 Plugin count: 67
 Catalog: `official-plugins.json`
 Packages directory: `registries/packages/`
@@ -23,21 +23,21 @@ Baseline release tag: `official-plugins-baseline-v1.0.0`
 
 | Plugin ID | Size (bytes) |
 | --- | ---: |
-| `com.practicore.bookatrium.conversionoutput.pdf` | 4,245,929 |
-| `com.practicore.bookatrium.conversioninput.pdf` | 3,762,467 |
-| `com.practicore.bookatrium.conversioninput.kindle` | 383,662 |
-| `com.practicore.bookatrium.conversioninput.kepub` | 372,911 |
-| `com.practicore.bookatrium.conversioninput.epub` | 372,079 |
-| `com.practicore.bookatrium.conversioninput.html` | 371,842 |
-| `com.practicore.bookatrium.conversioninput.docx` | 371,779 |
-| `com.practicore.bookatrium.conversionoutput.azw3` | 371,764 |
-| `com.practicore.bookatrium.conversionoutput.mobi` | 371,743 |
-| `com.practicore.bookatrium.conversionoutput.kepub` | 371,228 |
-| `com.practicore.bookatrium.conversioninput.txt` | 370,446 |
-| `com.practicore.bookatrium.conversioninput.fb2` | 370,404 |
-| `com.practicore.bookatrium.conversionoutput.docx` | 369,826 |
-| `com.practicore.bookatrium.conversionoutput.epub` | 369,469 |
-| `com.practicore.bookatrium.conversionoutput.lrf` | 368,075 |
+| `com.practicore.bookatrium.conversionoutput.pdf` | 4,242,012 |
+| `com.practicore.bookatrium.conversioninput.pdf` | 3,758,554 |
+| `com.practicore.bookatrium.conversioninput.kindle` | 379,958 |
+| `com.practicore.bookatrium.conversioninput.kepub` | 369,210 |
+| `com.practicore.bookatrium.conversioninput.epub` | 368,377 |
+| `com.practicore.bookatrium.conversioninput.html` | 368,139 |
+| `com.practicore.bookatrium.conversioninput.docx` | 368,084 |
+| `com.practicore.bookatrium.conversionoutput.azw3` | 368,069 |
+| `com.practicore.bookatrium.conversionoutput.mobi` | 368,039 |
+| `com.practicore.bookatrium.conversionoutput.kepub` | 367,525 |
+| `com.practicore.bookatrium.conversioninput.txt` | 366,738 |
+| `com.practicore.bookatrium.conversioninput.fb2` | 366,709 |
+| `com.practicore.bookatrium.conversionoutput.docx` | 366,125 |
+| `com.practicore.bookatrium.conversionoutput.epub` | 365,771 |
+| `com.practicore.bookatrium.conversionoutput.lrf` | 364,376 |
 
 ## Hosting
 

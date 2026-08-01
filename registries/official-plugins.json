@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-01T12:24:24.4259613+00:00",
+  "generatedAtUtc": "2026-08-01T13:46:04.7265246+00:00",
   "minimumClientVersion": "1.0.0",
   "trustSource": "official-bookatrium",
   "description": "Official BookAtrium first-party plugin catalogue. Separate from the independently published community plugins registry.",
@@ -48,8 +48,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.authormetadatasource.goodreads-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.authormetadatasource.goodreads-1.0.0.bookplugin",
-        "sizeBytes": 36843,
-        "sha256": "4889621e1bd31f91e28c1be298a46d528928334d6ba66dcb1fb07d3bef8e417a"
+        "sizeBytes": 31741,
+        "sha256": "5b11cd4675ab79549d9d5d7697bbbcc7abbe835fe35b64a8d9887bb8d5795b09"
       }
     },
     {
@@ -90,8 +90,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.docx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.docx-1.0.0.bookplugin",
-        "sizeBytes": 371779,
-        "sha256": "1a34de7b7d24b1f01fbdb92c80c6db733bacbc45ba981123b0b13c0a0613726a"
+        "sizeBytes": 368084,
+        "sha256": "b3b6d3ae8898df74a961712ded466453cc7a296a815e8ba954e725bf8e14a504"
       }
     },
     {
@@ -132,8 +132,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.epub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.epub-1.0.0.bookplugin",
-        "sizeBytes": 372079,
-        "sha256": "82e61183ed633e910c04b7637316cb0e56457dee5b308967769707957460dc62"
+        "sizeBytes": 368377,
+        "sha256": "095bc9b456effcb5e2e31587f7c10de7ac87420eabf97fda8b365de067db5058"
       }
     },
     {
@@ -174,8 +174,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.fb2-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.fb2-1.0.0.bookplugin",
-        "sizeBytes": 370404,
-        "sha256": "90fb23f012964d76fc91d0dbd336f1ad8a8bc811d32b74df3c44ad637ef23075"
+        "sizeBytes": 366709,
+        "sha256": "253f7c2d6a0956e663b056d6cfcbe055b15c02af4f84a639fbbb28b6788fc69f"
       }
     },
     {
@@ -216,8 +216,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.html-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.html-1.0.0.bookplugin",
-        "sizeBytes": 371842,
-        "sha256": "73696c40d2087815a2de1eb48993ee4647b68cc541d689eafe388c59f1d416c8"
+        "sizeBytes": 368139,
+        "sha256": "d41d7a4729bc0f81453811b71ad852b9cff7a2d47379e2fb915e213eef3a33b0"
       }
     },
     {
@@ -258,8 +258,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.kepub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.kepub-1.0.0.bookplugin",
-        "sizeBytes": 372911,
-        "sha256": "ac97e9ca65f32479c608f032ab7d4f654c6bbf8978fe527f83d2d27bd2cd1b5d"
+        "sizeBytes": 369210,
+        "sha256": "2fa53e069ad6d2e5f7350a511cad374cc088f19172beba4cdcda9ac69efa0274"
       }
     },
     {
@@ -300,8 +300,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.kindle-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.kindle-1.0.0.bookplugin",
-        "sizeBytes": 383662,
-        "sha256": "3718ebcbabe2fda8f0086279edc88d1d85f383cea2469b7b47ed08ebde15e223"
+        "sizeBytes": 379958,
+        "sha256": "0388e98ce5168f02901fc2cc6b025bc39e980bf11d2bbca81595d249047688d5"
       }
     },
     {
@@ -342,8 +342,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.pdf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.pdf-1.0.0.bookplugin",
-        "sizeBytes": 3762467,
-        "sha256": "950057f6449f918412a6f70142ea3372637128287fafeea0d051c9c8a84b0efb"
+        "sizeBytes": 3758554,
+        "sha256": "ca7d07107e162ec7e29e6eb39f6547b5c9120593dde7d370fc44e94cd34b7a1c"
       }
     },
     {
@@ -384,8 +384,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversioninput.txt-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversioninput.txt-1.0.0.bookplugin",
-        "sizeBytes": 370446,
-        "sha256": "2c08b6d6ca0076e3ab384ba01e7f67f5ab46b1d20327df2cb74a3ad4eb57f29f"
+        "sizeBytes": 366738,
+        "sha256": "0e30f6ca506c89ac0bc421f2f748fa7a7867e5c2d4d675de9372019fb37d6e97"
       }
     },
     {
@@ -426,8 +426,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.azw3-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.azw3-1.0.0.bookplugin",
-        "sizeBytes": 371764,
-        "sha256": "f6d71d5c7593346cf261358da217a149c28cfe24eb37e07425d5b71def0fa426"
+        "sizeBytes": 368069,
+        "sha256": "7703793a6b5bc00134ed91c98660fb3310316a10c63206f2337ff0c84f87bb45"
       }
     },
     {
@@ -468,8 +468,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.docx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.docx-1.0.0.bookplugin",
-        "sizeBytes": 369826,
-        "sha256": "1c888b31f8283d26aea6d9ccebd59d4bdc71130538fa4b758cd0ba5c8d9a88ea"
+        "sizeBytes": 366125,
+        "sha256": "eb81a06d56aebf162f3172584e7628845beeb2e3b24c59d4e04aa1d2f78e92b7"
       }
     },
     {
@@ -510,8 +510,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.epub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.epub-1.0.0.bookplugin",
-        "sizeBytes": 369469,
-        "sha256": "ff549b9258dba6686889030949c30e0fcce746c3aa1609b4f33ac8b15a13f2a9"
+        "sizeBytes": 365771,
+        "sha256": "0fb94f23422b2390b1f112cf5ff04bb033418044549ca2af8f1a78c27c803bdf"
       }
     },
     {
@@ -552,8 +552,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.html-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.html-1.0.0.bookplugin",
-        "sizeBytes": 365672,
-        "sha256": "2137c4da1fac1449a93f72734342bff39478174b6f9648a0a987c8169272af85"
+        "sizeBytes": 361972,
+        "sha256": "b5a25a75b9967e8c7d8f615b53a329e5790b1c4e0d455549ed5914b1ab9a7965"
       }
     },
     {
@@ -594,8 +594,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.kepub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.kepub-1.0.0.bookplugin",
-        "sizeBytes": 371228,
-        "sha256": "e4a3e73eac79d19d0f060523d33e605b94e7efd3e4036138ade868d72a06507a"
+        "sizeBytes": 367525,
+        "sha256": "30f510d7a8164f62a85d1c91595e28a1dcce905fedfb156ba27392004e6be0a8"
       }
     },
     {
@@ -636,8 +636,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.lrf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.lrf-1.0.0.bookplugin",
-        "sizeBytes": 368075,
-        "sha256": "0438e8e7f98af295b25535e5e769fd019a2b33fa1c44758aead176ec9df72be8"
+        "sizeBytes": 364376,
+        "sha256": "62cae52cd9a03bbc027027843130d730c1b97483e5c1ec57efefbd2a64ae3bbf"
       }
     },
     {
@@ -678,8 +678,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.mobi-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.mobi-1.0.0.bookplugin",
-        "sizeBytes": 371743,
-        "sha256": "d80c90bf9549654c8da4ae542435db530c0e9f53c40a8586aacc909e62b56058"
+        "sizeBytes": 368039,
+        "sha256": "a2da640facc762db9e81f35b2cbec91503ffb4af0c261356f46e04bf09dc21dd"
       }
     },
     {
@@ -720,8 +720,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.oeb-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.oeb-1.0.0.bookplugin",
-        "sizeBytes": 367888,
-        "sha256": "6d951f03cd722a486c210fee198d7423b076231fd4c6a26c8e9eac2dee85696d"
+        "sizeBytes": 364182,
+        "sha256": "86f47c6a7fd205a46143954331eb23f307cca2a272dc2496da501ea17fca7988"
       }
     },
     {
@@ -762,8 +762,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.pdf-1.0.1.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.pdf-1.0.1.bookplugin",
-        "sizeBytes": 4245929,
-        "sha256": "e09c6662445ea7e3e817cb850a6de48945a5b185e6da2f1e08e6c790d04739a8"
+        "sizeBytes": 4242012,
+        "sha256": "8c7d63c301c8e0f398302897d413eca9000b3be8489627561a4017fd5b2e7246"
       }
     },
     {
@@ -804,8 +804,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.conversionoutput.txt-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.conversionoutput.txt-1.0.0.bookplugin",
-        "sizeBytes": 366294,
-        "sha256": "4c5211ad53e28996a00b2bc2cffbf47e984ee8ffe0aa13c60017faad77dceafd"
+        "sizeBytes": 362595,
+        "sha256": "84df64788944bc23d95cb8a5821d04c5fafbcb0607b2d2950c66b44225f86342"
       }
     },
     {
@@ -844,8 +844,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.filetypes.core-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.filetypes.core-1.0.0.bookplugin",
-        "sizeBytes": 11707,
-        "sha256": "3d2103b5e59da0a468beb79940ea517bbda18dfb92ce5caea82e471e39c9506d"
+        "sizeBytes": 6452,
+        "sha256": "61fb587ec51a98201b33d17dd6ffa3135b33b02fb63ea04f8edfbb2e7d04d1ae"
       }
     },
     {
@@ -884,8 +884,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.input-profiles.core-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.input-profiles.core-1.0.0.bookplugin",
-        "sizeBytes": 13251,
-        "sha256": "9182875c2e299ec59a830bf47d059397188aa9e5da559c9eef60c1bddfba7856"
+        "sizeBytes": 8162,
+        "sha256": "71899601e48c28e83660802b6840e76fe6b52439d426034e4a0e680c3e7ef3b8"
       }
     },
     {
@@ -925,8 +925,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.audio.mp3-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.audio.mp3-1.0.0.bookplugin",
-        "sizeBytes": 38784,
-        "sha256": "8878122ef4e5889882675a47bc622acaa778cd0818af1343b25eff7cd27a0384"
+        "sizeBytes": 33692,
+        "sha256": "a04635dc443cd6b9d1601d8ec49dcc0a326eb05ee644fb8e09239fdc36bd55b1"
       }
     },
     {
@@ -966,8 +966,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.audio.mpeg4-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.audio.mpeg4-1.0.0.bookplugin",
-        "sizeBytes": 38596,
-        "sha256": "196e850037ff5b2fa07f8c1e3af609ec11931ad18302227b3b6c97b637c4b5eb"
+        "sizeBytes": 33507,
+        "sha256": "d10c5ab48ce367317ef6933663eb322ae14418876988fdf6676276a34efe7ce5"
       }
     },
     {
@@ -1007,8 +1007,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.docx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.docx-1.0.0.bookplugin",
-        "sizeBytes": 34241,
-        "sha256": "4e9624d52d91489a6291725be63b53eea2e3bef3a7bcf9624837f7705eb19e47"
+        "sizeBytes": 29150,
+        "sha256": "b29b9e47ec9fcbc0ceb9d71e77c406d94140bb0e5e38218c5da7ecf37391de70"
       }
     },
     {
@@ -1048,8 +1048,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.epub-kepub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.epub-kepub-1.0.0.bookplugin",
-        "sizeBytes": 25433,
-        "sha256": "143f60604a1ac27f98d7608b26fd45f90fa73dd0bd1d748dc4c27ac4c8a0dd85"
+        "sizeBytes": 20335,
+        "sha256": "bf69d46668f8187d2b5ab9781e0b5fedc7c17eea3c4aa330b31f31b45e468912"
       }
     },
     {
@@ -1090,8 +1090,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.exiftool-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.exiftool-1.0.0.bookplugin",
-        "sizeBytes": 35005,
-        "sha256": "8e9329317ef1988ab7b7daa0b1ae95156e52e9089652781ad9cf54e5846964a3"
+        "sizeBytes": 29910,
+        "sha256": "eb8dbe14d278c363b294a79485c7383b10e5775f8cd5b279c43fe999e54b6805"
       }
     },
     {
@@ -1131,8 +1131,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.fb2-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.fb2-1.0.0.bookplugin",
-        "sizeBytes": 30644,
-        "sha256": "ec9945c6882817e2a07d974e5aae8a8ee87ad9a9a1c88b3d517391103c663dce"
+        "sizeBytes": 25552,
+        "sha256": "9cc8c9a2714b4b65650c360c6a460b32ba7579a374f6374461b1e28efe2c5e8d"
       }
     },
     {
@@ -1172,8 +1172,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.html-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.html-1.0.0.bookplugin",
-        "sizeBytes": 34148,
-        "sha256": "b7f559af1d484c2d42d9d54c12eb4f8bcde929300449e77b2d968aa1d43be105"
+        "sizeBytes": 29057,
+        "sha256": "20db9b502d5131d0662706f1b7e1cc4ce4fe8e59ac370dda29b9a8262ad7876c"
       }
     },
     {
@@ -1213,8 +1213,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.lit-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.lit-1.0.0.bookplugin",
-        "sizeBytes": 34947,
-        "sha256": "6e65b637a3fa8cf7a1bf6786e8e33456096c539555cfeb5e3910393f85059b7e"
+        "sizeBytes": 29859,
+        "sha256": "f59bc7b01690e8952dbf4335700909ae976c4dab12c7e1ce1b70bb2f63ea4720"
       }
     },
     {
@@ -1254,8 +1254,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.lrf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.lrf-1.0.0.bookplugin",
-        "sizeBytes": 34960,
-        "sha256": "d1277024105873e0c6506a1ee1a9919edc367ab15b471b73d41f6b5a83aaaf40"
+        "sizeBytes": 29862,
+        "sha256": "abb0123fcab59fdb2749795dc2346382f9cf6e65979da392d5a7ec469e9b7fb2"
       }
     },
     {
@@ -1295,8 +1295,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.lrx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.lrx-1.0.0.bookplugin",
-        "sizeBytes": 34985,
-        "sha256": "f0501a1a16c795211ac58bd1b5d37a7b600e45a31cc499ec7062fc409e2b47d1"
+        "sizeBytes": 29892,
+        "sha256": "40d2e84513587fd88bcd4d43fb40bc35ea67effc5ac5e9b23e17a295afde3e00"
       }
     },
     {
@@ -1336,8 +1336,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.mobi-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.mobi-1.0.0.bookplugin",
-        "sizeBytes": 33845,
-        "sha256": "7d7a8611dd57f0bea655318d584f170aff8377e6fb54f68551203fe25ea19ee1"
+        "sizeBytes": 28748,
+        "sha256": "4ed3018a943fcac4833eb37b12344d987302c48ff9443b98bbff9e9304a04bee"
       }
     },
     {
@@ -1377,8 +1377,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.odt-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.odt-1.0.0.bookplugin",
-        "sizeBytes": 34201,
-        "sha256": "86b451cadc40ad80cc2c65bcb7387a18be05622173967a39ffa5e959a0e9ac7d"
+        "sizeBytes": 29116,
+        "sha256": "a22dc1708a9b61aa50e093eead425277cab0d16a0f11368e85622055a5ca9494"
       }
     },
     {
@@ -1418,8 +1418,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.opf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.opf-1.0.0.bookplugin",
-        "sizeBytes": 30637,
-        "sha256": "0d520c40700e1dec8cb54d1539b7ef97cda1bc1d2c509e97b58a36d58673bcce"
+        "sizeBytes": 25543,
+        "sha256": "09f44c439f3bae1f3508e2dcf5c1a30943aca7a43516ab1a9a3ced6125cc4d49"
       }
     },
     {
@@ -1459,8 +1459,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.pdf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.pdf-1.0.0.bookplugin",
-        "sizeBytes": 20186,
-        "sha256": "4d422ba9ac742ccc9e5b50bf5b3e18b5ebec57caceab047523d97a355c9af46f"
+        "sizeBytes": 15098,
+        "sha256": "f205c9dd192f16e406ee99f25b1a207736bdaf36849d6534d362c3bb79d91408"
       }
     },
     {
@@ -1500,8 +1500,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.rar-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.rar-1.0.0.bookplugin",
-        "sizeBytes": 33470,
-        "sha256": "719a84ac79790046d914b5376a6cfd77531bdbcdbe70b5d1142fcf13ec7c17ce"
+        "sizeBytes": 28379,
+        "sha256": "e457a62037f6cd422d7c99ba82186bbbe7e67fe0b3ef128d92fbeeeb0ebad2c0"
       }
     },
     {
@@ -1541,8 +1541,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.rtf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.rtf-1.0.0.bookplugin",
-        "sizeBytes": 32534,
-        "sha256": "4bc8b94d001bc8d745aae0a657041456e057589adbc80c63c74c3b94ba552733"
+        "sizeBytes": 27438,
+        "sha256": "cc51278219c3d7a627d29158e78bdeb550983f2cdd68d8ab248fe4a75e9ce877"
       }
     },
     {
@@ -1582,8 +1582,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.topaz-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.topaz-1.0.0.bookplugin",
-        "sizeBytes": 34769,
-        "sha256": "9329ab646ca7d480056355d5fe5b437229696e891dbe62252b72dbcd90e6a8df"
+        "sizeBytes": 29680,
+        "sha256": "618f1549673375856211883fded334e978bb6f4d97bfa4a61afa17d6dfbcb2e5"
       }
     },
     {
@@ -1623,8 +1623,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatareader.zip-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatareader.zip-1.0.0.bookplugin",
-        "sizeBytes": 34705,
-        "sha256": "51fb48824178d3c4fa02201c98bd1ce1182621a28463b9eed2f5843940d533ec"
+        "sizeBytes": 29608,
+        "sha256": "32710ac0da90948915c5a6658cb19c8f025fd0a6c93953506f6fa73778286153"
       }
     },
     {
@@ -1681,8 +1681,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-ca-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-ca-1.0.0.bookplugin",
-        "sizeBytes": 62455,
-        "sha256": "14bab966a905e2b39b1f091795b382f559f302569eb9228bbf73bfe7eb04ee86"
+        "sizeBytes": 57364,
+        "sha256": "653f943020c5b9f91aaa02202955bd68d41c5d72bc6aaa4c456bb222a6e8e220"
       }
     },
     {
@@ -1739,8 +1739,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-co-jp-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-co-jp-1.0.0.bookplugin",
-        "sizeBytes": 62489,
-        "sha256": "4a54c1431872a2fcab6512921eacb90b12caeb2c7022a580da0cb6ef3d31c611"
+        "sizeBytes": 57391,
+        "sha256": "76cbc20f0496728c9b1fca8808f177924ead491416285fe37efd80ad7cb3cdfc"
       }
     },
     {
@@ -1797,8 +1797,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-co-uk-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-co-uk-1.0.0.bookplugin",
-        "sizeBytes": 62509,
-        "sha256": "4dff067c2ce895f95b2d63731a12f4ff21cd133d2cb801d21af5d854f380ae83"
+        "sizeBytes": 57413,
+        "sha256": "b20b1cc5db4314b3e4c62f68e1ccf553552bb4597325eb0b698c401d1795a954"
       }
     },
     {
@@ -1855,8 +1855,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-com-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-com-1.0.0.bookplugin",
-        "sizeBytes": 62441,
-        "sha256": "3c106efa7ea76964697689dce9866b8d8bed7e184bd2b08a3c9edbdff02951ef"
+        "sizeBytes": 57351,
+        "sha256": "a04d9ce1d7e516555d69aa80340082fbd70393b5dfb066d4cd50cdbefa5e15a6"
       }
     },
     {
@@ -1913,8 +1913,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-com-au-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-com-au-1.0.0.bookplugin",
-        "sizeBytes": 62493,
-        "sha256": "0828bc813c0e17168899c71d6c71e76c0a5525d4d95157e9c902604c8ad9db1c"
+        "sizeBytes": 57396,
+        "sha256": "58a5e4e43c367896fe85daac305195866a0825a643d4439a0141fd3e53bd4dcf"
       }
     },
     {
@@ -1971,8 +1971,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-com-br-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-com-br-1.0.0.bookplugin",
-        "sizeBytes": 62480,
-        "sha256": "5ccd3ee49d989255887ce3b2e87b2d1ce0885b0a1616391c13d8c8676c0a997e"
+        "sizeBytes": 57383,
+        "sha256": "242b394364d59f216a5f9ddec140c64ac6c23fa68a2c78fb06bc9d86183955b4"
       }
     },
     {
@@ -2029,8 +2029,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-com-mx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-com-mx-1.0.0.bookplugin",
-        "sizeBytes": 62483,
-        "sha256": "15f7f3eb64267edd710a40b99b682e32d6294499bf917bb5f88cafdf2fd7cc7e"
+        "sizeBytes": 57389,
+        "sha256": "47df8d8b105214b7fe63e2cf2159c55a1283de316dbef31e0b8d7c412545ad65"
       }
     },
     {
@@ -2087,8 +2087,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-com-tr-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-com-tr-1.0.0.bookplugin",
-        "sizeBytes": 62479,
-        "sha256": "e4863cecda299c8e1e813f8a228ed3d4d50f3ae05ccf328870793f7c6a7c6fc8"
+        "sizeBytes": 57389,
+        "sha256": "c3bcf7f779870c5d2c1f1fa1c87e64e0448c67e72ac80047b76b26f916d26d4c"
       }
     },
     {
@@ -2145,8 +2145,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-de-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-de-1.0.0.bookplugin",
-        "sizeBytes": 62488,
-        "sha256": "365e1accb520a5b4d78ac7c709e24d81db1e2296051c8590935ff924ea11ce35"
+        "sizeBytes": 57379,
+        "sha256": "9373979e8d236d393917e81c3b01c76a74e8f8bcb291859ff3b83f6849d40d94"
       }
     },
     {
@@ -2203,8 +2203,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-es-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-es-1.0.0.bookplugin",
-        "sizeBytes": 62452,
-        "sha256": "accadeedafcc498bff7aa64f171074039122cda1f6d024b680fa3d0ce080b5f1"
+        "sizeBytes": 57361,
+        "sha256": "7cba7a21307bcc13cdae5d28994449900e58d398f82eca662378daf37e5377a6"
       }
     },
     {
@@ -2261,8 +2261,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-fr-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-fr-1.0.0.bookplugin",
-        "sizeBytes": 62445,
-        "sha256": "2a2a1c63aefcdf5011b2a1f95d7bd353fe3e863adc5a8d6430ca0658ba4838e8"
+        "sizeBytes": 57355,
+        "sha256": "13a0be6209cf25d16e76a13eed8bec9562aa1267ffcd1a1935cce990cb4d1180"
       }
     },
     {
@@ -2319,8 +2319,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-in-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-in-1.0.0.bookplugin",
-        "sizeBytes": 62456,
-        "sha256": "1f6bb743ea555944b9f2df0d6136dd3e1337c427372c8be2e0e1d372c1b1d55c"
+        "sizeBytes": 57362,
+        "sha256": "3edf9f107c72b1bcadbb777f37faef94a818a722854e515330402aefbb12f7bf"
       }
     },
     {
@@ -2377,8 +2377,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-it-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-it-1.0.0.bookplugin",
-        "sizeBytes": 62461,
-        "sha256": "0b5a3537872ae05c532f7ed03002ac1bb089aea94c063fc0325a6c8254c62957"
+        "sizeBytes": 57376,
+        "sha256": "9d2db50143032968a0c06102c3069f52be0c38a50db0dba0f1c7afa1a5f3ed58"
       }
     },
     {
@@ -2435,8 +2435,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.amazon-nl-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.amazon-nl-1.0.0.bookplugin",
-        "sizeBytes": 62469,
-        "sha256": "4eb8f042e692db51cecfd3a7d92bf76d0e2103118367bee287cd5c220fc70177"
+        "sizeBytes": 57378,
+        "sha256": "7c7af1fc1e4e3e47708f82bf0d3f42eac7f013a60f823e577231560bdcd807b3"
       }
     },
     {
@@ -2493,8 +2493,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.goodreads-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.goodreads-1.0.0.bookplugin",
-        "sizeBytes": 42355,
-        "sha256": "21e8f567ccb0655c3d50aac9b8d6e348dea0800019285296e232352f10dec25d"
+        "sizeBytes": 37267,
+        "sha256": "7fff5128808ecdc880abdd3a6ace5db2833312b689b1c2a02041a10642c97f31"
       }
     },
     {
@@ -2551,8 +2551,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.google-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.google-1.0.0.bookplugin",
-        "sizeBytes": 32671,
-        "sha256": "5608f3d013e140fcb6e4b1024c77c5e1ec0a8fd23756f2deee0d6b8dc4a58dc6"
+        "sizeBytes": 27564,
+        "sha256": "508b0ab2d043a6f42d7f960f49e21980813ef4fa1a9dd5fc4eaa9d60630e2840"
       }
     },
     {
@@ -2599,8 +2599,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.google-images-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.google-images-1.0.0.bookplugin",
-        "sizeBytes": 30180,
-        "sha256": "1c8dace8dbfedaf6ac77d199332641ca0b6e9c82817c111abb3e2ebe2aa536ec"
+        "sizeBytes": 25081,
+        "sha256": "355fa8e15e8fa18aed5dffc96888981ed59a36cd44c61108e9e00c775b4e7769"
       }
     },
     {
@@ -2655,8 +2655,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatasource.openlibrary-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatasource.openlibrary-1.0.0.bookplugin",
-        "sizeBytes": 33695,
-        "sha256": "a3689b0130e1bb803b4ac0bec6c853ce6a19f1e0f9493674ce5a13797bce5579"
+        "sizeBytes": 28596,
+        "sha256": "87c520ac1707afb0b3c144abb5c6ad3fd47a7acc32efacdd6f1b4827000fb8f4"
       }
     },
     {
@@ -2697,8 +2697,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.docx-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.docx-1.0.0.bookplugin",
-        "sizeBytes": 15032,
-        "sha256": "a03c5ef5ed074216a30126aacc2a33f9f3dc01050c7bccdb72ae057e768dfc60"
+        "sizeBytes": 9936,
+        "sha256": "dcec58915a01a3fac6f4d242dce86448c24cba74ea709455cb595418b8a33398"
       }
     },
     {
@@ -2739,8 +2739,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.epub-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.epub-1.0.0.bookplugin",
-        "sizeBytes": 16656,
-        "sha256": "11d0989e0abd9ae264ea5d912c943809dfbc69469dd48f73d5246cf58eb48d28"
+        "sizeBytes": 11561,
+        "sha256": "492acc0eb1d1f455459c572b05010a9e2ed3f481aedc1a101ec7522f08172872"
       }
     },
     {
@@ -2781,8 +2781,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.fb2-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.fb2-1.0.0.bookplugin",
-        "sizeBytes": 14064,
-        "sha256": "3561ab7707c469c229ca78a62aca70d3c98db2d0c04ed01c1de98b7fb9a4ed6e"
+        "sizeBytes": 8970,
+        "sha256": "3723cec1e55ff395c0c3062119345d1f9db6725f14c7d026fb6f00cae2b5f6a4"
       }
     },
     {
@@ -2823,8 +2823,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.lrf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.lrf-1.0.0.bookplugin",
-        "sizeBytes": 17841,
-        "sha256": "014b805896dd75fc2724589382c90e16c13726e93fe25fb2ac006686c5a42c9f"
+        "sizeBytes": 12740,
+        "sha256": "1f47c1656731a153ef5254b9901b5805c9c31409aedb9effe5d0f9f8d5938578"
       }
     },
     {
@@ -2865,8 +2865,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.odt-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.odt-1.0.0.bookplugin",
-        "sizeBytes": 14286,
-        "sha256": "68eef20bf1fe97076ea68e5819646a44d870eaf8c763af6e68fe4d2f55f75e76"
+        "sizeBytes": 9194,
+        "sha256": "e244df43a067d4f71e0d071e18fefd8b9b7de779267f7e09ff586f4feee490d3"
       }
     },
     {
@@ -2907,8 +2907,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.pdf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.pdf-1.0.0.bookplugin",
-        "sizeBytes": 17753,
-        "sha256": "8219c3ae4c07a04330108e829533ffa47662a1f23c258cd2ed8dc9840cd6bcef"
+        "sizeBytes": 12658,
+        "sha256": "e1e0557438fc940b8c0c12d46c83ad70e28f671165ec909d02a65ff70b12797c"
       }
     },
     {
@@ -2949,8 +2949,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.metadatawriter.rtf-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.metadatawriter.rtf-1.0.0.bookplugin",
-        "sizeBytes": 13313,
-        "sha256": "ec5a4e9c59c5175548fa101dc822e00b5cad5f477d2e8dfdf31e0e685d6e2083"
+        "sizeBytes": 8215,
+        "sha256": "03343999d3a7b7282906a4908074c561ca5db51722cb175adc06d65d2b37a810"
       }
     },
     {
@@ -2989,8 +2989,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.output-profiles.core-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.output-profiles.core-1.0.0.bookplugin",
-        "sizeBytes": 11525,
-        "sha256": "e6bb021c726b2ad5ad82af08e8c05b904d7bb7b25e7d6c6492982c1a282177a6"
+        "sizeBytes": 6431,
+        "sha256": "e870a97512805e533f6f81ba7326569609e14fd6b3b74cefbf00924e6d091e7e"
       }
     },
     {
@@ -3040,8 +3040,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/plugin-store-amazon-us-kindle-v1.0.5/com.practicore.bookatrium.store.amazon-us-kindle-1.0.5.bookplugin",
         "fileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.5.bookplugin",
-        "sizeBytes": 22844,
-        "sha256": "3e34e3e8adb961e396cee56945f3900ecd557badcdcd05cdc7607bee77656b00"
+        "sizeBytes": 23592,
+        "sha256": "0ea355e916cca0f2c2dba5226af7d3b87035375b6009fe4be51df80c2a494e34"
       }
     },
     {
@@ -3082,8 +3082,8 @@
       "package": {
         "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/official-plugins-baseline-v1.0.0/com.practicore.bookatrium.store.demo-1.0.0.bookplugin",
         "fileName": "com.practicore.bookatrium.store.demo-1.0.0.bookplugin",
-        "sizeBytes": 13856,
-        "sha256": "5427dbb8a60f6d6908ee940630d28f329f0a1fddcce0d57e18e35ad2b0066fcb"
+        "sizeBytes": 8739,
+        "sha256": "3ff10e758725cc1298c9c6de3f41f36c8f3d1dcb49c5fa42e3040e6868fab96d"
       }
     }
   ]
