@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1",
-  "generatedAtUtc": "2026-07-31T21:01:04.0559939+00:00",
+  "generatedAtUtc": "2026-08-01T12:24:24.4259613+00:00",
   "pluginCount": 67,
   "plugins": [
     {
@@ -2348,7 +2348,7 @@
       "id": "com.practicore.bookatrium.store.amazon-us-kindle",
       "name": "Amazon US Kindle Store",
       "category": "Store",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "pluginApiVersion": "2.0",
       "minimumAppVersion": "1.0.0",
       "description": "Unofficial BookAtrium store plugin for searching Amazon.com Kindle listings and opening product pages in the user\u0027s browser.",
@@ -2384,7 +2384,7 @@
       "standaloneWebSupport": false,
       "manifestPath": "Plugins/Official/Stores/AmazonUSKindleStore/src/BookAtrium.Plugins.AmazonUSKindleStore/plugin.json",
       "projectPath": "Plugins/Official/Stores/AmazonUSKindleStore/src/BookAtrium.Plugins.AmazonUSKindleStore/BookAtrium.Plugins.AmazonUSKindleStore.csproj",
-      "packageFileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin"
+      "packageFileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.5.bookplugin"
     },
     {
       "id": "com.practicore.bookatrium.store.demo",

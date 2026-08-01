@@ -3,7 +3,7 @@
   "id": "com.practicore.bookatrium.store.amazon-us-kindle",
   "name": "Amazon US Kindle Store",
   "description": "Unofficial BookAtrium store plugin for searching Amazon.com Kindle listings and opening product pages in the user's browser.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "PractiCore",
   "author": "PractiCore",
   "license": "MIT",

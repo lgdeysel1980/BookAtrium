@@ -274,7 +274,10 @@ def build_registry_entry_schema(contract: dict[str, Any]) -> dict[str, Any]:
                 "pattern": "^[a-z0-9]([a-z0-9.\\-]{0,126}[a-z0-9])?$",
             },
             "name": {"type": "string", "minLength": 1, "maxLength": 200},
-            "publisher": {"const": "BookAtrium"},
+            # The publisher is whatever the plugin's own manifest declares. The installer cross-checks
+            # the catalogue entry against the packaged manifest, so pinning this to a product name that
+            # no package declares made every official install fail as a registry/manifest mismatch.
+            "publisher": {"type": "string", "minLength": 1, "maxLength": 200},
             "official": {"const": True},
             "ownership": {"const": "first-party"},
             "category": {"type": "string", "enum": contract["categories"]},

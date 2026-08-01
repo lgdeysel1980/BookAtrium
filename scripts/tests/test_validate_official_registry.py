@@ -345,6 +345,29 @@ def test_registry_manifest_consistency(sandbox: Path):
     assert validate_main(["--root", str(sandbox)]) == 1
 
 
+def test_publisher_divergence_from_the_manifest_is_rejected(sandbox: Path):
+    """The desktop installer refuses a package whose publisher differs from the catalogue's."""
+    _write_registry(sandbox, [_registry_entry(publisher="Someone Else")])
+    assert validate_main(["--root", str(sandbox)]) == 1
+
+
+def test_publisher_is_taken_from_the_manifest_rather_than_a_fixed_brand(sandbox: Path):
+    meta = sandbox.joinpath(*CANONICAL_META.split("/"))
+    _write_manifest(meta, publisher="PractiCore")
+    _write_registry(sandbox, [_registry_entry(publisher="PractiCore")])
+    assert validate_main(["--root", str(sandbox)]) == 0
+
+
+def test_publisher_comparison_ignores_case(sandbox: Path):
+    _write_registry(sandbox, [_registry_entry(publisher="bookatrium")])
+    assert validate_main(["--root", str(sandbox)]) == 0
+
+
+def test_missing_publisher_is_rejected(sandbox: Path):
+    _write_registry(sandbox, [_registry_entry(publisher="   ")])
+    assert validate_main(["--root", str(sandbox)]) == 1
+
+
 def test_amazon_us_kindle_store_registration_in_repo():
     """Live repository must register Amazon under the canonical source-tree path."""
     registry = json.loads(

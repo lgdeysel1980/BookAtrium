@@ -65,7 +65,9 @@
             "maxLength": 200
           },
           "publisher": {
-            "const": "BookAtrium"
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
           },
           "official": {
             "const": true

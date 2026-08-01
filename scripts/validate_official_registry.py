@@ -167,8 +167,9 @@ def validate_registry(
         else:
             seen_ids.add(plugin_id)
 
-        if entry.get("publisher") != "BookAtrium":
-            errors.append(f"{prefix}: publisher must be 'BookAtrium'")
+        publisher = entry.get("publisher")
+        if not isinstance(publisher, str) or not publisher.strip():
+            errors.append(f"{prefix}: publisher is required")
         if entry.get("official") is not True:
             errors.append(f"{prefix}: official must be true")
         if entry.get("ownership") != "first-party":
@@ -254,6 +255,21 @@ def validate_manifest_consistency(
             errors.append(
                 f"{prefix}: registry.{field} ({left!r}) != manifest.{field} ({right!r})"
             )
+
+    # The desktop installer rejects a package whose manifest publisher differs from the catalogue
+    # entry's, so a divergence here is not cosmetic: it makes the plugin impossible to install.
+    # Mirror the host's comparison, which is case-insensitive and falls back to the manifest author.
+    registry_publisher = registry_entry.get("publisher")
+    manifest_publisher = manifest.get("publisher") or manifest.get("author")
+    if (
+        isinstance(registry_publisher, str)
+        and isinstance(manifest_publisher, str)
+        and registry_publisher.strip().casefold() != manifest_publisher.strip().casefold()
+    ):
+        errors.append(
+            f"{prefix}: registry.publisher ({registry_publisher!r}) != "
+            f"manifest.publisher ({manifest_publisher!r})"
+        )
 
     category = registry_entry.get("category")
     plugin_type = manifest.get("pluginType")

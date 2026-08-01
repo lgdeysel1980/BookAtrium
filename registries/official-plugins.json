@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-07-31T21:01:04.0559939+00:00",
+  "generatedAtUtc": "2026-08-01T12:24:24.4259613+00:00",
   "minimumClientVersion": "1.0.0",
   "trustSource": "official-bookatrium",
   "description": "Official BookAtrium first-party plugin catalogue. Separate from the independently published community plugins registry.",
@@ -8,7 +8,7 @@
     {
       "id": "com.practicore.bookatrium.authormetadatasource.goodreads",
       "name": "Goodreads",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "AuthorMetadataSource",
@@ -55,7 +55,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.docx",
       "name": "DOCX Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -97,7 +97,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.epub",
       "name": "EPUB Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -139,7 +139,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.fb2",
       "name": "FB2 Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -181,7 +181,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.html",
       "name": "HTML Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -223,7 +223,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.kepub",
       "name": "KEPUB Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -265,7 +265,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.kindle",
       "name": "Kindle Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -307,7 +307,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.pdf",
       "name": "PDF Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -349,7 +349,7 @@
     {
       "id": "com.practicore.bookatrium.conversioninput.txt",
       "name": "TXT Conversion Input",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionInput",
@@ -391,7 +391,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.azw3",
       "name": "AZW3 Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -433,7 +433,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.docx",
       "name": "DOCX Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -475,7 +475,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.epub",
       "name": "EPUB Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -517,7 +517,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.html",
       "name": "HTML Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -559,7 +559,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.kepub",
       "name": "KEPUB Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -601,7 +601,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.lrf",
       "name": "LRF Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -643,7 +643,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.mobi",
       "name": "MOBI Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -685,7 +685,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.oeb",
       "name": "OEB Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -727,7 +727,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.pdf",
       "name": "PDF Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -769,7 +769,7 @@
     {
       "id": "com.practicore.bookatrium.conversionoutput.txt",
       "name": "TXT Conversion Output",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "ConversionOutput",
@@ -811,7 +811,7 @@
     {
       "id": "com.practicore.bookatrium.filetypes.core",
       "name": "Core Book File Types",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "FileType",
@@ -851,7 +851,7 @@
     {
       "id": "com.practicore.bookatrium.input-profiles.core",
       "name": "Core Input Profiles",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "InputProfile",
@@ -891,7 +891,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.audio.mp3",
       "name": "MP3 Audiobook Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -932,7 +932,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.audio.mpeg4",
       "name": "M4B/M4A Audiobook Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -973,7 +973,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.docx",
       "name": "DOCX Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1014,7 +1014,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.epub-kepub",
       "name": "ePub/KePub Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1055,7 +1055,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.exiftool",
       "name": "ExifTool Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1097,7 +1097,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.fb2",
       "name": "FB2 Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1138,7 +1138,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.html",
       "name": "HTML Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1179,7 +1179,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.lit",
       "name": "LIT Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1220,7 +1220,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.lrf",
       "name": "LRF Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1261,7 +1261,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.lrx",
       "name": "LRX Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1302,7 +1302,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.mobi",
       "name": "MOBI Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1343,7 +1343,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.odt",
       "name": "ODT Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1384,7 +1384,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.opf",
       "name": "OPF Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1425,7 +1425,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.pdf",
       "name": "PDF Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1466,7 +1466,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.rar",
       "name": "RAR Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1507,7 +1507,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.rtf",
       "name": "RTF Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1548,7 +1548,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.topaz",
       "name": "Topaz Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1589,7 +1589,7 @@
     {
       "id": "com.practicore.bookatrium.metadatareader.zip",
       "name": "ZIP Metadata Reader",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataReader",
@@ -1630,7 +1630,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-ca",
       "name": "Amazon.ca, Canada",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1688,7 +1688,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-co-jp",
       "name": "Amazon.co.jp, Japan",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1746,7 +1746,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-co-uk",
       "name": "Amazon.co.uk, UK",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1804,7 +1804,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-com",
       "name": "Amazon.com, USA",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1862,7 +1862,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-com-au",
       "name": "Amazon.com.au, Australia",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1920,7 +1920,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-com-br",
       "name": "Amazon.com.br, Brazil",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -1978,7 +1978,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-com-mx",
       "name": "Amazon.com.mx, Mexico",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2036,7 +2036,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-com-tr",
       "name": "Amazon.com.tr, Turkey",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2094,7 +2094,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-de",
       "name": "Amazon.de, Germany",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2152,7 +2152,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-es",
       "name": "Amazon.es, Spain",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2210,7 +2210,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-fr",
       "name": "Amazon.fr, France",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2268,7 +2268,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-in",
       "name": "Amazon.in, India",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2326,7 +2326,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-it",
       "name": "Amazon.it, Italy",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2384,7 +2384,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.amazon-nl",
       "name": "Amazon.nl, Netherlands",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2442,7 +2442,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.goodreads",
       "name": "Goodreads",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2500,7 +2500,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.google",
       "name": "Google",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2558,7 +2558,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.google-images",
       "name": "Google Images",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2606,7 +2606,7 @@
     {
       "id": "com.practicore.bookatrium.metadatasource.openlibrary",
       "name": "Open Library",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataSource",
@@ -2662,7 +2662,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.docx",
       "name": "DOCX Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2704,7 +2704,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.epub",
       "name": "EPUB Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2746,7 +2746,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.fb2",
       "name": "FB2 Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2788,7 +2788,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.lrf",
       "name": "LRF Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2830,7 +2830,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.odt",
       "name": "ODT Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2872,7 +2872,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.pdf",
       "name": "PDF Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2914,7 +2914,7 @@
     {
       "id": "com.practicore.bookatrium.metadatawriter.rtf",
       "name": "RTF Metadata Writer",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "MetadataWriter",
@@ -2956,7 +2956,7 @@
     {
       "id": "com.practicore.bookatrium.output-profiles.core",
       "name": "Core Output Profiles",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "OutputProfile",
@@ -2996,11 +2996,11 @@
     {
       "id": "com.practicore.bookatrium.store.amazon-us-kindle",
       "name": "Amazon US Kindle Store",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "Store",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "pluginApiVersion": "2.0",
       "summary": "Unofficial BookAtrium store plugin for searching Amazon.com Kindle listings and opening product pages in the user\u0027s browser.",
       "description": "Unofficial BookAtrium store plugin for searching Amazon.com Kindle listings and opening product pages in the user\u0027s browser.",
@@ -3035,19 +3035,19 @@
       "withdrawn": false,
       "metadataPath": "Plugins/Official/Stores/AmazonUSKindleStore/src/BookAtrium.Plugins.AmazonUSKindleStore/plugin.json",
       "releaseRepository": "lgdeysel1980/BookAtrium",
-      "releaseTag": "plugin-store-amazon-us-kindle-v1.0.4",
+      "releaseTag": "plugin-store-amazon-us-kindle-v1.0.5",
       "packageHosting": "bookatrium",
       "package": {
-        "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/plugin-store-amazon-us-kindle-v1.0.4/com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
-        "fileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.4.bookplugin",
-        "sizeBytes": 24256,
-        "sha256": "65040330d195f98597f8a0484c559020cd64b3669b75fc89befd09e6a9a65719"
+        "downloadUrl": "https://github.com/lgdeysel1980/BookAtrium/releases/download/plugin-store-amazon-us-kindle-v1.0.5/com.practicore.bookatrium.store.amazon-us-kindle-1.0.5.bookplugin",
+        "fileName": "com.practicore.bookatrium.store.amazon-us-kindle-1.0.5.bookplugin",
+        "sizeBytes": 22844,
+        "sha256": "3e34e3e8adb961e396cee56945f3900ecd557badcdcd05cdc7607bee77656b00"
       }
     },
     {
       "id": "com.practicore.bookatrium.store.demo",
       "name": "Demo Store",
-      "publisher": "BookAtrium",
+      "publisher": "PractiCore",
       "official": true,
       "ownership": "first-party",
       "category": "Store",

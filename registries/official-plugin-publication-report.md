@@ -1,6 +1,6 @@
 # Official plugin publication report
 
-Generated (UTC): 2026-07-31T21:01:55.4602035+00:00
+Generated (UTC): 2026-08-01T12:24:24.4495735+00:00
 Plugin count: 67
 Catalog: `official-plugins.json`
 Packages directory: `registries/packages/`
