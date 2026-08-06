@@ -8,9 +8,9 @@ public sealed record PluginBookMetadataSnapshot(
     string? Title = null,
     string? Subtitle = null,
     IReadOnlyList<string>? Authors = null,
-    /// <summary>Optional author sort / file-as values aligned by index with <see cref="Authors"/>.</summary>
+    // Optional author sort / file-as values aligned by index with Authors.
     IReadOnlyList<string>? AuthorSorts = null,
-    /// <summary>Optional author roles aligned by index with <see cref="Authors"/> (e.g. Author, Translator).</summary>
+    // Optional author roles aligned by index with Authors (e.g. Author, Translator).
     IReadOnlyList<string>? AuthorRoles = null,
     string? Series = null,
     double? SeriesIndex = null,
@@ -29,5 +29,5 @@ public sealed record PluginBookMetadataSnapshot(
     string? SortTitle = null,
     TimeSpan? Duration = null,
     IReadOnlyList<string>? Narrators = null,
-    /// <summary>Format-specific supplemental key/value metadata (non-canonical fields).</summary>
+    // Format-specific supplemental key/value metadata (non-canonical fields).
     IReadOnlyDictionary<string, string>? SupplementalFields = null);

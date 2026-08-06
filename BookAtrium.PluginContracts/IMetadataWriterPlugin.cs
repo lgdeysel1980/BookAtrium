@@ -23,5 +23,5 @@ public sealed record MetadataWriteResult(
     string OutputTempPath,
     IReadOnlyList<string>? UnsupportedFields = null,
     IReadOnlyList<string>? Warnings = null,
-    /// <summary>True when the temporary output file was modified relative to the source copy.</summary>
+    // True when the temporary output file was modified relative to the source copy.
     bool FileChanged = true);

@@ -10,11 +10,9 @@ public sealed record PluginMetadataSearchRequest(
     string? Series,
     string? Publisher,
     int MaxResults,
-    /// <summary>
-    /// When true, the host is performing an audiobook-scoped search and the plugin should
-    /// prefer audiobook editions where the provider distinguishes them. General ebook identity
-    /// fields from audiobook-only results must still be treated as audiobook-scoped by the host.
-    /// </summary>
+    // When true, the host is performing an audiobook-scoped search and the plugin should
+    // prefer audiobook editions where the provider distinguishes them. General ebook identity
+    // fields from audiobook-only results must still be treated as audiobook-scoped by the host.
     bool PreferAudiobookResults = false);
 
 public sealed record PluginCoverSearchRequest(
