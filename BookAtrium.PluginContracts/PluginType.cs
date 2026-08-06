@@ -9,5 +9,10 @@ public enum PluginType
     MetadataReader = 3,
     MetadataSource = 4,
     MetadataWriter = 5,
-    Store = 6
+    Store = 6,
+    FileType = 7,
+    InputProfile = 8,
+    OutputProfile = 9,
+    /// <summary>Author-domain metadata lookup (biography, sort name, author identifiers).</summary>
+    AuthorMetadataSource = 10
 }

@@ -4,7 +4,13 @@ namespace BookAtrium.PluginContracts;
 public sealed class BookMetadata
 {
     public string? Title { get; set; }
+    public string? Subtitle { get; set; }
+    public string? SortTitle { get; set; }
     public IList<string> Authors { get; set; } = new List<string>();
+    /// <summary>Optional author sort / file-as values aligned by index with <see cref="Authors"/>.</summary>
+    public IList<string> AuthorSorts { get; set; } = new List<string>();
+    /// <summary>Optional author roles aligned by index with <see cref="Authors"/>.</summary>
+    public IList<string> AuthorRoles { get; set; } = new List<string>();
     public string? Publisher { get; set; }
     public DateTime? Published { get; set; }
     public string? Description { get; set; }
@@ -13,8 +19,21 @@ public sealed class BookMetadata
     public double? SeriesIndex { get; set; }
     public IList<string> Tags { get; set; } = new List<string>();
     public IDictionary<string, string> Identifiers { get; set; } = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+    public double? Rating { get; set; }
+    public int? PageCount { get; set; }
     public string? CoverUrl { get; set; }
     public byte[]? CoverBytes { get; set; }
+    public string? CoverMimeType { get; set; }
+    public string? EditionType { get; set; }
+    public string? AudiobookAsin { get; set; }
+    public IList<string> Narrators { get; set; } = new List<string>();
+    public TimeSpan? ListeningLength { get; set; }
+    public DateTime? AudiobookPublicationDate { get; set; }
+    public string? AudiobookVersion { get; set; }
+    public string? AudiobookLanguage { get; set; }
+    /// <summary>Format-specific supplemental key/value metadata.</summary>
+    public IDictionary<string, string> SupplementalFields { get; set; } =
+        new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 }
 
 public sealed class BookCover

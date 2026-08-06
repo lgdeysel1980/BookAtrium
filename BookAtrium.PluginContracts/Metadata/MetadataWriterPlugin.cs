@@ -62,7 +62,10 @@ public abstract class MetadataWriterPlugin : BookAtriumPlugin, IMetadataWriterPl
         var meta = new BookMetadata
         {
             Title = s.Title,
+            Subtitle = s.Subtitle,
+            SortTitle = s.SortTitle,
             Authors = s.Authors?.ToList() ?? new List<string>(),
+            AuthorSorts = s.AuthorSorts?.ToList() ?? new List<string>(),
             Series = s.Series,
             SeriesIndex = s.SeriesIndex,
             Publisher = s.Publisher,
@@ -70,7 +73,10 @@ public abstract class MetadataWriterPlugin : BookAtriumPlugin, IMetadataWriterPl
             Language = s.Language,
             Description = s.Description ?? s.Comments,
             Tags = s.Tags?.ToList() ?? new List<string>(),
-            CoverBytes = s.CoverBytes
+            Rating = s.Rating,
+            PageCount = s.PageCount,
+            CoverBytes = s.CoverBytes,
+            CoverMimeType = s.CoverMimeType
         };
         if (s.Identifiers is not null)
         {

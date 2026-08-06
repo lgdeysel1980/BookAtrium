@@ -30,7 +30,10 @@ public enum PluginCapabilities
     TransferToDevice = 1 << 8,
     StoreSearch = 1 << 9,
     CoverDownload = 1 << 10,
-    MetadataLookup = 1 << 11
+    MetadataLookup = 1 << 11,
+    DeclareFileTypes = 1 << 12,
+    DeclareInputProfiles = 1 << 13,
+    DeclareOutputProfiles = 1 << 14
 }
 
 /// <summary>Well-known capability name strings for manifests and serialisation.</summary>
@@ -48,6 +51,9 @@ public static class PluginCapabilityNames
     public const string StoreSearch = nameof(PluginCapabilities.StoreSearch);
     public const string CoverDownload = nameof(PluginCapabilities.CoverDownload);
     public const string MetadataLookup = nameof(PluginCapabilities.MetadataLookup);
+    public const string DeclareFileTypes = nameof(PluginCapabilities.DeclareFileTypes);
+    public const string DeclareInputProfiles = nameof(PluginCapabilities.DeclareInputProfiles);
+    public const string DeclareOutputProfiles = nameof(PluginCapabilities.DeclareOutputProfiles);
 
     public static readonly IReadOnlySet<string> All = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     {
@@ -62,7 +68,10 @@ public static class PluginCapabilityNames
         TransferToDevice,
         StoreSearch,
         CoverDownload,
-        MetadataLookup
+        MetadataLookup,
+        DeclareFileTypes,
+        DeclareInputProfiles,
+        DeclareOutputProfiles
     };
 
     public static bool TryParse(string? name, out PluginCapabilities capability)
@@ -145,6 +154,12 @@ public static class PluginCapabilityRules
                 PluginCapabilities.NetworkAccess |
                 PluginCapabilities.PluginSettingsStorage,
 
+            [PluginType.AuthorMetadataSource] =
+                PluginCapabilities.MetadataLookup |
+                PluginCapabilities.CoverDownload |
+                PluginCapabilities.NetworkAccess |
+                PluginCapabilities.PluginSettingsStorage,
+
             [PluginType.MetadataWriter] =
                 PluginCapabilities.WriteBookMetadata |
                 PluginCapabilities.TemporaryFileAccess |
@@ -154,6 +169,18 @@ public static class PluginCapabilityRules
                 PluginCapabilities.StoreSearch |
                 PluginCapabilities.CoverDownload |
                 PluginCapabilities.NetworkAccess |
+                PluginCapabilities.PluginSettingsStorage,
+
+            [PluginType.FileType] =
+                PluginCapabilities.DeclareFileTypes |
+                PluginCapabilities.PluginSettingsStorage,
+
+            [PluginType.InputProfile] =
+                PluginCapabilities.DeclareInputProfiles |
+                PluginCapabilities.PluginSettingsStorage,
+
+            [PluginType.OutputProfile] =
+                PluginCapabilities.DeclareOutputProfiles |
                 PluginCapabilities.PluginSettingsStorage
         };
 

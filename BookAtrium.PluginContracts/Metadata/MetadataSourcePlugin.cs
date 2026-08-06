@@ -153,6 +153,13 @@ public abstract class MetadataSourcePlugin : BookAtriumPlugin, IMetadataSourcePl
             Identifiers: new Dictionary<string, string>(meta.Identifiers),
             CoverUrl: meta.CoverUrl,
             CoverImage: meta.CoverBytes,
-            Attribution: Info.Name);
+            Attribution: Info.Name,
+            EditionType: meta.EditionType,
+            AudiobookAsin: meta.AudiobookAsin,
+            Narrators: meta.Narrators.ToArray(),
+            ListeningLength: meta.ListeningLength,
+            AudiobookPublicationDate: meta.AudiobookPublicationDate,
+            AudiobookVersion: meta.AudiobookVersion,
+            AudiobookLanguage: meta.AudiobookLanguage);
     }
 }

@@ -24,6 +24,12 @@ public abstract class MetadataReaderPlugin : BookAtriumPlugin, IMetadataReaderPl
 
     public abstract Task<BookMetadata> ReadAsync(BookFile file, CancellationToken cancellationToken);
 
+    /// <summary>
+    /// Lower values run earlier when multiple readers match a file.
+    /// Gap-filler / optional-tool readers (e.g. ExifTool) should return a higher value.
+    /// </summary>
+    public virtual int ReadPriority => 100;
+
     /// <summary>Extensions without dots, e.g. "epub". Defaults from <see cref="CanRead"/> usage via override.</summary>
     protected virtual IEnumerable<string> GetSupportedFormats() => Array.Empty<string>();
 
@@ -54,7 +60,10 @@ public abstract class MetadataReaderPlugin : BookAtriumPlugin, IMetadataReaderPl
     private static PluginBookMetadataSnapshot ToSnapshot(BookMetadata meta) =>
         new(
             Title: meta.Title,
+            Subtitle: meta.Subtitle,
             Authors: meta.Authors.ToArray(),
+            AuthorSorts: meta.AuthorSorts.Count > 0 ? meta.AuthorSorts.ToArray() : null,
+            AuthorRoles: meta.AuthorRoles.Count > 0 ? meta.AuthorRoles.ToArray() : null,
             Series: meta.Series,
             SeriesIndex: meta.SeriesIndex,
             Publisher: meta.Publisher,
@@ -63,6 +72,15 @@ public abstract class MetadataReaderPlugin : BookAtriumPlugin, IMetadataReaderPl
             Identifiers: new Dictionary<string, string>(meta.Identifiers),
             Tags: meta.Tags.ToArray(),
             Description: meta.Description,
+            Rating: meta.Rating,
             Isbn: meta.Identifiers.TryGetValue("isbn", out var isbn) ? isbn : null,
-            CoverBytes: meta.CoverBytes);
+            CoverBytes: meta.CoverBytes,
+            CoverMimeType: meta.CoverMimeType,
+            PageCount: meta.PageCount,
+            SortTitle: meta.SortTitle,
+            Duration: meta.ListeningLength,
+            Narrators: meta.Narrators.Count > 0 ? meta.Narrators.ToArray() : null,
+            SupplementalFields: meta.SupplementalFields.Count > 0
+                ? new Dictionary<string, string>(meta.SupplementalFields, StringComparer.OrdinalIgnoreCase)
+                : null);
 }

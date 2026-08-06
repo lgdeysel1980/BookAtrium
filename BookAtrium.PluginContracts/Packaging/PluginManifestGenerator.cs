@@ -28,7 +28,7 @@ public static class PluginManifestGenerator
             PluginType = pluginType.ToString(),
             PluginApiVersion = PluginApiVersion.Current,
             MinimumAppVersion = info.MinimumAppVersion,
-            TargetFramework = "net8.0",
+            TargetFramework = "net10.0",
             SupportedPlatforms = new List<string> { "windows" },
             EntryAssembly = entryAssemblyFileName,
             EntryType = entryTypeFullName,
@@ -50,6 +50,9 @@ public static class PluginManifestGenerator
         InputConverterPlugin => PluginType.ConversionInput,
         OutputConverterPlugin => PluginType.ConversionOutput,
         DevicePlugin => PluginType.DeviceInterface,
+        FileTypePlugin => PluginType.FileType,
+        InputProfilePlugin => PluginType.InputProfile,
+        OutputProfilePlugin => PluginType.OutputProfile,
         _ => throw new PluginException($"Unknown plugin base type: {plugin.GetType().FullName}")
     };
 
@@ -64,6 +67,9 @@ public static class PluginManifestGenerator
             PluginType.ConversionInput => PluginCapabilities.ReadInputFormat | PluginCapabilities.TemporaryFileAccess,
             PluginType.ConversionOutput => PluginCapabilities.ProduceOutputFormat | PluginCapabilities.TemporaryFileAccess,
             PluginType.DeviceInterface => PluginCapabilities.DetectDevice | PluginCapabilities.TransferToDevice,
+            PluginType.FileType => PluginCapabilities.DeclareFileTypes,
+            PluginType.InputProfile => PluginCapabilities.DeclareInputProfiles,
+            PluginType.OutputProfile => PluginCapabilities.DeclareOutputProfiles,
             _ => PluginCapabilities.None
         };
 
@@ -80,6 +86,19 @@ public static class PluginManifestGenerator
         OutputConverterPlugin output => new List<string> { output.Extension.TrimStart('.').ToLowerInvariant() },
         MetadataReaderPlugin => new List<string>(),
         MetadataWriterPlugin => new List<string>(),
+        FileTypePlugin fileTypes => fileTypes.FileTypes
+            .Select(fileType => fileType.Extension.TrimStart('.').ToLowerInvariant())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList(),
+        InputProfilePlugin profiles => profiles.InputProfiles
+            .SelectMany(profile => profile.EnabledInputFormats)
+            .Select(format => format.TrimStart('.').ToLowerInvariant())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList(),
+        OutputProfilePlugin profiles => profiles.OutputProfiles
+            .Select(profile => profile.OutputFormat.TrimStart('.').ToLowerInvariant())
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToList(),
         _ => new List<string>()
     };
 }

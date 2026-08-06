@@ -1,6 +1,6 @@
 # BookAtrium
 
-BookAtrium is a Windows ebook library, reader, organiser, and management application designed to make managing a personal ebook collection straightforward and enjoyable.
+BookAtrium is a Windows ebook and audiobook library application for organising, reading, listening to, and managing a personal book collection.
 
 This repository is the official public home for BookAtrium downloads, documentation, support, feature requests, software issue reporting, and community discussions.
 
@@ -8,21 +8,38 @@ This repository is the official public home for BookAtrium downloads, documentat
 
 ## Download BookAtrium
 
-The latest stable version of BookAtrium will be available from the official GitHub Releases page.
+BookAtrium **v1.0.1** is available from the official GitHub Releases page.
 
-[Download the latest BookAtrium release](../../releases/latest)
+[Download BookAtrium releases](../../releases)
 
-Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
+Prefer a version-specific **application** release (for example `bookatrium-v1.0.1`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
 
 ## Project Status
 
-BookAtrium is currently under active development and has not yet had its first public application release.
+BookAtrium **v1.0.1** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
 
-Public installers, release notes, and update information are published through this repository when application releases are created.
+Public installers, release notes, and update information for the application are published through this repository.
+
+## What BookAtrium Does
+
+BookAtrium is designed around a local personal library on Windows. Major end-user capabilities include:
+
+- Creating and opening local libraries
+- Importing books (including Calibre library import and drag-and-drop)
+- Browsing by authors, series, categories, table view, and cover thumbnails
+- Searching, filtering, saved searches, and virtual libraries
+- Editing metadata, covers, and book details (including bulk edit and merge)
+- Reading ebooks (including EPUB and PDF workflows)
+- Playing audiobooks with chapter-aware playback
+- Recycle bin / undo for library care
+- Backup and restore, library health checks, and search-index maintenance
+- Built-in help
+- Optional web / OPDS-style library access
+- Official and community plugins for stores, metadata, formats, and related extensions
 
 ## Supported Platform
 
-BookAtrium is currently being developed for:
+BookAtrium currently supports:
 
 - Windows 10
 - Windows 11
@@ -32,33 +49,19 @@ Support for additional platforms may be considered in the future.
 
 ## Documentation
 
-BookAtrium documentation will include:
+In-app help and documentation cover installation and first launch, library management, importing and organising books, covers and metadata, ebook and audiobook reading, search and virtual libraries, backup and restore, options, shortcuts, troubleshooting, and plugin development.
 
-- Installation and update instructions
-- Getting started guidance
-- Library management
-- Importing and organising ebooks
-- Managing authors, series, tags, covers, and metadata
-- Using the ebook reader
-- Using the PDF reader
-- Highlights, notes, and bookmarks
-- Search and virtual libraries
-- Backup and restore
-- Web and OPDS access
-- Plugin development
-- Troubleshooting
+User-facing help is included with the application. Additional public documentation and plugin guides are maintained in this repository under [`docs/`](docs/).
 
-The full user manual will be published here when the first public release is available.
-
-### Plugin development (API 2.0)
+### Plugin development (API 2.1)
 
 Third-party plugins reference **only** the public NuGet package:
 
 ```xml
-<PackageReference Include="BookAtrium.PluginContracts" Version="2.0.1" />
+<PackageReference Include="BookAtrium.PluginContracts" Version="2.1.0" />
 ```
 
-New third-party plugin packages use the `.bookplugin` extension.
+BookAtrium hosts **Plugin API 2.1**. New third-party plugin packages use the `.bookplugin` extension.
 
 - Source and package metadata: [`BookAtrium.PluginContracts`](BookAtrium.PluginContracts/)
 - Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/)
@@ -81,52 +84,21 @@ Choose the support option that best matches your request:
 
 Before creating a new issue, please search the existing issues to see whether the problem or request has already been reported.
 
-## Reporting a Problem
+When reporting a problem, include your BookAtrium version, Windows version, the affected area, clear reproduction steps, expected result, and any relevant error message or screenshot. Do not include passwords, licence keys, private ebooks, personal documents, database backups, customer information, or other confidential material.
 
-When reporting a problem, please include:
-
-- Your BookAtrium version
-- Your Windows version
-- The affected area of the application
-- A clear description of what happened
-- The steps needed to reproduce the problem
-- The result you expected
-- Any relevant error message
-- Screenshots where useful
-
-Do not include passwords, licence keys, private ebooks, personal documents, database backups, customer information, or other confidential material.
-
-## Feature Requests
-
-Feature requests are welcome.
-
-A useful feature request explains:
-
-- What problem the feature would solve
-- How the feature would improve BookAtrium
-- An example of how it would be used
-- Any alternatives or workarounds currently being used
-
-Early ideas and general feedback can also be discussed in [GitHub Discussions](../../discussions).
+Feature requests should explain the problem to solve, how BookAtrium would improve, and a concrete example of use. Early ideas are welcome in [GitHub Discussions](../../discussions).
 
 ## Official BookAtrium Plugins
 
-BookAtrium publishes first-party plugins developed and maintained by the
-BookAtrium project.
+BookAtrium publishes first-party plugins through the official catalogue. Official plugins are independently versioned and updated only when their installed package changes.
 
-Official plugins are distributed through the official BookAtrium plugin
-catalogue and are independently versioned. A plugin is updated only when its
-installed package changes.
-
-Official plugins are listed under:
+They are listed under:
 
 - `plugins/official/`
-- the BookAtrium official-plugin registry ([`registries/official-plugins.json`](registries/official-plugins.json))
+- [`registries/official-plugins.json`](registries/official-plugins.json)
 - version-specific GitHub Releases
 
-An official BookAtrium plugin that integrates with a third-party website or
-service is not necessarily affiliated with or endorsed by that third party.
-Refer to each plugin’s documentation for applicable notices.
+An official plugin that integrates with a third-party website or service is not necessarily affiliated with or endorsed by that third party. Refer to each plugin’s documentation for applicable notices.
 
 ### Current official plugins
 
@@ -138,95 +110,35 @@ Amazon US Kindle Store is an official first-party BookAtrium plugin for searchin
 
 ## Third-Party Plugins
 
-This section applies only to independently published third-party (community) plugins. It does not describe BookAtrium’s official first-party plugins.
+This section applies only to independently published third-party (community) plugins.
 
-BookAtrium supports independently developed third-party plugins through Plugin API 2.0.
+BookAtrium supports community plugins through **Plugin API 2.1**. Developers may distribute plugins free of charge or commercially.
 
-Plugin developers will be free to decide whether their plugins are distributed without charge or sold commercially.
+Third-party plugins are distributed by their respective developers. BookAtrium does not operate an official third-party marketplace and does not host, sell, approve, certify, endorse, or support independently developed plugins unless expressly stated otherwise.
 
-Third-party plugins will be distributed directly by their respective developers. BookAtrium does not operate an official third-party plugin marketplace or directory and does not host, sell, approve, certify, endorse, or provide support for independently developed plugins unless expressly stated otherwise.
+Community catalogue metadata (not packages) may appear in [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins). Official BookAtrium plugins are not submitted there.
 
-Third-party catalogue metadata (not packages) may be listed separately in [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins). Official BookAtrium plugins are not submitted to that community catalogue.
+Third-party plugin developers are responsible for hosting, pricing, licensing, support, updates, compatibility, security, privacy, legal compliance, and any data their plugins collect or process.
 
-Third-party plugin developers are responsible for:
+Install plugins only from developers and sources you trust. Third-party plugins follow the plugin developer’s own terms, licence, privacy policy, and support arrangements.
 
-- Hosting and distributing their plugins
-- Pricing and payment arrangements
-- Licensing and activation
-- Refunds and customer service
-- Documentation and technical support
-- Updates and BookAtrium compatibility
-- Security and privacy
-- Compliance with applicable laws
-- Compliance with third-party licences
-- Any data collected or processed by their plugins
-
-Users should install plugins only from developers and sources they trust.
-
-Third-party plugins are subject to the plugin developer's own terms, licence, privacy policy, and support arrangements.
-
-Third-party plugins use the community metadata registry at
-[BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins).
-
-Current valid community state may be an empty approved catalogue. At this time,
-no community plugin has yet been publicly approved.
-
-Normal plugin development does not require access to BookAtrium's private core
-source code.
+Normal plugin development does not require access to BookAtrium’s private core source code.
 
 ## Core Application Development
 
 The BookAtrium core application is privately developed and proprietary.
 
-Developers interested in helping with core application development may apply to become approved volunteer contributors.
+Developers interested in helping with core development may [apply](../../issues/new?template=05-developer-interest.yml) to become approved volunteer contributors. Access is selective and may require NDA, contribution, and security agreements. Participation is voluntary and unpaid, and does not create an employment or payment relationship.
 
-Core development access is granted selectively and is not automatic. Applications may be assessed according to:
-
-- Relevant technical experience
-- Quality of previous work
-- Areas in which assistance is needed
-- Availability and reliability
-- Security considerations
-- Third-party component licensing requirements
-- Willingness to follow the project's development standards
-
-Approved contributors may be required to:
-
-- Sign a non-disclosure agreement
-- Sign an intellectual-property and contribution agreement
-- Accept repository access and security requirements
-- Comply with applicable third-party software licences
-- Protect private source code and project information
-- Work through assigned branches and reviewed pull requests
-- Return or delete confidential material when access ends
-
-Core development contributions are currently voluntary and unpaid.
-
-Participation does not create an employment, contractor, partnership, agency, or payment relationship.
-
-Approved contributors may receive public recognition for accepted work, including acknowledgement as an assistant developer or project contributor. The form and duration of recognition remain at the discretion of the project owner.
-
-BookAtrium is currently intended to be available without charge. However, BookAtrium may introduce optional premium functionality, paid services, commercial editions, or another commercial model in the future.
-
-Contributors must accept that approved contributions may continue to be used, modified, distributed, licensed, or commercialised by the BookAtrium project in accordance with the signed contribution agreement.
-
-[Apply to assist with BookAtrium development](../../issues/new?template=05-developer-interest.yml)
+BookAtrium is currently intended to be available without charge. Optional premium functionality, paid services, commercial editions, or another commercial model may be introduced in the future.
 
 ## Releases and Updates
 
-BookAtrium application releases are published through GitHub Releases.
+Application releases are published through GitHub Releases and may include a signed installer, release notes, user documentation, and checksums where applicable.
 
-Each release may include:
-
-- The signed BookAtrium installer
-- Release notes
-- A list of changes and fixes
-- The user manual
-- File checksums where applicable
+This repository may also host official plugin releases. Prefer version-specific **application** tags (for example `bookatrium-v1.0.1`) and version-specific **plugin** tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`.
 
 BookAtrium may use release information published in this repository to check for application updates.
-
-> **Release-tag note:** This repository will eventually host both application releases and official plugin releases. Repository-wide “latest release” links become ambiguous once plugin tags are published here. Prefer version-specific application tags (for example `bookatrium-v1.0.0`) and version-specific plugin tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`. The download link above still points at `/releases/latest` only while no public application release exists yet; it should be replaced with a version-specific application URL when the first application release is published.
 
 ## Security
 
@@ -236,20 +148,7 @@ Please read the [Security Policy](SECURITY.md) for the current security-reportin
 
 ## Privacy
 
-Public issues and discussions can be viewed by anyone.
-
-Never submit:
-
-- Passwords
-- Licence keys
-- Personal identification information
-- Private ebook files
-- Customer or business information
-- Database backups
-- Private source code
-- Confidential project material
-- Unedited diagnostic files containing sensitive data
-- Signing certificates or API credentials
+Public issues and discussions can be viewed by anyone. Never submit passwords, licence keys, personal identification information, private ebook files, customer or business information, database backups, private source code, confidential project material, unedited diagnostic files containing sensitive data, or signing certificates / API credentials.
 
 Always review screenshots, logs, and diagnostic information before uploading them publicly.
 

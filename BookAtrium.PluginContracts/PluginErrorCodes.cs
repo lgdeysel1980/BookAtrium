@@ -22,6 +22,7 @@ public static class PluginErrorCodes
     public const string ConfigureFailed = "PLUGIN_CONFIGURE_FAILED";
     public const string DisableFailed = "PLUGIN_DISABLE_FAILED";
     public const string RemoveFailed = "PLUGIN_REMOVE_FAILED";
+    public const string HostRuntimeUnavailable = "PLUGIN_HOST_RUNTIME_UNAVAILABLE";
     public const string SafeModeActive = "PLUGIN_SAFE_MODE_ACTIVE";
     public const string ResultInvalid = "PLUGIN_RESULT_INVALID";
     public const string OperationTimedOut = "PLUGIN_OPERATION_TIMED_OUT";

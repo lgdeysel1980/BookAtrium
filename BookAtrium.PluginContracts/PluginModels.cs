@@ -9,7 +9,13 @@ public sealed record PluginMetadataSearchRequest(
     string? Language,
     string? Series,
     string? Publisher,
-    int MaxResults);
+    int MaxResults,
+    /// <summary>
+    /// When true, the host is performing an audiobook-scoped search and the plugin should
+    /// prefer audiobook editions where the provider distinguishes them. General ebook identity
+    /// fields from audiobook-only results must still be treated as audiobook-scoped by the host.
+    /// </summary>
+    bool PreferAudiobookResults = false);
 
 public sealed record PluginCoverSearchRequest(
     string? Title,
@@ -38,7 +44,14 @@ public sealed record PluginMetadataResult(
     byte[]? CoverImage = null,
     string? SourceUrl = null,
     double? Confidence = null,
-    string? Attribution = null);
+    string? Attribution = null,
+    string? EditionType = null,
+    string? AudiobookAsin = null,
+    IReadOnlyList<string>? Narrators = null,
+    TimeSpan? ListeningLength = null,
+    DateTime? AudiobookPublicationDate = null,
+    string? AudiobookVersion = null,
+    string? AudiobookLanguage = null);
 
 public sealed record PluginCoverResult(
     string? ImageUrl = null,

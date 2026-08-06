@@ -3,8 +3,8 @@ using System.Text.Json.Serialization;
 namespace BookAtrium.PluginContracts;
 
 /// <summary>
-/// Canonical package manifest for <c>.bookplugin</c> packages.
-/// Compatibility aliases are retained for previously built package metadata.
+/// Canonical package manifest for <c>.bookapp-plugin</c> packages.
+/// Field names remain compatible with Phase 3D <c>plugin.json</c> (author, contractApiVersion, etc.).
 /// </summary>
 public sealed class PluginPackageManifest
 {
@@ -33,7 +33,7 @@ public sealed class PluginPackageManifest
     [JsonPropertyName("version")]
     public string Version { get; set; } = string.Empty;
 
-    /// <summary>Compatibility alias for older packages. New packages should set <see cref="Publisher"/>.</summary>
+    /// <summary>Legacy Phase 3D author field. Prefer <see cref="Publisher"/> for new packages.</summary>
     [JsonPropertyName("author")]
     public string? Author { get; set; }
 
@@ -57,7 +57,7 @@ public sealed class PluginPackageManifest
     [JsonPropertyName("pluginApiVersion")]
     public string? PluginApiVersion { get; set; }
 
-    /// <summary>Compatibility alias for older packages that used contractApiVersion.</summary>
+    /// <summary>Legacy Phase 3D contract API field; still accepted.</summary>
     [JsonPropertyName("contractApiVersion")]
     public string? ContractApiVersion { get; set; }
 
@@ -68,7 +68,7 @@ public sealed class PluginPackageManifest
     public string? MaximumAppVersion { get; set; }
 
     [JsonPropertyName("targetFramework")]
-    public string? TargetFramework { get; set; } = "net8.0";
+    public string? TargetFramework { get; set; } = "net10.0";
 
     [JsonPropertyName("supportedPlatforms")]
     public List<string> SupportedPlatforms { get; set; } = new();
@@ -116,14 +116,14 @@ public sealed class PluginPackageManifest
         !string.IsNullOrWhiteSpace(Author) ? Author! :
         string.Empty;
 
-    /// <summary>Effective API version: pluginApiVersion, else contractApiVersion, else 1.0 for compatibility.</summary>
+    /// <summary>Effective API version: pluginApiVersion, else contractApiVersion, else 1.0.</summary>
     [JsonIgnore]
     public string EffectivePluginApiVersion =>
         !string.IsNullOrWhiteSpace(PluginApiVersion) ? PluginApiVersion! :
         !string.IsNullOrWhiteSpace(ContractApiVersion) ? ContractApiVersion! :
         "1.0";
 
-    /// <summary>Resolved plugin type; defaults to MetadataSource for compatibility when missing.</summary>
+    /// <summary>Resolved plugin type; defaults to MetadataSource for legacy packages.</summary>
     [JsonIgnore]
     public PluginType EffectivePluginType
     {
@@ -147,10 +147,10 @@ public static class PluginPackageExtensions
     /// <summary>Canonical Plugin API 2.0 package extension (`bookatrium-plugin pack`).</summary>
     public const string BookPlugin = ".bookplugin";
 
-    /// <summary>Compatibility package extension retained for Plugin API 1.x packages.</summary>
+    /// <summary>Legacy unified package extension (Plugin API 1.x).</summary>
     public const string BookAppPlugin = ".bookapp-plugin";
 
-    /// <summary>Compatibility alias for older MetadataSource packages.</summary>
+    /// <summary>Accepted alias for MetadataSource packages (Phase 3D).</summary>
     public const string LegacyMetadataPlugin = ".bookmetadata-plugin";
 
     public static bool IsRecognisedPackagePath(string? path)
