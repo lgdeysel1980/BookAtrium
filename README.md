@@ -102,9 +102,42 @@ An official plugin that integrates with a third-party website or service is not 
 
 ### Current official plugins
 
-| Plugin | Version | Category |
-|--------|---------|----------|
-| [Amazon US Kindle Store](plugins/official/stores/amazon-us-kindle-store/) | 1.0.4 | Store |
+| Plugin | Version | Plugin | Version |
+|--------|---------|--------|---------|
+| Amazon US Kindle Store | 1.0.5 | Amazon.ca, Canada | 1.0.0 |
+| Amazon.co.jp, Japan | 1.0.0 | Amazon.co.uk, UK | 1.0.0 |
+| Amazon.com, USA | 1.0.0 | Amazon.com.au, Australia | 1.0.0 |
+| Amazon.com.br, Brazil | 1.0.0 | Amazon.com.mx, Mexico | 1.0.0 |
+| Amazon.com.tr, Turkey | 1.0.0 | Amazon.de, Germany | 1.0.0 |
+| Amazon.es, Spain | 1.0.0 | Amazon.fr, France | 1.0.0 |
+| Amazon.in, India | 1.0.0 | Amazon.it, Italy | 1.0.0 |
+| Amazon.nl, Netherlands | 1.0.0 | AZW3 Conversion Output | 1.0.0 |
+| Core Book File Types | 1.0.0 | Core Input Profiles | 1.0.0 |
+| Core Output Profiles | 1.0.0 | Demo Store | 1.0.0 |
+| DOCX Conversion Input | 1.0.0 | DOCX Conversion Output | 1.0.0 |
+| DOCX Metadata Reader | 1.0.0 | DOCX Metadata Writer | 1.0.0 |
+| EPUB Conversion Input | 1.0.0 | EPUB Conversion Output | 1.0.0 |
+| EPUB Metadata Writer | 1.0.0 | ePub/KePub Metadata Reader | 1.0.0 |
+| ExifTool Metadata Reader | 1.0.0 | FB2 Conversion Input | 1.0.0 |
+| FB2 Metadata Reader | 1.0.0 | FB2 Metadata Writer | 1.0.0 |
+| Goodreads | 1.0.0 | Goodreads | 1.0.0 |
+| Google | 1.0.0 | Google Images | 1.0.0 |
+| HTML Conversion Input | 1.0.0 | HTML Conversion Output | 1.0.0 |
+| HTML Metadata Reader | 1.0.0 | KEPUB Conversion Input | 1.0.0 |
+| KEPUB Conversion Output | 1.0.0 | Kindle Conversion Input | 1.0.0 |
+| LIT Metadata Reader | 1.0.0 | LRF Conversion Output | 1.0.0 |
+| LRF Metadata Reader | 1.0.0 | LRF Metadata Writer | 1.0.0 |
+| LRX Metadata Reader | 1.0.0 | M4B/M4A Audiobook Metadata Reader | 1.0.0 |
+| MOBI Conversion Output | 1.0.0 | MOBI Metadata Reader | 1.0.0 |
+| MP3 Audiobook Metadata Reader | 1.0.0 | ODT Metadata Reader | 1.0.0 |
+| ODT Metadata Writer | 1.0.0 | OEB Conversion Output | 1.0.0 |
+| Open Library | 1.0.0 | OPF Metadata Reader | 1.0.0 |
+| PDF Conversion Input | 1.0.0 | PDF Conversion Output | 1.0.1 |
+| PDF Metadata Reader | 1.0.0 | PDF Metadata Writer | 1.0.0 |
+| RAR Metadata Reader | 1.0.0 | RTF Metadata Reader | 1.0.0 |
+| RTF Metadata Writer | 1.0.0 | Topaz Metadata Reader | 1.0.0 |
+| TXT Conversion Input | 1.0.0 | TXT Conversion Output | 1.0.0 |
+| ZIP Metadata Reader | 1.0.0 |  |  |
 
 Amazon US Kindle Store is an official first-party BookAtrium plugin for searching Amazon US Kindle listings. It is not affiliated with, sponsored by, approved by, or endorsed by Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.
 
