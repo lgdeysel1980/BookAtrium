@@ -112,7 +112,7 @@ Normal plugin development does **not** require access to the private BookAtrium 
 Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/).  
 Reusable CI: [`.github/workflows/plugin-build.yml`](.github/workflows/plugin-build.yml).  
 Third-party catalogue submissions: [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins).  
-Official BookAtrium plugins: [`plugins/official/`](plugins/official/) and [`registries/official-plugins.json`](registries/official-plugins.json) (not submitted to the community catalogue).
+Official BookAtrium plugins are bundled with the application and are not published as downloadable packages from this repository.
 
 Plugin developers may choose whether their plugins are:
 
@@ -146,7 +146,7 @@ A plugin must not imply that it is developed, approved, certified, endorsed, sol
 
 Plugin developers must not use BookAtrium branding in a way that could mislead users into believing that an independent plugin is an official BookAtrium product.
 
-The Plugin API package (`BookAtrium.PluginContracts`), guides under `docs/plugins/sdk-2/`, packaging format, compatibility rules, and permission model are published from this repository. Official first-party plugin catalogue metadata is also published here. Community catalogue listing for independently published plugins is separate and curated.
+The Plugin API package (`BookAtrium.PluginContracts`), guides under `docs/plugins/sdk-2/`, packaging format, compatibility rules, and permission model are published from this repository. Official first-party plugins are bundled with BookAtrium. Community catalogue listing for independently published plugins is separate and curated.
 
 ## Private Core Application Development
 

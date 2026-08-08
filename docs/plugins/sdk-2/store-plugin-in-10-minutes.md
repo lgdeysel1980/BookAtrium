@@ -57,4 +57,4 @@ bookatrium-plugin pack
 
 See sample: `samples/BookAtrium.PluginSamples.Store` when published.
 
-For an example of a published official store plugin’s **public catalogue** page (not implementation source), see [`plugins/official/stores/amazon-us-kindle-store`](../../../plugins/official/stores/amazon-us-kindle-store/). Official plugin implementation source is private; third-party store plugins continue to live in their own repositories.
+Official store plugins such as Amazon US Kindle Store are bundled with BookAtrium. Official plugin implementation source is private; third-party store plugins continue to live in their own repositories.

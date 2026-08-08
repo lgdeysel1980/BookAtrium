@@ -12,7 +12,7 @@ BookAtrium **v1.0.1** is available from the official GitHub Releases page.
 
 [Download BookAtrium releases](../../releases)
 
-Prefer a version-specific **application** release (for example `bookatrium-v1.0.1`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
+Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source. GitHub Releases here contain **application** installers only.
 
 ## Project Status
 
@@ -66,10 +66,9 @@ BookAtrium hosts **Plugin API 2.1**. New third-party plugin packages use the `.b
 - Source and package metadata: [`BookAtrium.PluginContracts`](BookAtrium.PluginContracts/)
 - Guides: [`docs/plugins/sdk-2`](docs/plugins/sdk-2/)
 - Reusable CI: [`.github/workflows/plugin-build.yml`](.github/workflows/plugin-build.yml)
-- Official plugin catalogue: [`plugins/official/`](plugins/official/) and [`registries/official-plugins.json`](registries/official-plugins.json)
 - Community catalogue (third-party metadata only): [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
 
-The application core remains private. Third-party plugin projects should reference only `BookAtrium.PluginContracts`. Official BookAtrium plugins are developed privately and published here as catalogue metadata and release references.
+The application core remains private. Third-party plugin projects should reference only `BookAtrium.PluginContracts`. Official BookAtrium plugins are developed privately and **bundled with the application**; they are not downloaded from this repository.
 
 ## Support
 
@@ -90,15 +89,9 @@ Feature requests should explain the problem to solve, how BookAtrium would impro
 
 ## Official BookAtrium Plugins
 
-BookAtrium publishes first-party plugins through the official catalogue. Official plugins are independently versioned and updated only when their installed package changes.
+Official first-party plugins are **bundled with BookAtrium**. They are not downloaded separately from GitHub, a plugin directory, or GitHub Releases.
 
-They are listed under:
-
-- `plugins/official/`
-- [`registries/official-plugins.json`](registries/official-plugins.json)
-- version-specific GitHub Releases
-
-An official plugin that integrates with a third-party website or service is not necessarily affiliated with or endorsed by that third party. Refer to each plugin’s documentation for applicable notices.
+An official plugin that integrates with a third-party website or service is not necessarily affiliated with or endorsed by that third party. Refer to in-app plugin documentation for applicable notices.
 
 ### Current official plugins
 
@@ -169,7 +162,7 @@ BookAtrium is currently intended to be available without charge. Optional premiu
 
 Application releases are published through GitHub Releases and may include a signed installer, release notes, user documentation, and checksums where applicable.
 
-This repository may also host official plugin releases. Prefer version-specific **application** tags (for example `bookatrium-v1.0.1`) and version-specific **plugin** tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`.
+This repository’s GitHub Releases contain **application** releases only. Official plugins ship with BookAtrium and are not published as separate release assets.
 
 BookAtrium may use release information published in this repository to check for application updates.
 
