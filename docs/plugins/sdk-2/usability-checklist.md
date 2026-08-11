@@ -26,4 +26,4 @@ Acceptance checklist for task-first authoring.
 - [ ] `bookatrium-plugin prepare-release` produces registry-entry scaffold
 - [ ] Reusable workflow `lgdeysel1980/BookAtrium/.github/workflows/plugin-build.yml@main` builds/tests/packs a plugin repo
 - [ ] Registry PR targets [BookAtrium-Community-Plugins](https://github.com/lgdeysel1980/BookAtrium-Community-Plugins)
-- [ ] Do **not** submit official BookAtrium plugins to the community catalogue; official releases use [`plugins/official/`](../../../plugins/official/) and [`registries/official-plugins.json`](../../../registries/official-plugins.json)
+- [ ] Do **not** submit official BookAtrium plugins to the community catalogue; official plugins are bundled with BookAtrium

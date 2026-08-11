@@ -2,10 +2,9 @@
 
 This guide is for **independently published third-party plugins**.
 
-BookAtrium-owned official plugins are **not** submitted here. Official catalogue
-metadata and release references are published through the public BookAtrium
-repository (`plugins/official/` and `registries/official-plugins.json`). See
-[Official plugin release process](../official/release-process.md).
+BookAtrium-owned official plugins are **not** submitted here. Official plugins
+are bundled with BookAtrium and are not published as downloadable packages from
+this repository.
 
 Third-party packages must target **Plugin API 2.0** (`BookAtrium.PluginContracts`).
 Third-party developers host their own repositories and release assets.
