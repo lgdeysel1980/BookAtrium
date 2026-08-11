@@ -12,8 +12,6 @@ BookAtrium **v1.0.2** is available from the official GitHub Releases page.
 
 [Download BookAtrium releases](../../releases)
 
-Prefer a version-specific **application** release (for example `bookatrium-v1.0.2`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
-=======
 Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source. GitHub Releases here contain **application** installers only.
 
 ## Project Status
