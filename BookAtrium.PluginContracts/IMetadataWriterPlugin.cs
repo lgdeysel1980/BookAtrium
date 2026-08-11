@@ -19,9 +19,12 @@ public sealed record MetadataWriteRequest(
     PluginBookMetadataSnapshot Metadata,
     IReadOnlyDictionary<string, string>? Options = null);
 
+/// <param name="OutputTempPath">Path of the temporary output file.</param>
+/// <param name="UnsupportedFields">Fields the writer could not apply.</param>
+/// <param name="Warnings">Non-fatal writer warnings.</param>
+/// <param name="FileChanged">True when the temporary output file was modified relative to the source copy.</param>
 public sealed record MetadataWriteResult(
     string OutputTempPath,
     IReadOnlyList<string>? UnsupportedFields = null,
     IReadOnlyList<string>? Warnings = null,
-    // True when the temporary output file was modified relative to the source copy.
     bool FileChanged = true);

@@ -3,7 +3,10 @@ using BookAtrium.PluginContracts.Internal;
 
 namespace BookAtrium.PluginContracts;
 
-/// <summary>Device plugin. Implement <see cref="DetectAsync"/> and <see cref="SendAsync"/>.</summary>
+/// <summary>
+/// Device plugin. Implement <see cref="DetectAsync"/> and <see cref="SendAsync"/>.
+/// BookAtrium does not ship an official DeviceInterface plugin; third-party implementations remain supported.
+/// </summary>
 public abstract class DevicePlugin : BookAtriumPlugin, IDeviceInterfacePlugin
 {
     private readonly Dictionary<string, Device> _devices = new(StringComparer.OrdinalIgnoreCase);

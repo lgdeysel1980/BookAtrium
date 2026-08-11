@@ -43,6 +43,7 @@ public static class PluginManifestGenerator
 
     public static PluginType ResolveType(BookAtriumPlugin plugin) => plugin switch
     {
+        AuthorMetadataSourcePlugin => PluginType.AuthorMetadataSource,
         StorePlugin => PluginType.Store,
         MetadataSourcePlugin => PluginType.MetadataSource,
         MetadataReaderPlugin => PluginType.MetadataReader,
@@ -62,6 +63,7 @@ public static class PluginManifestGenerator
         {
             PluginType.Store => PluginCapabilities.StoreSearch | PluginCapabilities.CoverDownload,
             PluginType.MetadataSource => PluginCapabilities.MetadataLookup | PluginCapabilities.CoverDownload,
+            PluginType.AuthorMetadataSource => PluginCapabilities.MetadataLookup | PluginCapabilities.CoverDownload,
             PluginType.MetadataReader => PluginCapabilities.ReadBookMetadata,
             PluginType.MetadataWriter => PluginCapabilities.WriteBookMetadata | PluginCapabilities.TemporaryFileAccess,
             PluginType.ConversionInput => PluginCapabilities.ReadInputFormat | PluginCapabilities.TemporaryFileAccess,

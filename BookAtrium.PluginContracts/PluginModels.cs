@@ -1,5 +1,15 @@
 namespace BookAtrium.PluginContracts;
 
+/// <param name="SearchMode">Search mode requested by the host.</param>
+/// <param name="Query">Free-text query.</param>
+/// <param name="Title">Title filter when provided.</param>
+/// <param name="Authors">Author filters.</param>
+/// <param name="Identifiers">Identifier filters.</param>
+/// <param name="Language">Preferred language.</param>
+/// <param name="Series">Series filter.</param>
+/// <param name="Publisher">Publisher filter.</param>
+/// <param name="MaxResults">Maximum results to return.</param>
+/// <param name="PreferAudiobookResults">When true, prefer audiobook editions where the provider distinguishes them; audiobook-only identity fields remain audiobook-scoped for the host.</param>
 public sealed record PluginMetadataSearchRequest(
     string SearchMode,
     string Query,
@@ -10,9 +20,6 @@ public sealed record PluginMetadataSearchRequest(
     string? Series,
     string? Publisher,
     int MaxResults,
-    // When true, the host is performing an audiobook-scoped search and the plugin should
-    // prefer audiobook editions where the provider distinguishes them. General ebook identity
-    // fields from audiobook-only results must still be treated as audiobook-scoped by the host.
     bool PreferAudiobookResults = false);
 
 public sealed record PluginCoverSearchRequest(

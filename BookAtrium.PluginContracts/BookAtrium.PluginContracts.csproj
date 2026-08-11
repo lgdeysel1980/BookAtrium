@@ -7,9 +7,9 @@
     <RootNamespace>BookAtrium.PluginContracts</RootNamespace>
     <AssemblyName>BookAtrium.PluginContracts</AssemblyName>
     <PackageId>BookAtrium.PluginContracts</PackageId>
-    <Version>2.1.0</Version>
-    <AssemblyVersion>2.1.0.0</AssemblyVersion>
-    <FileVersion>2.1.0.0</FileVersion>
+    <Version>2.1.1</Version>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
     <Authors>PractiCore</Authors>
     <Description>Canonical public BookAtrium plugin authoring package (Plugin API 2.1). Reference this package only.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AngleSharp" Version="1.6.0" />
+    <PackageReference Include="AngleSharp" Version="1.7.1" />
   </ItemGroup>
 
   <ItemGroup>

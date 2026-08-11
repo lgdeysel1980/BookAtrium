@@ -5,6 +5,7 @@ public enum PluginType
 {
     ConversionInput = 0,
     ConversionOutput = 1,
+    /// <summary>Third-party device transfer. No official implementation ships; the type remains supported.</summary>
     DeviceInterface = 2,
     MetadataReader = 3,
     MetadataSource = 4,
