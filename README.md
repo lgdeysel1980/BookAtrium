@@ -8,15 +8,15 @@ This repository is the official public home for BookAtrium downloads, documentat
 
 ## Download BookAtrium
 
-BookAtrium **v1.0.1** is available from the official GitHub Releases page.
+BookAtrium **v1.0.2** is available from the official GitHub Releases page.
 
 [Download BookAtrium releases](../../releases)
 
-Prefer a version-specific **application** release (for example `bookatrium-v1.0.1`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
+Prefer a version-specific **application** release (for example `bookatrium-v1.0.2`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
 
 ## Project Status
 
-BookAtrium **v1.0.1** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
+BookAtrium **v1.0.2** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
 
 Public installers, release notes, and update information for the application are published through this repository.
 
@@ -102,42 +102,35 @@ An official plugin that integrates with a third-party website or service is not 
 
 ### Current official plugins
 
-| Plugin | Version | Plugin | Version |
-|--------|---------|--------|---------|
-| Amazon US Kindle Store | 1.0.5 | Amazon.ca, Canada | 1.0.0 |
-| Amazon.co.jp, Japan | 1.0.0 | Amazon.co.uk, UK | 1.0.0 |
-| Amazon.com, USA | 1.0.0 | Amazon.com.au, Australia | 1.0.0 |
-| Amazon.com.br, Brazil | 1.0.0 | Amazon.com.mx, Mexico | 1.0.0 |
-| Amazon.com.tr, Turkey | 1.0.0 | Amazon.de, Germany | 1.0.0 |
-| Amazon.es, Spain | 1.0.0 | Amazon.fr, France | 1.0.0 |
-| Amazon.in, India | 1.0.0 | Amazon.it, Italy | 1.0.0 |
-| Amazon.nl, Netherlands | 1.0.0 | AZW3 Conversion Output | 1.0.0 |
-| Core Book File Types | 1.0.0 | Core Input Profiles | 1.0.0 |
-| Core Output Profiles | 1.0.0 | Demo Store | 1.0.0 |
-| DOCX Conversion Input | 1.0.0 | DOCX Conversion Output | 1.0.0 |
-| DOCX Metadata Reader | 1.0.0 | DOCX Metadata Writer | 1.0.0 |
-| EPUB Conversion Input | 1.0.0 | EPUB Conversion Output | 1.0.0 |
-| EPUB Metadata Writer | 1.0.0 | ePub/KePub Metadata Reader | 1.0.0 |
-| ExifTool Metadata Reader | 1.0.0 | FB2 Conversion Input | 1.0.0 |
-| FB2 Metadata Reader | 1.0.0 | FB2 Metadata Writer | 1.0.0 |
-| Goodreads | 1.0.0 | Goodreads | 1.0.0 |
-| Google | 1.0.0 | Google Images | 1.0.0 |
-| HTML Conversion Input | 1.0.0 | HTML Conversion Output | 1.0.0 |
-| HTML Metadata Reader | 1.0.0 | KEPUB Conversion Input | 1.0.0 |
-| KEPUB Conversion Output | 1.0.0 | Kindle Conversion Input | 1.0.0 |
-| LIT Metadata Reader | 1.0.0 | LRF Conversion Output | 1.0.0 |
-| LRF Metadata Reader | 1.0.0 | LRF Metadata Writer | 1.0.0 |
-| LRX Metadata Reader | 1.0.0 | M4B/M4A Audiobook Metadata Reader | 1.0.0 |
-| MOBI Conversion Output | 1.0.0 | MOBI Metadata Reader | 1.0.0 |
-| MP3 Audiobook Metadata Reader | 1.0.0 | ODT Metadata Reader | 1.0.0 |
-| ODT Metadata Writer | 1.0.0 | OEB Conversion Output | 1.0.0 |
-| Open Library | 1.0.0 | OPF Metadata Reader | 1.0.0 |
-| PDF Conversion Input | 1.0.0 | PDF Conversion Output | 1.0.1 |
-| PDF Metadata Reader | 1.0.0 | PDF Metadata Writer | 1.0.0 |
-| RAR Metadata Reader | 1.0.0 | RTF Metadata Reader | 1.0.0 |
-| RTF Metadata Writer | 1.0.0 | Topaz Metadata Reader | 1.0.0 |
-| TXT Conversion Input | 1.0.0 | TXT Conversion Output | 1.0.0 |
-| ZIP Metadata Reader | 1.0.0 |  |  |
+| Plugin | Version | Type | Plugin | Version | Type |
+|--------|---------|------|--------|---------|------|
+| Amazon | 1.0.6 | Metadata Source | Amazon US Kindle Store | 1.0.5 | Store |
+| AZW3 Conversion Output | 1.0.0 | Conversion Output | Core Book File Types | 1.0.0 | File Type |
+| Core Input Profiles | 1.0.0 | Input Profile | Core Output Profiles | 1.0.0 | Output Profile |
+| Demo Store | 1.0.0 | Store | DOCX Conversion Input | 1.0.0 | Conversion Input |
+| DOCX Conversion Output | 1.0.0 | Conversion Output | DOCX Metadata Reader | 1.0.0 | Metadata Reader |
+| DOCX Metadata Writer | 1.0.0 | Metadata Writer | EPUB Conversion Input | 1.0.0 | Conversion Input |
+| EPUB Conversion Output | 1.0.0 | Conversion Output | EPUB Metadata Writer | 1.0.0 | Metadata Writer |
+| ePub/KePub Metadata Reader | 1.0.0 | Metadata Reader | ExifTool Metadata Reader | 1.0.0 | Metadata Reader |
+| FB2 Conversion Input | 1.0.0 | Conversion Input | FB2 Metadata Reader | 1.0.0 | Metadata Reader |
+| FB2 Metadata Writer | 1.0.0 | Metadata Writer | Goodreads | 1.0.0 | Metadata Source |
+| Goodreads | 1.0.0 | Author Metadata Source | Google | 1.0.0 | Metadata Source |
+| Google Images | 1.0.0 | Metadata Source | HTML Conversion Input | 1.0.0 | Conversion Input |
+| HTML Conversion Output | 1.0.0 | Conversion Output | HTML Metadata Reader | 1.0.0 | Metadata Reader |
+| KEPUB Conversion Input | 1.0.0 | Conversion Input | KEPUB Conversion Output | 1.0.0 | Conversion Output |
+| Kindle Conversion Input | 1.0.0 | Conversion Input | LIT Metadata Reader | 1.0.0 | Metadata Reader |
+| LRF Conversion Output | 1.0.0 | Conversion Output | LRF Metadata Reader | 1.0.0 | Metadata Reader |
+| LRF Metadata Writer | 1.0.0 | Metadata Writer | LRX Metadata Reader | 1.0.0 | Metadata Reader |
+| M4B/M4A Audiobook Metadata Reader | 1.0.0 | Metadata Reader | MOBI Conversion Output | 1.0.0 | Conversion Output |
+| MOBI Metadata Reader | 1.0.0 | Metadata Reader | MP3 Audiobook Metadata Reader | 1.0.0 | Metadata Reader |
+| ODT Metadata Reader | 1.0.0 | Metadata Reader | ODT Metadata Writer | 1.0.0 | Metadata Writer |
+| OEB Conversion Output | 1.0.0 | Conversion Output | Open Library | 1.0.0 | Metadata Source |
+| OPF Metadata Reader | 1.0.0 | Metadata Reader | PDF Conversion Input | 1.0.0 | Conversion Input |
+| PDF Conversion Output | 1.0.1 | Conversion Output | PDF Metadata Reader | 1.0.0 | Metadata Reader |
+| PDF Metadata Writer | 1.0.0 | Metadata Writer | RAR Metadata Reader | 1.0.0 | Metadata Reader |
+| RTF Metadata Reader | 1.0.0 | Metadata Reader | RTF Metadata Writer | 1.0.0 | Metadata Writer |
+| Topaz Metadata Reader | 1.0.0 | Metadata Reader | TXT Conversion Input | 1.0.0 | Conversion Input |
+| TXT Conversion Output | 1.0.0 | Conversion Output | ZIP Metadata Reader | 1.0.0 | Metadata Reader |
 
 Amazon US Kindle Store is an official first-party BookAtrium plugin for searching Amazon US Kindle listings. It is not affiliated with, sponsored by, approved by, or endorsed by Amazon. Amazon and Kindle are trademarks of Amazon.com, Inc. or its affiliates.
 
@@ -169,7 +162,7 @@ BookAtrium is currently intended to be available without charge. Optional premiu
 
 Application releases are published through GitHub Releases and may include a signed installer, release notes, user documentation, and checksums where applicable.
 
-This repository may also host official plugin releases. Prefer version-specific **application** tags (for example `bookatrium-v1.0.1`) and version-specific **plugin** tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`.
+This repository may also host official plugin releases. Prefer version-specific **application** tags (for example `bookatrium-v1.0.2`) and version-specific **plugin** tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`.
 
 BookAtrium may use release information published in this repository to check for application updates.
 
