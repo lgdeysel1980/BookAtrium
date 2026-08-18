@@ -208,6 +208,8 @@ Public issues and discussions can be viewed by anyone. Never submit passwords, l
 
 Always review screenshots, logs, and diagnostic information before uploading them publicly.
 
+[Read the BookAtrium Privacy Policy](PRIVACY.md)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting issues, participating in Discussions, developing plugins, or applying to help with core development.
