@@ -12,17 +12,50 @@ BookAtrium **v1.0.2** is available from the official GitHub Releases page.
 
 [Download BookAtrium releases](../../releases)
 
-<<<<<<< HEAD
-Prefer a version-specific **application** release (for example `bookatrium-v1.0.2`) rather than a plugin release tag. Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source.
-=======
 Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source. GitHub Releases here contain **application** installers only.
->>>>>>> 9201a20ec1c4a0748c2e19c3e6050a712a6deabc
 
 ## Project Status
 
 BookAtrium **v1.0.2** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
 
 Public installers, release notes, and update information for the application are published through this repository.
+
+## Screenshots
+
+See BookAtrium in action across its desktop library, reading, listening, metadata, and web-library experiences. Select any screenshot to view it at full size.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/main-library-table-view.png"><img src="docs/images/screenshots/main-library-table-view.png" alt="BookAtrium main library table view" width="100%"></a>
+      <br><strong>Main library — table view</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/main-library-list-view.png"><img src="docs/images/screenshots/main-library-list-view.png" alt="BookAtrium main library list view" width="100%"></a>
+      <br><strong>Main library — list view</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/book-details-editor.png"><img src="docs/images/screenshots/book-details-editor.png" alt="BookAtrium book details and metadata editor" width="100%"></a>
+      <br><strong>Book details and metadata editor</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/ebook-reader.png"><img src="docs/images/screenshots/ebook-reader.png" alt="BookAtrium ebook reader" width="100%"></a>
+      <br><strong>Built-in ebook reader</strong>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/audiobook-player.png"><img src="docs/images/screenshots/audiobook-player.png" alt="BookAtrium audiobook player with chapters" width="100%"></a>
+      <br><strong>Audiobook player with chapters</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="docs/images/screenshots/web-library.png"><img src="docs/images/screenshots/web-library.png" alt="BookAtrium web library" width="100%"></a>
+      <br><strong>Web library</strong>
+    </td>
+  </tr>
+</table>
 
 ## What BookAtrium Does
 
@@ -159,11 +192,7 @@ BookAtrium is currently intended to be available without charge. Optional premiu
 
 Application releases are published through GitHub Releases and may include a signed installer, release notes, user documentation, and checksums where applicable.
 
-<<<<<<< HEAD
-This repository may also host official plugin releases. Prefer version-specific **application** tags (for example `bookatrium-v1.0.2`) and version-specific **plugin** tags (for example `plugin-store-amazon-us-kindle-v1.0.4`). Plugin download metadata must never use `/releases/latest/download/...`.
-=======
 This repository’s GitHub Releases contain **application** releases only. Official plugins ship with BookAtrium and are not published as separate release assets.
->>>>>>> 9201a20ec1c4a0748c2e19c3e6050a712a6deabc
 
 BookAtrium may use release information published in this repository to check for application updates.
 
@@ -178,6 +207,8 @@ Please read the [Security Policy](SECURITY.md) for the current security-reportin
 Public issues and discussions can be viewed by anyone. Never submit passwords, licence keys, personal identification information, private ebook files, customer or business information, database backups, private source code, confidential project material, unedited diagnostic files containing sensitive data, or signing certificates / API credentials.
 
 Always review screenshots, logs, and diagnostic information before uploading them publicly.
+
+[Read the BookAtrium Privacy Policy](PRIVACY.md)
 
 ## Contributing
 
