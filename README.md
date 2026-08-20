@@ -16,7 +16,7 @@ The Microsoft Store is the sole official application download and installation c
 
 ## Project Status
 
-BookAtrium **v1.0.2** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
+BookAtrium **v1.0.3** is publicly available through the **Microsoft Store**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
 
 Release notes and version history for the application are published through this repository.
 
