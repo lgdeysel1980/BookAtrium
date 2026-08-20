@@ -22,10 +22,9 @@ This Agreement grants you limited permission to use the Software. It does not tr
 
 Subject to your compliance with this Agreement, BookAtrium grants you a limited, personal, non-exclusive, non-transferable, revocable licence to:
 
-- Download and install the Software from an official BookAtrium distribution source;
+- Download and install the Software from the [Microsoft Store](https://apps.microsoft.com/detail/9pjds5mpb8fx?cid=DevShareMCLPCS&hl=en-US&gl=ZA);
 - Install the Software on computers that you own or control;
 - Use the Software for lawful personal, educational, professional, or internal business purposes;
-- Make a reasonable backup copy of the installer for your own use;
 - Use documentation supplied with the Software.
 
 No other rights are granted unless expressly stated in writing.
@@ -76,7 +75,7 @@ These restrictions do not limit rights that cannot legally be excluded.
 
 ## 6. Official Distribution
 
-The official BookAtrium installer and updates will be distributed through locations identified by BookAtrium, which may include the official BookAtrium GitHub Releases page.
+The official BookAtrium application is distributed through the [Microsoft Store](https://apps.microsoft.com/detail/9pjds5mpb8fx?cid=DevShareMCLPCS&hl=en-US&gl=ZA). GitHub is used for project information, documentation, release notes, support, and version history; it does not distribute BookAtrium application installers or updates.
 
 BookAtrium is not responsible for installers, modified copies, repackaged versions, or downloads obtained from unauthorised sources.
 
@@ -84,7 +83,7 @@ You should verify that you are downloading BookAtrium from an official source.
 
 ## 7. Updates
 
-BookAtrium may check an official update source to determine whether a newer version is available.
+Installed Store versions receive application updates through Microsoft's Store distribution and update mechanism. BookAtrium may check Store-provided update information where necessary to determine whether a newer version is available.
 
 Update checks may transmit limited technical information necessary to obtain release information, such as:
 

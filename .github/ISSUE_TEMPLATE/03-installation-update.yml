@@ -9,7 +9,7 @@ body:
       value: |
         Use this form for problems involving installation, updates, repair, or removal of BookAtrium.
 
-        Do not upload licence keys, Windows product keys, passwords, or complete system backups.
+        BookAtrium is installed and updated through the Microsoft Store. Do not upload licence keys, Windows product keys, passwords, or complete system backups.
 
   - type: dropdown
     id: problem-type
@@ -79,7 +79,7 @@ body:
     id: error-message
     attributes:
       label: Error message or error code
-      description: Paste the complete installer or updater message.
+      description: Paste the complete Microsoft Store or application update message.
       placeholder: Paste the complete error text here.
 
   - type: textarea
@@ -89,28 +89,28 @@ body:
       description: Tell us what you have already tried.
       placeholder: |
         - Restarted Windows
-        - Downloaded the installer again
-        - Ran the installer as administrator
+        - Reopened the Microsoft Store
+        - Checked for updates in the Microsoft Store
 
   - type: textarea
     id: security-software
     attributes:
       label: Security software
-      description: List any antivirus or endpoint security product that may have blocked the installer.
+      description: List any antivirus or endpoint security product that may have blocked the Store installation or update.
       placeholder: "Example: Microsoft Defender"
 
   - type: textarea
     id: screenshots
     attributes:
       label: Screenshots or installer logs
-      description: Drag and drop relevant screenshots or logs here. Remove personal or sensitive information first.
+      description: Drag and drop relevant screenshots or application logs here. Remove personal or sensitive information first.
 
   - type: checkboxes
     id: confirmations
     attributes:
       label: Before submitting
       options:
-        - label: I downloaded the installer from the official BookAtrium GitHub Releases page.
+        - label: I installed or updated BookAtrium through the Microsoft Store.
           required: true
         - label: I searched the existing issues for the same installation or update problem.
           required: true

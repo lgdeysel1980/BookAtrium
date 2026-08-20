@@ -71,7 +71,7 @@ BookAtrium may connect to official distribution or hosting services to:
 - Retrieve information about available community plugins.
 - Download a plugin that you choose to install.
 
-Depending on how BookAtrium was installed, these services may include Microsoft Store services, GitHub, or another official BookAtrium distribution service.
+Application installation and updates use Microsoft Store services. GitHub and other hosting services may be used for project information, release notes, or community plugin information and packages.
 
 Those services may receive standard technical information associated with the network request, including your IP address and information normally transmitted by your device or network client.
 
@@ -153,7 +153,7 @@ The official BookAtrium GitHub repository is used for activities such as:
 - Documentation feedback.
 - Community discussions.
 - Release information.
-- Application downloads for applicable distribution channels.
+- Microsoft Store application distribution and updates.
 
 Information that you post in a public GitHub Issue or Discussion can be viewed by other people and may remain publicly accessible.
 

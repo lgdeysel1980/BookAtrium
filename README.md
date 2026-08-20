@@ -2,23 +2,23 @@
 
 BookAtrium is a Windows ebook and audiobook library application for organising, reading, listening to, and managing a personal book collection.
 
-This repository is the official public home for BookAtrium downloads, documentation, support, feature requests, software issue reporting, and community discussions.
+This repository is the official public home for BookAtrium documentation, release history, support, feature requests, software issue reporting, and community discussions.
 
 > The BookAtrium core application source code is private and is not stored in this public repository.
 
 ## Download BookAtrium
 
-BookAtrium **v1.0.2** is available from the official GitHub Releases page.
+BookAtrium eBook Library is available from the Microsoft Store.
 
-[Download BookAtrium releases](../../releases)
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9pjds5mpb8fx?cid=DevShareMCLPCS&hl=en-US&gl=ZA)
 
-Only download BookAtrium from this repository or another location explicitly identified as an official BookAtrium download source. GitHub Releases here contain **application** installers only.
+The Microsoft Store is the sole official application download and installation channel. Installed Store versions receive application updates through Microsoft's Store distribution and update mechanism.
 
 ## Project Status
 
 BookAtrium **v1.0.2** is a public **beta**. Core library, reading, listening, backup, help, and plugin features are available for everyday use, while behaviour, packaging, and documentation continue to improve with feedback.
 
-Public installers, release notes, and update information for the application are published through this repository.
+Release notes and version history for the application are published through this repository.
 
 ## Screenshots
 
@@ -190,11 +190,11 @@ BookAtrium is currently intended to be available without charge. Optional premiu
 
 ## Releases and Updates
 
-Application releases are published through GitHub Releases and may include a signed installer, release notes, user documentation, and checksums where applicable.
+Application release notes and version history may be published through GitHub Releases. GitHub Releases do not contain BookAtrium application installers or update packages.
 
-This repository’s GitHub Releases contain **application** releases only. Official plugins ship with BookAtrium and are not published as separate release assets.
+The Microsoft Store is the sole official source for installing BookAtrium and receiving application updates. Official plugins ship with BookAtrium and are not published as separate release assets.
 
-BookAtrium may use release information published in this repository to check for application updates.
+The current application release workflow is to build the BookAtrium Release payload, package the Store release using the native MSIX / Windows Store Package project, submit the package through Microsoft Partner Center, pass Microsoft certification, and publish through the Microsoft Store. GitHub Release notes may be kept for version history, but application installer binaries are not uploaded there.
 
 ## Security
 

@@ -72,7 +72,7 @@ Please include:
 - Steps already attempted
 - Relevant screenshots or logs
 
-Only download BookAtrium from an official BookAtrium source.
+Install BookAtrium from the [Microsoft Store](https://apps.microsoft.com/detail/9pjds5mpb8fx?cid=DevShareMCLPCS&hl=en-US&gl=ZA). The Microsoft Store is the sole official application download and update channel.
 
 ## Documentation Corrections
 
